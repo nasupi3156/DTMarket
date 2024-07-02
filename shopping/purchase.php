@@ -61,7 +61,7 @@ if (isset($_POST['btn-modal'])) {
  
   // phpの関数を定義
   function calculateShippingFee($sumPrice) {
-    // 2000円と以上
+    // 2000円と2000円以上
     return ($sumPrice >= 2000) ? 0 : 300;
   } 
 
@@ -120,7 +120,7 @@ if (isset($_POST['submit'])) {
   ]);
 
   $orderId = $db->getLastId();
-  // ordersテーブルのorder_id(プライマリー、オートイン)を挿入から取得したorder_idを使用して、getLastIdメソッド(lastInsertId)を使用して、新しく挿入された注文のorder_idを取得。
+  // ordersテーブルのorder_idを挿入から取得したorder_idを使用して、getLastIdメソッド(lastInsertId)を使用して、新しく挿入された注文のorder_idを取得。
   // lastInsertIdはデータベース接続で生成された最後の自動インクリメント値を返す。
   // order_idを取得しorder_detailsテーブルにorder_idレコードを挿入詳細がそれぞれの注文に正しく関連付けられる。
   // selectやupdateでは新しい行ができないので、insertの時だけ
