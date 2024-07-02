@@ -1,0 +1,58 @@
+CREATE DATABASE shopping_db DEFAULT CHARACTER SET utf8;	
+
+GRANT ALL PRIVILEGES ON shopping_db.* TO shopping_user@'localhost' IDENTIFIED BY 'shopping_pass' WITH GRANT OPTION;	
+
+USE shopping_db;	
+	
+	
+//商品テーブル	
+CREATE TABLE item (	
+item_id int unsigned not null auto_increment,	
+item_name varchar(100) not null,	
+detail text not null,	
+price DECIMAL(10,3) unsigned not null, //デシマル:decimal(最大桁数、小数点以下の桁数)	
+image varchar(50) not null,	
+ctg_id tinyint unsigned not null,	
+primary key( item_id ),	
+index item_idx( ctg_id )  //インデックス：データの検索速度を向上させるために、どの行がどこにあるかを示した索引のこと	
+);	
+	
+//カート(取引)	
+CREATE TABLE cart (	
+crt_id int unsigned not null auto_increment,	
+customer_no int unsigned not null,	
+item_id int unsigned not null,	
+num tinyint(1) unsigned not null default 1,	
+delete_flg tinyint(1) unsigned not null default 0,	
+primary key( crt_id ),	
+index crt_idx( customer_no, delete_flg )	
+);	
+	
+//カテゴリー	
+CREATE TABLE category (	
+ctg_id tinyint unsigned not null auto_increment,	
+category_name varchar(100) not null,	
+primary key(ctg_id)	
+);	
+	
+//顧客の認識	
+CREATE TABLE session (	
+customer_no int unsigned not null auto_increment,	
+session_key varchar(32),	
+primary key(customer_no)	
+);	
+
+
+
+
+
+CREATE TABLE item (
+item_id int unsigned not null auto_increment,
+item_name varchar(100) not null,
+detail text not null,
+price DECIMAL(10,3) unsigned not null, 
+image varchar(50) not null,
+ctg_id tinyint unsigned not null,
+primary key( item_id ),
+index item_idx( ctg_id ) 
+);
