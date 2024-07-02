@@ -1,0 +1,4 @@
+# macOS システムファイルを無視
+.DS_Store
+
+/vendor
