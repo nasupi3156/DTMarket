@@ -27,18 +27,15 @@ class Cart
       // $this->updateCartData($qtyItem[0]['crt_id'], $qtyItem[0]['quantity']);
     } else {   
     // 新しい商品をカートに追加
-    // insertされた瞬間はブラウザーに表示しない。cart.phpにリダイレクトされることで、再度selectを行い最新のデータを取得
+    // insertされた瞬間はブラウザーに表示しない。AJAXリクエストでページのリロード中にselectで最新のデータを取得
     // ユーザーが過去に購入したが、現在のカートには存在しない商品を再購入する場合、新しいアイテムとしてカートに追加する必要がある
-    $insData = [
-      'customer_no' => $customer_no,
-      'item_id' => $item_id,
-      'quantity' => $qty
-    ];
-     $this->db->insert($table, $insData);
-  }
-   // 更新後にカートページにリダイレクト
-   header('Location: ./cart.php');
-   exit;
+      $insData = [
+        'customer_no' => $customer_no,
+        'item_id' => $item_id,
+        'quantity' => $qty
+      ];
+      $this->db->insert($table, $insData);
+    }  
   }
 
   public function getCartItemData($customer_no, $item_id)
