@@ -96,7 +96,7 @@
                     <p>&yen;{{(value.price)|number_format(0, '.', ',')}}</p>
                   </td>
                   <td>
-                    <select class="" onchange="qtyChange({{ value.crt_id }}, this.value)">
+                    <select class="" onchange="qtySelect({{ value.crt_id }}, this.value)">
                     {# onchange : 数値を選択、javascriptのqtyChange関数呼び出される #}
                       {% for num in 1..10 %}
                       <option value="{{ num }}" {% if num == value.quantity %}selected{% endif %}>{{ num }}</option>
@@ -162,18 +162,16 @@
 
     <script>
     
-      function qtyChange(crt_id, qty) {
-        $.get('./cart.php?qtyChange=1&crt_id=' + crt_id + '&qty=' + qty, function(data) {
+      function qtySelect(crt_id, qty) {
+        $.get('./cart.php?qtySelect=1&crt_id=' + crt_id + '&qty=' + qty, function(data) {
             if (data) {
-                location.reload();
+                location.reload(); // 最新のデータを取得するためにページをリロード
             } else {
                 alert('エラーが発生しました');
             }
         });
       }
-      {# JavaScript関数やURLパラメータなどは直接Twigのコンテキストに含める必要はない #}
-      {# qtyChange関数では、商品のIDと新しい数量をパラメータとしてcart.phpに送信し、ページを再読み込み #}
-
+      
     </script>
   </body>
 
