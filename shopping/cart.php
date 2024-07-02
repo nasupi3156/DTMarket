@@ -38,28 +38,20 @@ if (isset($_GET['item_id']) && preg_match('/^\d+$/', $_GET['item_id'])) {
   $item_id = $_POST['item_id']; 
 }
 
-// qtyChangeはなぜ必要か？数量変更を区別するためにコードの理解とメンテナンスをしやすくする為
+// qtySelectはなぜ必要か？数量変更を区別するためにコードの理解とメンテナンスをしやすくする為
 // 数量変更
-$qtyChange = (isset($_GET['qtyChange']) === true && preg_match('/^\d+$/',$_GET['qtyChange']) === 1) ? $_GET['qtyChange'] : '';
+$qtySelect = (isset($_GET['qtySelect']) === true && preg_match('/^\d+$/',$_GET['qtySelect']) === 1) ? $_GET['qtySelect'] : '';
 
 $price = isset($_POST['price']) &&  is_numeric($_POST['price']) ? (float)$_POST['price'] : 0;
 
-// 数量
 $quantity = (isset($_POST['quantity']) && preg_match('/^\d+$/', $_POST['quantity'])) ? (int)$_POST['quantity'] : 1;
 
-
-// GETリクエスト内に 'qtyChange' パラメータが設定されているかどうか、およびその値が数字のみで構成されているかどうか
-
-
-// == 1 は、正規表現が正確に1回一致したことを確認し、それが有効な整数であることを確認します。
 // qtyは数量
 $qty = (isset($_GET['qty']) === true && preg_match('/^\d+$/',$_GET['qty']) === 1) ? $_GET['qty'] : '1';
-// $qtyを取得
 
 
-
-// 商品をカートに追加するための処理です。具体的には、与えられた顧客番号と商品IDを使用して、カートに商品を追加
-// insCartData メソッドがカートに商品データを挿入する役割を果たしています。
+// 商品をカートに追加するための処理。具体的には、与えられた顧客番号と商品IDを使用して、カートに商品を追加
+// insCartData : カートに商品データを挿入する役割。
 if ($item_id !== '') {
   $res = $cart->insCartData($customer_no, $item_id, $qty);
   //登録に失敗した場合、エラーページを表示する
@@ -70,8 +62,8 @@ if ($item_id !== '') {
 }
 
 // カート内の商品の数量を更新する
-// qtyとquantityは本来同じ値を持ってるのでif引数からメソッドに渡された時にquantityでも同じ
-if ($qtyChange && $crt_id && $qty) {
+// qtyとquantityは本来同じ値を持ってるので引数からメソッドに渡された時にquantityでも同じ
+if ($qtySelect && $crt_id && $qty) {
    $cart->updateCartData($crt_id, $qty);
     echo true;
     exit();
