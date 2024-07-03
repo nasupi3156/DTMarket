@@ -23,7 +23,7 @@ $twig = new \Twig\Environment($loader, [
 $errArr = []; 
 $dataArr = [];
 $delete = false;
-// 重複確認変数
+
 $duplicateEmail = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
