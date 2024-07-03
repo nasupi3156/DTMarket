@@ -45,7 +45,7 @@ $page = min($page, $totalPages);
 
 // オフセットを計算し、データベースクエリの開始位置を決定
 $offset = ($page - 1) * $orderPerPage;
-// ページ1、(1-1) * 2 = 0 、ページ2　(2-1) * 2 = 2 
+// ページ1、(1-1) * 20 = 0 、ページ2　(2-1) * 20 = 20 
 
 // 現在のページの注文を取得
 $orders = $cart->getOrders($user_id, $offset, $orderPerPage);
