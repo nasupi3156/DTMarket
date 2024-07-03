@@ -56,7 +56,8 @@ $categories = $itm->getCategoryDetail();
 // LIMITに使われる値(1ページあたり12項目を表示)
 $itemsPerPage = 12;
 
-// 1ページ目、$offset = (1 - 1) * 12 = 0なので1~12
+// 1ページ目、$offset = (1 - 1) * 12 = 0 : 0~11
+// 2ページ目、$offset = (2 - 1) * 12 = 12 : 12~23
 $offset = ($page - 1) * $itemsPerPage;
 
 // 前アイテム数を取得/
