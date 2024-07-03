@@ -33,8 +33,9 @@ $page = isset($_GET['page']) && preg_match('/^[0-9]+$/', $_GET['page']) ? (int)$
 $page = max($page, 1); 
 // ページ番号が1未満の場合は1に設定
     
-$orderPerPage = 20;
 // LIMIT 1ページあたりのアイテム数を1
+$orderPerPage = 20;
+
 // $totalItems = $cart->getTotalOrderCount($user_id);
 $offset = ($page - 1) * $orderPerPage;
 
