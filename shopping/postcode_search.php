@@ -22,8 +22,7 @@ if (isset($_GET['zip1']) === true && isset($_GET['zip2']) === true){
 
   if ($res) {
     echo ($res !== '' && count($res) !== 0) ? $res['pref']. $res['city'].$res['town']: false;
-    // echo($res !== "" && count($res) !== 0) ? $res[0]['pref'].$res[0]
-    // ['city'].$res[0]['town']:''; 
+    // echo($res !== "" && count($res) !== 0) ? $res[0]['pref'].$res[0]['city'].$res[0]['town']:''; 
 
   } else {
     echo 'no';
