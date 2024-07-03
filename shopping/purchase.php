@@ -33,7 +33,6 @@ if(!isset($_SESSION['user_id'])) {
 
 // purchase edit
 if (isset($_POST['btn-modal'])) {
-// if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['btn-modal'])) {
   $dataArr = [
   'family_name' => filter_input(INPUT_POST, 'family_name', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
   'first_name' => filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
