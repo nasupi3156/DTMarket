@@ -23,30 +23,6 @@ class Item
     return $res;
   }
   
-  // public function getItemList($ctg_id, $orderBy, $start = 0, $itemsPerPage = null)
-  // {
-  //   $table = 'item';
-  //   $col = 'item_id, item_name, price, image, ctg_id';
-  //   $where = ($ctg_id != '') ? ' ctg_id = ? ' : '';
-  //   $arrVal = ($ctg_id != '') ? [$ctg_id] : [];
-
-  //   // $orderBy = 'item_id DESC';
-  //   // $orderBy item_id DESC : カラムを降順に並べる / item_id ASC ,price : 昇順に並べる
-    
-  //   $orderBy = ($orderBy !== '') ? "ORDER BY $orderBy" : '';
-    
-  //   $limit = ($itemsPerPage !== null) ? "LIMIT $start, $itemsPerPage" : '';
-
-     
-  //   $res = $this->db->select($table, $col, $where, $arrVal, $limit, $orderBy);
-    
-  //   // shuffle ($res);
-  //   // 取得したデータをシャッフル、ランダムな順序で表示
-
-  //   return ($res !== false && count($res) !== 0) ? $res : false;
-  // }
-
- 
   // 商品,ソート、ページネーション
   public function getItemList($ctg_id, $orderBy, $offset, $itemsPerPage)
   {
