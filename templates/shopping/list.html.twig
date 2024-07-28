@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     {# bootstrap icons #}
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/list.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/header.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/footer.css" rel="stylesheet" type="text/css" />
@@ -31,82 +35,27 @@
         {# time ; バツボタン(特殊文字アイコン)  #}
       </button>
   </div>
-    
-  <header> 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">DT-Health </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-          <ul class="navbar-nav ms-auto my-2 my-lg-2 d-flex align-items-center">
-          {# ms-auto : 要素を左から右に寄せる、my-lg-1上下の余白(大きい画面)#}
-            <form class="d-flex search-form" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
-              <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
-              <button class="btn btn-outline-success" type="submit">search</button>
-            </form>
-            {# 検索結果を表示、サジェスト結果をここに表示 #}
-            <div id="suggestions"></div>
-
-            <li class="nav-item">
-              <a class="nav-link greeting" href="#">こんにちは <span>{{ family_name }}</span> さん！</a>
-            </li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle my-dropdown-toggle account" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                マイアカウント
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}profile.php">お客様情報</a></li>
-                <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order.php">注文履歴</a></li>
-                <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order_detail.php">注文履歴詳細</a></li>
-                <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}contact.php">お問い合わせ</a></li>
-              </ul>
-
-              <li class="nav-item">
-                <a class="nav-link cart" href="cart.php">
-                  <i class="bi bi-cart position-relative" style="font-size: 26px;">
-                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
-                     {# rounded-pillからrounded-circle #}
-                      {{ sumNum == 0 ? '0' : sumNum }} 
-                      <!-- ここにカート内のアイテム数を動的に表示 -->
-                    </span>
-                  </i> 
-                </a>
-              </li>
-            <li class="nav-item login-out">
-              {% if isUserLogin %}
-                <a id="logoutButton" class="nav-link click" href="./login.php?logout=1" onclick="return logoutConfirm();">ログアウト</a>
-              {% else %}
-                <a class="nav-link click" href="./login.php">ログイン</a>
-              {% endif %}
-            </li>
-            {# ログアウトボタンに onclick イベントを追加し、JavaScriptの関数logoutConfirm()を呼び出す。 #}
-          </ul> 
-        </div>
-      </div>
-    </nav> 
-  </header> 
-
+  
+  {% include 'header.html.twig'%}
+  
   <section id="slider"> 
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"> 
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/slider/yasai.jpg" class="d-block w-100" alt="色とりどりの野菜">
+          <img src="images/slider/colorful-vegetables.jpg" class="d-block w-100" alt="色とりどりの野菜">
           <div class="carousel-caption">
           {# carousel-captionのスタイルをカスタマイズすることで、テキストの位置や見た目をさらに調整 #}
             <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/slider/fruits.jpg" class="d-block w-100" alt="色とりどりの果物">
+          <img src="images/slider/colorful-fruits.jpg" class="d-block w-100" alt="色とりどりの果物">
           <div class="carousel-caption">
              <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/slider/yasai01.jpg" class="d-block w-100" alt="新鮮な野菜">
+          <img src="images/slider/fresh-vegetables.jpg" class="d-block w-100" alt="新鮮な野菜">
           <div class="carousel-caption">
              <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
@@ -132,7 +81,6 @@
       <div class="item_order">
         <div class="order">
           <select id="sortOrder">
-            {# <option value="">選択する</option> #}
             <option value="asc" {% if order == 'price ASC' %}selected{% endif %}>安い価格</option>
             {# valueのascなどはgetリクエストの一部としてサーバーに送信されサーバーはこの値を読み取り、クエリ結果をどのように並べ替えるかを決める   #}
             <option value="desc" {% if order == 'price DESC' %}selected{% endif %}>高い価格</option>
@@ -181,14 +129,11 @@
     {# pagination #}   
   </section>
 
- <footer>
-   <p>DT-Health</p>
- </footer>
+  {# footer #}
+  {% include 'footer.html.twig' %}
 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  {# Bootstrap #}
-
+ <script src="{{ constant('shopping\\Bootstrap::APP_URL' )}}js/logout.js"></script>
+  
  <script>
    {# 安い価格、高い価格 #}
    document.getElementById('sortOrder').addEventListener('change', function() {

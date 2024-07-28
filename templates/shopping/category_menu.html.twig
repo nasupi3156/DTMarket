@@ -1,6 +1,6 @@
 <div id="category">
   <ul class="category_list">
-    {# 初期状態のアクセス時はget[ctg_id]は設定されてない状態なのでempty(から)でactiveのcssを指定, all-itemはclass #}
+    {# 初期状態のアクセス時はget[ctg_id]は設定されてない状態なのでemptyでactiveのcssを指定, class = all-item #}
     <li class="{{ currentCtg is empty ? 'active all-item': '' }}">
     <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php?order={{ order == 'price ASC' ? 'asc' : 'desc' }}"><span class="ctg_name">全て</span><span class="ctg_number">({{ categories[0].total_count }})</span></a>
     </li>

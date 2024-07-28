@@ -11,32 +11,22 @@
 
     <script src="{{constant('shopping\\Bootstrap::APP_URL')}}js/logout.js"></script>
     <title>新規登録管理者リスト</title>
+    <style>
+      td.logged_in {
+        font-weight: bold;
+        font-size: 17px;
+      } 
+    </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">ADMIN-DT-Health</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          </div>
-        </div>
-      </nav>
-    </header>
+    {% include 'admin_header.html.twig' %}
+    
     <section class="my-5">
       <div class="container">
         <div class="row oreder-detail-f">
-          <div class="col-3 list-group-a">
-            <div class="list-group">
-              <p class="list-ctg"><span class="underline-text">カテゴリー</span></p>
-    
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}admin/admin_signup.php" class="list-info">お客様情報</a>
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}admin/admin_order_history.php" class="list-info">注文履歴詳細</a>
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}admin/admin_contact.php" class="list-info">お問い合わせ</a>
-            </div>
-          </div>  
+
+        {% include 'admin_sidebar.html.twig' %}
+          
             <div class="col-9">    
               <h3 class="order-history">新規登録</h3> 
                 <form action="csv/signup_csv.php" method="get">
@@ -60,10 +50,12 @@
                         <th>電話番号</th>
                         <th>編集</th>
                         <th>削除</th>
+                        <th>ユーザー</th>
                       </tr>
                     </thead>
                     <tbody>
                       {% for signup in adminSignup %}
+                  
                       <tr>
                         <td>{{ signup.user_id }}</td>
                         <td>{{ signup.family_name }}</td>
@@ -75,10 +67,12 @@
                         <td>{{ signup.zip1 }}-{{ signup.zip2 }}</td>
                         <td>{{ signup.address }}</td>
                         <td>{{ signup.email }}</td>
-                        <td>{{ signup.tel1 }}-{{ signup.tel2 }}-{{ tel3 }}</td>
+                        <td>{{ signup.tel1 }}-{{ signup.tel2 }}-{{ signup.tel3 }}</td>
                         <td><button class="btn btn-edit" data-bs-toggle="modal" data-bs-target="#editUserModal{{ order.order_id }}">編集</button></td>
                         <td class="delete"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}admin/admin_signup.php?user_id={{ signup.user_id }}">削除</a>
                         </td>
+                 
+                        <td class="{{ signup.is_logged_in ? 'logged_in' : 'logged_out' }}">{{ signup.is_logged_in ? 'ログイン' : 'ログアウト' }}</td>
                       </tr>
                     {% endfor %}
                   </tbody>
