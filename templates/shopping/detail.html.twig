@@ -53,18 +53,13 @@
           </dl>
         </div>     
         <input type="hidden" name="item_id" id="item_id" value="{{itemData.item_id}}">
-        {# jQueryのitem_idがこちらのitemDataのitem_id(商品情報1,2)などと結びついいて、type="hidden"で見えないようにしている #}
-        {# valueのitemData.item_idは、detail.phpの商品情報をとってきた、そのid数が入ってます#}
-        {# なのでpost通信ではなくてget通信 #}
+        {# jQueryのitem_idが、サーバーから取得したitemDataのitem_idと結びつき、この要素はhiddenで見えないようにしている。
+        value="{{itemData.item_id}}"は、detail.phpから取得した商品情報のitem_idが入る。 #}
         
-
-        {# 戻る先がない時(新しいウィンドウで開く等)での意図しない挙動を防ぐ #}
-        {# return false; はphpのexitと同じ #}
         <input type="button" name="back" value="一覧へ戻る" onclick="history.back(); return false;" / class="detail_back">
-        {# onclick属性 : history.back(); return false　一つ前のメージへ戻る #}
+        {# onclick="history.back(); return false;"  : ブラウザは前のページに戻りフォームの値を保持 #}
         <input type="button" name="cart_in" value="ショッピングカートへ入れる" id="cart_in" / class="detail_cart">
-        {# formの中に囲まれてないでbuttonなどが行われたのは jQueryを使っているから。上記でjQueryのファイルを読み込む  id="cart_in" #}
-        {# idがクリックjsでイベント確認 #}
+        {# ショッピングカートに入れるボタン。クリックイベントはjQueryで処理します。 #}
         
         </div>
         {# col-7 #}
