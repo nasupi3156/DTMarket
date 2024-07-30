@@ -72,7 +72,6 @@ primary key( crt_id ),
 index crt_idx( customer_no, is_deleted )	
 );	
 
-
 CREATE TABLE orders (
   order_id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT UNSIGNED NOT NULL,
@@ -92,7 +91,6 @@ CREATE TABLE orders (
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
-
 CREATE TABLE order_details (
     detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
@@ -105,9 +103,6 @@ CREATE TABLE order_details (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
-
-
-; お問い合わせ
 CREATE TABLE contacts (
   id INT AUTO_INCREMENT PRIMARY KEY,
   user_id INT UNSIGNED,
@@ -128,14 +123,6 @@ customer_no int unsigned not null auto_increment,
 session_key varchar(32),	
 primary key(customer_no)	
 );	
-
-
-; 外部キーを追加
-ALTER TABLE items
-ADD CONSTRAINT fk_ctg_id
-FOREIGN KEY (ctg_id) REFERENCES categories(id);
-
-	
 
 
 CREATE TABLE password_resets (
@@ -255,7 +242,6 @@ INSERT INTO items VALUES ( 38,  'カリフラワー', 'カリフラワー(愛知
 INSERT INTO items VALUES ( 39,  'ビーツ', 'ビーツ(北海道県産)旬の季節は、秋から冬です。栄養素は、葉酸、マグネシウム、鉄分、ビタミンCが豊富に含まれています。', 400, 'beets.jpg', 1 );
 
 INSERT INTO items VALUES ( 40,  'かぼちゃ', 'かぼちゃ(神奈川県産)旬の季節は、秋です。栄養素は、ビタミンA、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 290, 'pumpkin.jpg', 1 );
-
 
 INSERT INTO items VALUES ( 41, 'ドラゴンフルーツ', 'ドラゴンフルーツ(沖縄県産)旬の季節は夏です。栄養素としては、ビタミンC、ビタミンB、食物繊維、カリウムが豊富に含まれています。', 550, 'dragonFruits.jpg', 1 );
 
