@@ -105,7 +105,7 @@
               <input type="text" name="email" value="{{formData.email | default('') }}" class="{{ errArr.email | length > 0 ? "input_error" : '' }}" size="40">
               {% if errArr.email | length > 0 %}<br><span class="red">{{errArr.email}}</span>{% endif %}
               {% if duplicateEmail and not errArr.email %}
-              {# 重複メールがtrueでform.emailがからの場合 #}
+              {# 重複メールがtrueでform.emailが空の場合 #}
                 <br><p class="red">こちらのメールアドレスは既に使用されています。</p>
               {% endif %}
               {% if delete and not errArr.email %}
@@ -119,7 +119,7 @@
             <th class="regist_name">電話番号<span class="red">*</span></th>
             <td class="regist_data">
               <input type="text" name="tel1" value="{{formData.tel1 | default('') }}" class="{{ errArr.tel1 | length > 0 ? "input_error" : '' }}" size="6" maxlength="6"> - 
-              {# maxlength文字数  size,文字数に合わせて幅も6にしてるだけ #}
+              {# maxlength文字数  sizeに合わせて文字数の幅も6 #}
               <input type="text" name="tel2" value="{{formData.tel2 | default('') }}" class="{{ errArr.tel2 | length > 0 ? "input_error" : '' }}" size="6" maxlength="6"> - 
               <input type="text" name="tel3" value="{{formData.tel3 | default('') }}" class="{{ errArr.tel3 | length > 0 ? "input_error" : '' }}" size="6" maxlength="6">
               {% if errArr.tel1 | length > 0 %}<br><span class="red">{{errArr.tel1}}</span>{% endif %}
