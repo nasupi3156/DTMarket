@@ -58,18 +58,18 @@ CREATE TABLE items (
   PRIMARY KEY (item_id),
   INDEX item_idx (ctg_id),
   FOREIGN KEY (ctg_id) REFERENCES categories(ctg_id)
-  );
+);
 
   ; カート(取引)	
 CREATE TABLE carts (	
-crt_id int unsigned not null auto_increment,	
-customer_no int unsigned not null,	
-item_id int unsigned not null,	
-num tinyint(1) unsigned not null default 1,	
-quantity tinyint(1) unsigned not null default 1,
-is_deleted tinyint(1) unsigned not null default 0,	
-primary key( crt_id ),	
-index crt_idx( customer_no, is_deleted )	
+  crt_id int unsigned not null auto_increment,	
+  customer_no int unsigned not null,	
+  item_id int unsigned not null,	
+  num tinyint(1) unsigned not null default 1,	
+  quantity tinyint(1) unsigned not null default 1,
+  is_deleted tinyint(1) unsigned not null default 0,	
+  primary key( crt_id ),	
+  index crt_idx( customer_no, is_deleted )	
 );	
 
 CREATE TABLE orders (
@@ -92,15 +92,15 @@ CREATE TABLE orders (
 );
 
 CREATE TABLE order_details (
-    detail_id INT AUTO_INCREMENT PRIMARY KEY,
-    order_id INT NOT NULL,
-    item_id INT NOT NULL,
-    image VARCHAR(255),
-    item_name VARCHAR(255),
-    quantity INT NOT NULL,
-    price INT UNSIGNED NOT NULL,
-    is_deleted TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
-    FOREIGN KEY (order_id) REFERENCES orders(order_id)
+  detail_id INT AUTO_INCREMENT PRIMARY KEY,
+  order_id INT NOT NULL,
+  item_id INT NOT NULL,
+  image VARCHAR(255),
+  item_name VARCHAR(255),
+  quantity INT NOT NULL,
+  price INT UNSIGNED NOT NULL,
+  is_deleted TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
+  FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
 CREATE TABLE contacts (
@@ -119,38 +119,37 @@ CREATE TABLE contacts (
 
 ; 顧客の認識	
 CREATE TABLE sessions (	
-customer_no int unsigned not null auto_increment,	
-session_key varchar(32),	
-primary key(customer_no)	
+  customer_no int unsigned not null auto_increment,	
+  session_key varchar(32),	
+  primary key(customer_no)	
 );	
 
 
 CREATE TABLE password_resets (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT UNSIGNED NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    token VARCHAR(255) NOT NULL,
-    expires_at TIMESTAMP NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT UNSIGNED NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  token VARCHAR(255) NOT NULL,
+  expires_at TIMESTAMP NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 CREATE TABLE postcodes (
-
-jis varchar(5),
-old_zip varchar(5),
-zip varchar(7),
-pref_kana varchar(100),
-city_kana varchar(100),
-town_kana varchar(100),
-pref varchar(100),
-city varchar(100),
-town varchar(100),
-comment1 tinyint(1)unsigned,
-comment2 tinyint(1)unsigned,
-comment3 tinyint(1)unsigned,
-comment4 tinyint(1)unsigned,
-comment5 tinyint(1)unsigned,
-comment6 tinyint(1)unsigned
+  jis varchar(5),
+  old_zip varchar(5),
+  zip varchar(7),
+  pref_kana varchar(100),
+  city_kana varchar(100),
+  town_kana varchar(100),
+  pref varchar(100),
+  city varchar(100),
+  town varchar(100),
+  comment1 tinyint(1)unsigned,
+  comment2 tinyint(1)unsigned,
+  comment3 tinyint(1)unsigned,
+  comment4 tinyint(1)unsigned,
+  comment5 tinyint(1)unsigned,
+  comment6 tinyint(1)unsigned
 );
 
 ; mac
