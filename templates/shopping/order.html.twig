@@ -34,7 +34,7 @@
           {% if groupOrderHistory | length > 0 %}
           {# 1つ以上の要素が存在、何らかの注文履歴データが存在している場合 #}
             <h3>注文履歴</h3>
-          {# ループ変数として各グループの日付を表示 #}
+          {# ループ : datatimeが日付キー、dataが値 #}
           {% for datetime, data in groupOrderHistory %}
           {# 日付ごとに注文履歴をループ #}
             <p class="order-date">ご注文日 : {{ datetime }} <span class="total-amount">合計金額: ¥{{ data.total_price }}</span></p>
@@ -51,8 +51,9 @@
                   </tr>
                 </thead>
                 <tbody>
+                  {# 各注文アイテムをループ #}
                   {% for order in data.orders %}
-                  {# 各注文の詳細をループ #}
+                  {# groupOrderHistoryのdataとその中のordersのアイテム情報を組み合わせ多次元配列 #}
                     <tr>
                       <td>{{ order.item_id }}</td>
                       <td>{{ order.item_name}}</td>
