@@ -26,6 +26,7 @@
   <section class="my-5 entire">
     <div class="container">
       <div class="row order-f">
+
         {% include 'sidebar.html.twig' %}
        
           <!-- 右側のコンテンツ -->
@@ -83,7 +84,7 @@
           {% endif %} 
           {# 購入履歴チェック終了 #}
           {% else %}
-            <p style="color: #f00; padding: 20px 0;">購入履歴を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
+            <p style="color: #f00; padding: 20px 0;">注文履歴を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
           {% endif %}
           {# ログインチェック終了  #}
           </div>
@@ -94,7 +95,7 @@
     </div>
     {# container #}
   </section>
-  {# totalPagesが1を超える場合にのみページネーションを表示、1ページ以下の場合にはページネーションが表示されない #}
+  {# totalPagesが1を超える場合にのみ表示、1ページ以下の場合は表示しない #}
   {% if totalPages > 1%}
     <div class="pagination mt-3 d-flex justify-content-center">
       <nav aria-label="Page navigation">
@@ -113,6 +114,5 @@
   
   <script src="{{ constant('shopping\\Bootstrap::APP_URL') }}js/logout.js"></script>
  
-  
 </dody>
 </html>
