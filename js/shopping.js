@@ -1,20 +1,18 @@
-// formを使わずjQueryだけで
+// formを使わずjQueryの場合
 $(function () {
   var entry_url = $("#entry_url").val();
   // hiddenのid="entry_url"の値を取得
   $("#cart_in").click(function () {
-    // cart_idというボタンをクリック
+
     var item_id = $("#item_id").val();
     // hiddenのid="item_id"の値を取得
     location.href = entry_url + "cart.php?item_id=" + item_id;
-    // item_idを取得しitem_idをクエリパラメータとしてURLを構築しリダイレクト
-    // この時URLには「item_idだけが渡される」、item_idは1や2  +は数値
-    // そしてcart.phpではクエリパラメータからitem_idを取得、($item_id = $_GET['item_id'];)
-    // item_idを使用してデータベースから商品詳細を取得
+     // item_idをクエリパラメータとしてURLに追加してリダイレクト
+    
   });
 });
 
-// pageを追加
+
 function suggest(query, ctg_id) {
   // クエリが空の場合、サジェストエリアをクリアして終了
   if (query.length == 0) {
@@ -22,7 +20,7 @@ function suggest(query, ctg_id) {
     return;
   }
 
-  // XMLHttpRequest(非同期通信、ページ全体をリロードすることなく)オブジェクトを作成
+  // 空じゃなかったら、XMLHttpRequest(非同期通信、ページ全体をリロードすることなく)オブジェクトを作成
   var xhr = new XMLHttpRequest();
   
   // リクエストの状態が変わったときに呼び出される関数を定義
@@ -34,16 +32,20 @@ function suggest(query, ctg_id) {
     }
   };
 
-   // GETリクエストを初期化。クエリとカテゴリIDをエンコード(特殊文字が正しく処理)してURLに追加
+   // xhr.openでGETリクエストを初期化。クエリとカテゴリIDをエンコード(特殊文字が正しく処理)してURLに追加
+  // URLパラメータを送信するためのキー(query)と値(ctg_id)、
   xhr.open("GET", "suggest.php?query=" + encodeURIComponent(query) + "&ctg_id" + encodeURIComponent(ctg_id), true);
+  // 流れ : URLパラメータで検索、オブジェクト作成、成功したらデータベースから値を取得suggestionsで表示
   xhr.sent();
+  // sendで初めてsuggest.phpが呼び出される
 }
-// 検索ボックスのsearchBoxに文字を入力、javascriptのkeyupイベントが発生
+
+
+// 検索ボックスのsearchBoxに文字を入力、keyupイベントが発生
 document.getElementById("searchBox").addEventListener("keyup", function() {
   // keyupイベントリスナーが起動、検索ボックスのqueryとカテゴリーのctg_idを取得  
   var query = this.value; 
   var ctg_id = document.getElementById("categorySelect").value;
-  // イベントリスナーは、これらの値を引数としてサジェスト関数を呼び出す
-  // suggest関数は、XMLHttpRequestを使用して非同期のGETリクエストをsuggest.phpに送信。クエリとカテゴリIDがURLパラメータとして追加
+  // イベントリスナーは、これらの値を引数としてsuggest関数を呼び出す
   suggest(query, ctg_id);
 });
