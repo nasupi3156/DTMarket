@@ -20,8 +20,6 @@ body {
 
 .container {
   max-width: 100%;
-  /* height: auto; */
-  /* width: 100%; */
 }
 
 .col-6 {
@@ -346,3 +344,10 @@ td {
   font-size: 18px;
   background-color: #1eaa39;
 }
+
+/* 手数料 */
+/* 
+td.shipping_fee_color {
+  color: #f00;
+  font-weight: 550;
+} */

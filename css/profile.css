@@ -18,10 +18,8 @@ h3 {
 } */
 
 .table-info {
-  /* margin-top: 20px; */
   width: 520px;
   height: 200px;
-  /* margin-bottom: 20px; */
   width: 70%;
 }
 
@@ -210,7 +208,7 @@ footer {
   align-items: center;
   text-align: center;
   background-color: #1eaa39;
-  margin-top: 16.8em;
+  margin-top: 27em;
 }
 
 footer p {

@@ -63,7 +63,7 @@ img {
   width: 100%;
   /* height: calc(100vh - 300px);  */
   object-fit: cover;
-  /* 画像が設定された高さと幅に収まるように、コンテナに対して画像を切り取るように指定 */
+  /* 画像が設定された高さと幅に収まるように、コンテナに対して画像を切り取るように */
   overflow: hidden;
   /* 上下のはみ出した部分を非表示 */
   /* object-fit: cover;と組み合わせて使用 */
@@ -212,7 +212,6 @@ img {
   border: solid 1.6px #fff;
 
   font-weight: 548;
-  /* background-color: rgba(255, 255, 255, 0.088); */
   background-color: rgba(255, 255, 255, 0.005);
 
   color: #fff;
@@ -256,14 +255,14 @@ img {
 }
 
 /* 商品カート */
-#cart_list {
+/* #cart_list {
   grid-area: side;
   height: 150px;
   margin: 20px;
   text-align: center;
   border: solid 1px #999;
   background-color: whitesmoke;
-}
+} */
 
 .item ul .name {
   font-size: 11px;

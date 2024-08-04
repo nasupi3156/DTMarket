@@ -73,7 +73,6 @@ label {
   max-width: 250px;
   height: 33px;
   outline: none;
-  /* border: solid 2px #d3d3d3; */
   border: solid 2px #c2c2c2;
   border-radius: 2px;
 }
@@ -101,7 +100,6 @@ input[name="address_search"] {
   font-size: 14px;
   padding: 6px 5px;
   margin-left: 2px;
-  /* margin: 10px auto;  */
   cursor: pointer;
 }
 

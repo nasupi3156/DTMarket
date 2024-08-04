@@ -11,9 +11,92 @@
 }
 
 
+
+/* .contact_data input[type="text"] {
+  min-width: 150px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-right: 10px;
+} */
+/* .form-group {
+  margin-left: 40px;
+} */
+
+.contact_name {
+ display: block;
+}
+
+.contact_name_data {
+  margin-left: 80px;
+}
+
+.contact_family {
+  width: 320px; 
+  margin: 0 8px 0 0;
+  padding-left: 5px;
+  /* 入力フィールドの幅を100%に設定 */
+  /* max-width: 400px; */
+   /* 入力フィールドの最大幅を設定 */
+}
+
+.contact_family input[type="text"] {
+  font-size: 28px;
+  margin-left: 20px;
+}
+
+.contact_first {
+  width: 320px; 
+  padding-left: 5px;
+  /* 入力フィールドの幅を100%に設定 */
+  /* max-width: 300px; */
+}
+
+.contact_email {
+  display: block;
+}
+
+.contact_email_data {
+  margin-left: 80px;
+}
+
+.contact_email_form {
+  padding-left: 5px;
+  width: 652.7px;
+}
+
+.contacts {
+  display: block;
+}
+
+.contact_data {
+  margin-left: 80px;
+}
+
+.contact_form {
+  padding: 3px 0 0 8px;
+
+  width: 652.7px;
+}
+
+
+
+
+/* .form-group input[type="text"] {
+  padding: 8px;
+  max-width: 250px;
+  height: 33px;
+  outline: none;
+  
+  border: solid 2px #c2c2c2;
+  border-radius: 2px;
+  display: block;
+} */
+
+
 .border {
   background-color: #f8f9fa; 
   line-height: 2;
+  max-width: 980px;
 }
 
 .btn-custom {

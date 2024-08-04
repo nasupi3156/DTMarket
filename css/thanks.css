@@ -1,9 +1,7 @@
 @charset "UTF-8";
 
 .thanks {
-  /* text-align: center; */
   padding: 1em 3em 0 4em;
-  /* background-color: #1eaa39; */
 }
 
 .thanks p {
@@ -19,5 +17,17 @@ h3 {
   font-weight: 550;
   margin-top: 25px;
   margin-bottom: 15px;
+}
+
+footer {
+  padding: 50px;
+  align-items: center;
+  text-align: center;
+  background-color: #1eaa39;
+  margin-top: 35.9em;
+}
+
+footer p {
+  font-size: 26px;
 }
 

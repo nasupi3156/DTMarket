@@ -8,9 +8,18 @@ body {
   background-color: #f2f2f2;
 }
 
+.error_confirm {
+  color: red;
+  font-size: 18px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+}
+
 .container {
   background-color: #f2f2f2;
-  
 }
 
 .confirm_form {

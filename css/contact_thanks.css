@@ -21,3 +21,15 @@
 .contact a:hover {
   text-decoration: underline;
 }
+
+footer {
+  padding: 50px;
+  align-items: center;
+  text-align: center;
+  background-color: #1eaa39;
+  margin-top: 36.8em;
+}
+
+footer p {
+  font-size: 26px;
+}
