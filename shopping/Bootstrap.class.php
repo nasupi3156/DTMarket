@@ -1,8 +1,7 @@
 <?php
-/**
- *  ファイル名 : Bootstrap.class.php(設定に関するプログラム)
- */
 
+// 設定
+ 
 namespace shopping;
 
 date_default_timezone_set('Asia/Tokyo');
@@ -11,7 +10,7 @@ require_once dirname(__FILE__) . './../vendor/autoload.php';
 
 class Bootstrap
 {
-  const DB_HOST = 'localhost'; //後でDB名を変更する
+  const DB_HOST = 'localhost'; 
   const DB_NAME = 'DTshopping_db';
   const DB_USER = 'DTshopping_user';
   const DB_PASS = 'DTshopping_pass';

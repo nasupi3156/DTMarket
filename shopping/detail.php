@@ -1,7 +1,4 @@
 <?php
-/**
- *  ファイル名 : detail.php(商品詳細を表示するプログラム,Controller)
- */
 
 namespace shopping;
 
@@ -25,14 +22,13 @@ $ses->checkSession();
 $customer_no = $_SESSION['customer_no'];
 
 $item_id = (isset($_GET['item_id']) === true && preg_match('/^\d+$/', $_GET['item_id']) === 1) ? $_GET['item_id'] : '';
-//$_GETがitem_idというキーを持ち、かつその値がセットされているか、また$_GET['item_id']の値が数字のみで構成されているか、/^\d+$/ は数字のみ
+//$_GETがitem_idというキーを持ち、かつその値がセットされているか、また$_GET['item_id']の値が数字のみで構成されているか、/^\d+$/ 数字のみ
 
 //item_idが取得できていない場合、商品一覧へ遷移させる
 if ($item_id === '') {
   header('Location: ' . Bootstrap::ENTRY_URL. 'list.php'); 
 } 
 
-//カテゴリーリスト(一覧)を取得する
 $cateArr = $itm->getCategoryList();
 
 //商品情報を取得する

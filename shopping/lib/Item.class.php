@@ -1,7 +1,5 @@
 <?php
-/**
- * ファイル名 : Item.class.php(商品に関するプログラムのクラスファイル、Model)
- */
+// model
 namespace shopping\lib;
 
 class Item
@@ -14,10 +12,9 @@ class Item
     $this->db = $db;
   }
 
-  // カテゴリーリストの取得 
   public function getCategoryList()
   {
-    $table = ' category ';
+    $table = ' categories ';
     $col = ' ctg_id, category_name ';
     $res = $this->db->select($table, $col);
     return $res;
@@ -25,16 +22,15 @@ class Item
   
   // 商品,ソート、ページネーション
   public function getItemList($ctg_id, $orderBy, $offset, $itemsPerPage)
-  {
-    // ($ctg_id)の引数が空じゃなければctg_id = ?が入る
+  { 
     // カテゴリーによって表示させるアイテムを変える
-    $table = ' item ';
-    $col = ' item_id, item_name, price,image, ctg_id ';
-    $where = ($ctg_id !== '') ? '  ctg_id = ? ' : '';
+    $table = ' items i JOIN categories c ON i.ctg_id = c.ctg_id';
+    $col = ' i.item_id, i.item_name, i.price,image, i.ctg_id, c.category_name ';
+    $where = ($ctg_id !== '') ? '  i.ctg_id = ? ' : '';
     $arrVal = ($ctg_id !== '') ? [$ctg_id] : [];
     
     $limit = "$offset, $itemsPerPage";
-
+    // offset : 行を取得するための開始点を計算 itemsPerPage : 1ページ当たりアイテム数
     $res = $this->db->select($table, $col, $where, $arrVal, $orderBy, $limit);
     return ($res !== false && count($res) !== 0) ? $res : false;  
   }
@@ -42,30 +38,28 @@ class Item
   
 
   // 全てのカテゴリーと特定のカテゴリIDに基づいてアイテムの総数をカウント
-  // ctg_idの引数をデフォルト値で空にすることで全てとカテゴリー別の両方に対応
+  // ctg_idの引数をデフォルト値で空にすることで全てとカテゴリーの両方に対応
   public function getTotalItemCount($ctg_id = '') {
-    $table = 'item';
+    $table = 'items';
     $col = 'COUNT(*) as total_count';
     $where = ($ctg_id !== '') ? 'ctg_id = ?' : '';
     $arrVal = ($ctg_id !== '') ? [$ctg_id] : [];
 
     $res = $this->db->select($table, $col, $where, $arrVal);
     return ($res !== false) ? $res[0]['total_count'] : 0;
-}
+  }
 
-  // 商品詳細
   public function getCategoryDetail()
   {
-    $categories = [];
+    $categoriesList = [];
     // categoriesでは全アイテム数を持つ「全て」カテゴリを取得
-    $categories = [
+    $categoriesList = [
       [ 
       // ctgが空なのは特定の商品に限定されずに全てを表示するため
       'ctg_id' => '',
       'category_name' => '全て',
       // 全てのitemの数
       'total_count' => $this->getTotalItemCount()
-      // 'total_count' => $this->getTotalItemCountForAll()
       ]
     ];
     // cateListでは個別のカテゴリーを取得
@@ -76,17 +70,17 @@ class Item
       $ctg_id = $category['ctg_id'];
       // totalメソッドからctg_idでアイテム情報を取得、メソッドからcategoryにtotal_count追加
       $category['total_count'] = $this->getTotalItemCount($ctg_id);
-      $categories[] = $category; 
+      $categoriesList[] = $category; 
       
     }
-    return $categories;
+    return $categoriesList;
   }
 
 
   // 商品の詳細情報を取得する
   public function getItemDetailData($item_id)
   {
-    $table = ' item ';
+    $table = ' items ';
     $col = ' item_id, item_name, detail, price, image, ctg_id ';
     $where = ($item_id !== '') ? ' item_id = ? ' : ''; 
     // カテゴリーによって表示させるアイテムをかえる
@@ -97,29 +91,41 @@ class Item
     return ($res !== false && count($res) !== 0) ? $res : false;
   }
 
-   // 検索
-   public function searchItems($query, $ctg_id)
+   public function searchItems($query, $ctg_id, $orderBy, $offset = null, $itemsPerPage = null)
    {
-     $table = 'item';
-     $column = 'item_id, item_name, price, image, ctg_id';
-     $where = 'item_name LIKE ?';
-     // LINKは部分一致に使用される演算子、$queryも前後に % を付けることで部分一致検索
+     $table = 'items i JOIN categories c ON i.ctg_id = c.ctg_id';
+     $column = 'i.item_id, i.item_name, i.price, i.image, i.ctg_id, c.category_name';
+     $where = 'i.item_name LIKE ?';
+     // queryの所に[mikan]が入り、それがLINK条件に入る
      $arrVal = ['%' . $query . '%'];
  
      if ($ctg_id !== '') {
       // .= は文字列結合演算子、右辺の文字列を左辺の文字列に追加
-       $where .= ' AND ctg_id = ?';
+       $where .= ' AND i.ctg_id = ?';
        $arrVal[] = $ctg_id;
      }
-    //  三項演算子でも同じ
+
+    //  三項演算子の場合
     //  $ctg_id !== '' ? ($where .= ' AND ctg_id = ?') && $arrVal[] = $ctg_id : '';
-     return $this->db->select($table, $column, $where, $arrVal);
+    
+    if ($offset !== null && $itemsPerPage !== null) {
+  
+      $limit = "$offset, $itemsPerPage";
+      $queryResult = $this->db->select($table, $column, $where, $arrVal, $orderBy, $limit);
+  } else {
+      $column = 'COUNT(*) as total';
+      $queryResult = $this->db->select($table, $column, $where, $arrVal, $orderBy);
+      return $queryResult !== false ? $queryResult[0]['total'] : 0;
+  }
+
+  return $queryResult;
+
    }
 
  
   public function  getSearchResultCount($query, $ctg_id, $offset, $itemsPerPage)
   {
-    $table = 'item';
+    $table = 'items';
     $column = 'item_id, item_name, price, image, ctg_id';
     $where = 'item_name LIKE ?';
     $arrVal = ['%' . $query . '%'];

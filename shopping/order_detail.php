@@ -36,29 +36,29 @@ $totalOrders = $cart->getTotalOrderCount($user_id);
 // 1ページあたりのアイテム数
 $orderPerPage = 20;
 
-// / 合計ページ数を計算、合計ページ数が1未満にならないように
+// 合計ページ数を計算、合計ページ数が1未満にならないように
 $totalPages = max(1, ceil($totalOrders / $orderPerPage));
 
-// ページ番号が合計ページ数を超えないようにする
+// ページが合計ページ数を超えないように、pageもtotalPagesも数が小さい番号を優先、存在しないページアクセスを防ぐ
 $page = min($page, $totalPages); 
 
 
-// オフセットを計算し、データベースクエリの開始位置を決定
 $offset = ($page - 1) * $orderPerPage;
-// ページ1、(1-1) * 20 = 0 、ページ2　(2-1) * 20 = 20 
+// 行を取得するための開始点を計算 
+// 1ページ目、$offset = (1 - 1) * 20 = 0 : 0~19
+
 
 // 現在のページの注文を取得
 $orders = $cart->getOrders($user_id, $offset, $orderPerPage);
 
-// 空の配列を初期化、注文ごとに関連するデータをグループ化するため
-// order_id をキーとして使用し、注文の詳細情報やアイテム情報を格納
+//  注文ごとに関連するデータをグループ化して、初期化
 $groupOrderHistory = [];
 
 foreach ($orders as $order) {
   $orderId = $order['order_id']; 
   // 各注文のアイテムを取得
   $orderItems = $cart->getOrderItems($orderId);
-   // 注文ごとに情報をグループ化
+   // 注文ごとにユーザー情報をグループ化
   $groupOrderHistory[$orderId] = [
     'order_id' => $orderId, 
     'purchase_date' => $order['purchase_date'],
@@ -73,7 +73,7 @@ foreach ($orders as $order) {
     'shipping_fee' => $order['shipping_fee'],
     'total_price' => $order['total_price'],
     'payment_method' => $order['payment_method'],
-    'items' => $orderItems // アイテム情報を配列として格納
+    'items' => $orderItems // アイテム情報をグループ化
   ];
 }
    

@@ -16,8 +16,8 @@ $query = isset($_GET['query']) ? $_GET['query'] : '';
 $ctg_id = isset($_GET['ctg_id']) ? $_GET['ctg_id'] : '';
 
 if ($query !== '') {
-  // suggest関数から受け取ったクエリとカテゴリIDに基づいてデータベースを検索。検索結果を取得し、HTMLとして返す。
-  $results = $itm->searchItems($query, $ctg_id);
+  // suggest関数から受け取ったクエリとカテゴリIDに基づいてデータベースを検索。検索結果を取得し返す。
+  $results = $itm->searchItems($query, $ctg_id, $orderBy, $offset = null, $itemsPerPage = null);
   if (empty($results)) {
     echo "<div>検索できませんでした。</div>";
   } else {

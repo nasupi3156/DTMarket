@@ -1,8 +1,5 @@
 <?php
-/**
- *  ファイル名 : list.php(セッション関係のクラスファイル,Model)
- *  (商品一覧を表示するプログラム、Controller)
- */
+
 namespace shopping;
 
 require_once dirname(__FILE__) . '/Bootstrap.class.php';
@@ -49,22 +46,24 @@ $page = isset($_GET['page']) && preg_match('/^[0-9]+$/', $_GET['page']) ? (int)$
   
 
 $totalItemCount = $itm->getTotalItemCount($ctg_id);
-// $totalItemCount = $itm->getTotalItemCountForAll();
  
 $categories = $itm->getCategoryDetail();
 
-// LIMITに使われる値(1ページあたり12項目を表示)
+// 1ページあたりのアイテム数
 $itemsPerPage = 12;
 
 // 1ページ目、$offset = (1 - 1) * 12 = 0 : 0~11
 // 2ページ目、$offset = (2 - 1) * 12 = 12 : 12~23
 $offset = ($page - 1) * $itemsPerPage;
 
-// 前アイテム数を取得/
+// 全アイテム数を取得
 $totalItems = $itm->getTotalItemCount($ctg_id);
 
-// 全アイテム数を1ページあたりのアイテム数で割る(小数点以下を切り上げ)
-$totalPages = ceil($totalItems / $itemsPerPage);
+// 全アイテム数を1ページあたりのアイテム数で割る(max : 1未満にならないように)(ceil : 小数点以下を切り上げ)
+$totalPages = max(1, ceil($totalItems / $itemsPerPage));
+
+// ページが合計ページ数を超えないように、pageもtotalPagesも数が小さい番号を優先、存在しないページアクセスを防ぐ
+$page = min($page, $totalPages); 
   
 // カテゴリーリスト(一覧)を取得する
 $cateArr = $itm->getCategoryList();
@@ -73,15 +72,22 @@ list($sumNum, $sumPrice) = $cart->getItemAndSumPrice($customer_no);
 
 // 検索クエリがある場合とない場合の処理
 if ($query !== '') {
-  // $totalItems = $itm->getSearchResultCount($query, $ctg_id,  $offset, $itemsPerPage);
-  $searchResults = $itm->searchItems($query, $ctg_id, $offset, $itemsPerPage);
+  $totalItems = $itm->searchItems($query, $ctg_id, $order);
+ 
+  $searchResults = $itm->searchItems($query, $ctg_id, $order, $offset, $itemsPerPage);
   $dataArr = $searchResults;
+  $totalPages = ceil($totalItems / $itemsPerPage);
   if (empty($searchResults)) {
+    $totalPages = 0;
     $errorMessage = "検索結果が見つかりませんでした";
   } 
-} else {
-  // $totalItems = $itm->getTotalItemCount($ctg_id);
+
+  } else {
+
+  $totalItems = $itm->getTotalItemCount($ctg_id);
+  // 検索クエリがない場合は通常のアイテムリスト
   $dataArr = $itm->getItemList($ctg_id, $order, $offset, $itemsPerPage);
+  $totalPages = ceil($totalItems / $itemsPerPage);
 }
 
 $context = [
@@ -102,7 +108,7 @@ $context = [
   'dataArr' => $dataArr,
   'errorMessage' => $errorMessage,
   
-  // ユーザーがログインしているかどうかでページの表示内容を変える
+  // session変数を確認し、ログインしてるかどうか確認
   'isUserLogin' => $ses->isUserLogin()
 ];
 

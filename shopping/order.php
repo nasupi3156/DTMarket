@@ -30,20 +30,19 @@ $item_id = (isset($_GET['item_id']) === true && preg_match('/^\d+$/', $_GET['ite
 $page = isset($_GET['page']) && preg_match('/^[0-9]+$/', $_GET['page']) ? (int)$_GET['page'] : 1;
 
 
-$page = max($page, 1); 
-// ページ番号が1未満の場合は1に設定
-    
-// LIMIT 1ページあたりのアイテム数を1
 $orderPerPage = 20;
 
-// $totalItems = $cart->getTotalOrderCount($user_id);
 $offset = ($page - 1) * $orderPerPage;
 
 $totalOrders = $cart->getTotalOrderCount($user_id);
 
 $orderHistory = $cart->getOrderHistoryData($user_id, $offset, $orderPerPage); 
 
-$totalPages = ceil($totalOrders / $orderPerPage);
+
+
+$totalPages = max(1, ceil($totalOrders / $orderPerPage));
+
+$page = min($page, $totalPages); 
 
 // 全体の初期化
 $groupOrderHistory = [];
@@ -51,16 +50,17 @@ $groupOrderHistory = [];
 foreach ($orderHistory as $item) {
   $datetime = $item['purchase_date']; 
   if(!isset($groupOrderHistory[$datetime])) {
-  // purchase_dateがgroupOrderHistoryにない場合は個別の詳細な初期化
+
   $groupOrderHistory[$datetime] = [
     'datetime' => $datetime, // 購入日を格納
     'orders' => [], // 購入日の注文アイテムを保持する空の配列を初期化
-    'total_price' => 0, // このグループの合計価格を0に初期化
+    'total_price' => 0, 
   ];
   }
-  // item_idやnameをgroupOrderHistoryの[orders]配列に追加する、連想多次元配列をイメージして
+  
+  // ordersでアイテム情報取得
   $groupOrderHistory[$datetime]['orders'][] = [
-    // []は末尾のtotal_priceなどの要素を追加、単一の数値として保持し、配列ではなくその値を直接更新するため[]
+    // []は、アイテム情報の配列を保持
     'item_id' => $item['item_id'],
     'item_name' => $item['item_name'],
     'image' => $item['image'],
@@ -68,11 +68,10 @@ foreach ($orderHistory as $item) {
     'quantity' => $item['quantity'],
   ];
   $groupOrderHistory[$datetime]['total_price'] += $item['price'] * $item['quantity'];
-  // グループの合計価格を取得
+  // グループの合計価格
 }
 
 
-// カートの合計アイテム数と価格
 list($sumNum, $sumPrice) = $cart->getItemAndSumPrice($customer_no);
 
 $context = [
@@ -80,11 +79,11 @@ $context = [
   'totalPages' => $totalPages,
   'currentPage' => $page,
 
+  'groupOrderHistory' => $groupOrderHistory,
   'sumNum' => $sumNum,
   'loggedIn' => $loggedIn,
 ];
 
-$context['groupOrderHistory'] = $groupOrderHistory;
 $context['isUserLogin'] = $ses->isUserLogin();
 
 $template = $twig->loadTemplate('order.html.twig');

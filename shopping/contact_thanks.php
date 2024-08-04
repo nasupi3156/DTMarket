@@ -26,6 +26,5 @@ $context = [
 'isUserLogin' => $ses->isUserLogin()
 ];
 
-// 登録完了画面を表示
 $template = $twig->loadTemplate('contact_thanks.html.twig');
 $template->display($context);

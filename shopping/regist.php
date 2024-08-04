@@ -6,20 +6,21 @@ require_once dirname(__FILE__) .'/Bootstrap.class.php';
 
 use shopping\lib\PDODatabase;
 use shopping\lib\Session;
+use shopping\lib\User;
 use shopping\lib\Error;
 use shopping\lib\Initial;
 
 $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS, Bootstrap::DB_NAME, Bootstrap::DB_TYPE);
 $ses = new Session($db);
+$user = new User($db);
 $error = new Error();
 
-//テンプレート指定
 $loader = new \Twig\Loader\FilesystemLoader(Bootstrap::TEMPLATE_DIR);
 $twig = new \Twig\Environment($loader, [
 'cache' => Bootstrap::CACHE_DIR
 ]);
 
-// エラー配列を初期化
+// 初期化
 $errArr = []; 
 $dataArr = [];
 $delete = false;
@@ -35,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
     'family_name_kana' => filter_input(INPUT_POST, 'family_name_kana', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
     'first_name_kana' => filter_input(INPUT_POST, 'first_name_kana', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
     'sex' => filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
-    'year' => filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT) ?? 0, // 空の場合は0を代入
+    'year' => filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT) ?? 0, 
     'month' => filter_input(INPUT_POST, 'month', FILTER_SANITIZE_NUMBER_INT) ?? 0,
     'day' => filter_input(INPUT_POST, 'day', FILTER_SANITIZE_NUMBER_INT) ?? 0,
     'zip1' => filter_input(INPUT_POST, 'zip1', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
@@ -49,8 +50,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
   ];
 
   // メールアドレスの重複チェック
-  $user = $db->emailCheck($dataArr['email']);
-    if($user['cnt'] > 0) {
+  $emailCheckResult = $user->emailCheck($dataArr['email']);
+    if($emailCheckResult['cnt'] > 0) {
       $duplicateEmail = true;  
     }
 
@@ -58,18 +59,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
   $errArr = $error->errorCheck($dataArr);
   
 
-  $delete = $db->isUserDeleted($dataArr['email']);
+  $delete = $user->isUserDeleted($dataArr['email']);
    if ($delete) {
     $errArr['email'] = "このメールアドレスは退会済みのため使用することができません";
   } 
 
   
   if ($error->getErrorFlg() === true && !$duplicateEmail && !$delete) {
-  // エラーがなく、かつメールアドレスの重複もない
+  // エラーがなく、メールアドレスの重複もなく、退会もなく
   
   $_SESSION['formData'] = $dataArr; 
-  // フォームデータをセッションに保存
-
+  
   header('Location: ' . Bootstrap::ENTRY_URL . 'confirm.php');
     exit();
   } else {

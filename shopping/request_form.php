@@ -7,14 +7,14 @@ require_once dirname(__FILE__) .'/Bootstrap.class.php';
 use shopping\lib\PDODatabase;
 use shopping\lib\Session;
 use shopping\lib\Error;
-use shopping\lib\Initial;
+use shopping\lib\User;
 
 $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS, Bootstrap::DB_NAME, Bootstrap::DB_TYPE);
 
 $ses = new Session($db);
+$user = new User($db);
 $error = new Error();
 
-//テンプレート指定
 $loader = new \Twig\Loader\FilesystemLoader(Bootstrap::TEMPLATE_DIR);
 $twig = new \Twig\Environment($loader, [
 'cache' => Bootstrap::CACHE_DIR
@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['click'])) {
     // 安全なランダムトークンを生成
   $token = bin2hex(random_bytes(16));
   // トークンの有効期限を1時間
-  $expires = time() + 3600;
+  $expires_at = time() + 3600;
 
-  $emailUser = $db->emailConfirm($email);
+  $emailUser = $user->emailConfirm($email);
   if ($emailUser) {
     $user_id = $emailUser['user_id'];
-    $db->insertPasswordReset($user_id, $email, $token, $expires);
+    $user->insertPasswordReset($user_id, $email, $token, $expires_at);
       
   mb_language("Japanese");
   mb_internal_encoding("UTF-8");
@@ -52,11 +52,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['click'])) {
 
 
   // 送信者情報の設定
-  $header = "From : nasubi54kk@gmail.com\n"; // これは送信者のメールアドレス
 
-  // text/htmlを指定し、html形式で送ることも可能
+  $header = "From : nasubi54kk@gmail.com\n"; 
+  // これは送信者のメールアドレス
+
   $header .= "Content-Type : text/plain";
+  // text/htmlを指定し、html形式で送ることも可能
 
+  
   // メール送信
   $response = mb_send_mail($to, $subject, $body, $header);
 
@@ -71,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['click'])) {
     
     } else {
       // メールアドレスが違う、ユーザ入力がデータベースにない
-      $errArr['email_failed'] = "入力されたメールアドレスは当システムに登録されていません。再確認してもう一度お試しください。";  
+      $errArr['email_failed'] = "入力されたメールアドレスは登録されていません。再度確認してもう一度お試しください。";  
     }
   }
 }

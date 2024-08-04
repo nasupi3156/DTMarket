@@ -25,6 +25,7 @@ $context = [
 
 'isUserLogin' => $ses->isUserLogin()
 ];
+
 // $context['isUserLogin'] = $ses->isUserLogin();
 $template = $twig->loadTemplate('thanks.html.twig');
 $template->display($context);

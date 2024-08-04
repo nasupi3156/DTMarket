@@ -6,11 +6,13 @@ require_once dirname(__FILE__) .'/Bootstrap.class.php';
 
 use shopping\lib\PDODatabase;
 use shopping\lib\Error;
+use shopping\lib\User;
 use shopping\lib\Session;
 
 $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS, Bootstrap::DB_NAME, Bootstrap::DB_TYPE);
 
 $ses = new Session($db);
+$user = new User($db);
 $error = new Error();
 
 $loader = new \Twig\Loader\FilesystemLoader(Bootstrap::TEMPLATE_DIR);
@@ -26,11 +28,11 @@ if (isset($_GET['logout']) && $_GET['logout'] = '1') {
   exit();
 }
 
-// 変数は空の配列として初期化され、"空の箱"として機能
+// 初期化、空の箱
 $dataArr = [];
 $errArr = [];
 
-// 退会済みのユーザーかどうかを示すフラグ、falseで初期化
+// 退会済みかどうか、false初期化
 $delete = false; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -41,29 +43,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   'password' => $password,
   ];
 
-  // エラーチェック、入力データに問題があれば、$errArr配列にエラーメッセージ追加
+  // エラーチェック
   $errArr = $error->loginErrorCheck($dataArr); 
  
   if ($error->getErrorFlg() === true) {
   // エラーがなければ
     
-    $delete = $db->isUserDeleted($email);
-    // returnで$deleteを返してないけど、この場合はreturnでis_deletedの1を返す
+    $delete = $user->isUserDeleted($email);
+
     if ($delete) {
       $errArr['email'] = "このメールアドレスは退会済みのためログインできません。再登録してください。";
     } else {
-    
-    if ($ses->loginUser($dataArr['email'], $dataArr['password'])) {
+     
+    if ($user->loginUser($dataArr['email'], $dataArr['password'])) {
       
       //  // 新しいセッションIDを取得
       //  $newSessionId = session_id();
   
       // //  データベースのセッションID(session_key)を更新
       //  $db->updateSessionKey($customer_no, $newSessionId);
-       
-      //  $db->updateLoginStatus($user_id, 1);
+       $user_id = $_SESSION['user_id'];
 
+       $is_admin = $_SESSION['is_admin'] ?? false;
+       
       if ($_SESSION['is_admin']) {
+        
         unset($_SESSION['family_name']);
         unset($_SESSION['user_id']);
 
@@ -71,6 +75,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
       } else {
         unset($_SESSION['is_admin']);
+        $user_id = $_SESSION['user_id'];
+        $user->updateLoginStatus($user_id, 1);
+
         header('Location: ' . Bootstrap::ENTRY_URL . 'list.php');
         exit();
       }

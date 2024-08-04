@@ -1,5 +1,5 @@
 <?php
-/* ファイル名 : Cart.class.php(カートに関するプログラムのクラスファイル、Model) */
+// Model
 namespace shopping\lib;
 
 class Cart
@@ -14,14 +14,14 @@ class Cart
   // カートに商品を追加する, デフォルト値1
   public function insCartData($customer_no, $item_id, $qty = 1)
   {
-    $table = ' cart ';
+    $table = ' carts ';
     $qtyItem = $this->getCartItemData($customer_no, $item_id);
-    // 現在の商品の数量を更新  /ここではすでにitemの情報があるかを確認するだけで更新はしない
+    // 現在の商品の数量を更新、ここではすでにitemの情報があるかを確認するだけで更新はしない
     
     if ($qtyItem && isset($qtyItem[0])) {
       
+      $newQty = $qtyItem[0]['quantity'] + $qty; 
       // 商品が既にカートに存在する場合、その数量を更新、
-      $newQty = $qtyItem[0]['quantity'] + $qty; // + $qty 今の数量にプラスして
       $this->updateCartData($qtyItem[0]['crt_id'], $newQty);
       // ctg_idはcartテーブルの行を識別
       // $this->updateCartData($qtyItem[0]['crt_id'], $qtyItem[0]['quantity']);
@@ -36,6 +36,7 @@ class Cart
       ];
       $this->db->insert($table, $insData);
     }  
+      header('Location: ./cart.php');
   }
 
   public function getCartItemData($customer_no, $item_id)
@@ -55,13 +56,12 @@ class Cart
   // c.item_id = i.item_id ';
   // WHERE
   // c.customer_no = ? AND c.delete_flg = ? ';
-  $table = ' cart c LEFT JOIN item i  ON c.item_id = i.item_id  ';
+  $table = ' carts c LEFT JOIN items i  ON c.item_id = i.item_id  ';
   // LEFT JOIN : tableどうしを繋げるSQL文 : 一致する行だけ結合
   // ON : 結合情報を指定
-  // cart tableとitem tableを連結させたものから情報をとってきた
   $column = ' c.crt_id, c.quantity, i.item_id, i.item_name, i.price, i.image ';
   // c.quantity追記 
-  $where = ' c.customer_no = ? AND c.delete_flg = ? AND c.item_id = ?';
+  $where = ' c.customer_no = ? AND c.is_deleted = ? AND c.item_id = ?';
   // ここでdelete_flgの0をとってきて、1が削除
   $arrVal = [$customer_no, 0, $item_id];
 
@@ -85,26 +85,26 @@ class Cart
   // c.item_id = i.item_id ';
   // WHERE
   // c.customer_no = ? AND c.delete_flg = ? ';
-  $table = ' cart c LEFT JOIN item i  ON c.item_id = i.item_id  '; 
+  $table = ' carts c LEFT JOIN items i  ON c.item_id = i.item_id  '; 
   $column = ' c.crt_id, c.quantity, i.item_id, i.item_name, i.price, i.image ';
-  $where = ' c.customer_no = ? AND c.delete_flg = ?';
+  $where = ' c.customer_no = ? AND c.is_deleted = ?';
   $arrVal = [$customer_no, 0];
   
   return $this->db->select($table, $column, $where, $arrVal);
   }
   
-  // カートに商品を追加(再購入)
+  // 再購入
   public function addItemCart($customer_no, $item_id, $quantity, $qty)
   {
     // カートに同じ商品が既に存在するか確認
-    $table = 'cart';
-    $where =  'customer_no = ? AND item_id = ? AND delete_flg = 0';
+    $table = 'carts';
+    $where =  'customer_no = ? AND item_id = ? AND is_deleted = 0';
     $arrVal = [$customer_no, $item_id];
     $cartItem = $this->db->select($table, '*', $where, $arrVal);
 
     if ($cartItem) {
     // 既に存在する場合は数量を更新
-      $newQuantity = $cartItem[0]['num'] + $qty; // $quantityを$qtyに変更(数量を加算)
+      $newQuantity = $cartItem[0]['num'] + $qty; // 数量を加算
       $insData = ['num' => $newQuantity];
       $where =  'customer_no = ? AND item_id = ?';
       $arrVal = [$customer_no, $item_id];
@@ -118,13 +118,15 @@ class Cart
       ];
       return $this->db->insert($table, $insData);
     }
+    header('Location: ./cart.php');
+   
   }
 
   // カート情報を削除する : 必要な情報はどのカートを($crt_id)
   public function delCartData($crt_id)
   {
-    $table = ' cart ';
-    $insData = ['delete_flg ' => 1];
+    $table = ' carts';
+    $insData = ['is_deleted ' => 1];
     $where = ' crt_id = ? '; // 削除対象のカートID
     $arrWhereVal = [$crt_id]; 
     return $this->db->update($table, $insData, $where, $arrWhereVal);
@@ -132,10 +134,10 @@ class Cart
 
   public function clearUserCart($customer_no)
   {
-    $table = ' cart ';
-    $insData = ['delete_flg' => 1]; // キーと値の形式で更新データを指定
-    $where = 'customer_no = ?';  // プレースホルダ
-    $arrWhereVal = [$customer_no]; // バインドする値の配列
+    $table = ' carts ';
+    $insData = ['is_deleted' => 1]; 
+    $where = 'customer_no = ?';  
+    $arrWhereVal = [$customer_no]; 
     return $this->db->update($table, $insData, $where, $arrWhereVal);
   }
   
@@ -154,38 +156,40 @@ class Cart
     //WHERE
     //c.customer_no = ? AND c.delete_flg =?';
     //合計金額
-    $table = " cart c  LEFT JOIN item i ON c.item_id = i.item_id ";
+    $table = " carts c  LEFT JOIN items i ON c.item_id = i.item_id ";
     $column = " SUM( i.price * c.quantity ) AS totalPrice ";
     // SUMは特定の列の合計値を計算する関数, ASは名前変更、totalPriceにカラムを変更
-    $where = ' c.customer_no  = ? AND c.delete_flg = ?';
-    //（delete_flgが0)削除されたデータを区別するために0であることを条件に含めないと、削除されたデータも計算に含まれてしまう可能性がある
+    
+    $where = ' c.customer_no  = ? AND c.is_deleted = ?';
+    
     $arrWhereVal = [$customer_no, 0];
+    //（is_deleteが0)削除されたデータを区別するために0であることを条件に含めないと、削除されたデータも計算に含まれてしまう可能性がある
 
     $res = $this->db->select($table, $column, $where, $arrWhereVal);
     $price = ($res !== false && count($res) !== 0) ? $res[0]['totalPrice'] : 0;
 
-     // アイテム数 合計値
-     $table = ' cart c ';
+    $table = ' carts c ';
+    
      // SUMはquantity列の全ての合計値
      $column = "SUM( c.quantity ) AS totalItems";
-     $where = ' c.customer_no  = ? AND c.delete_flg = ?'; 
+     $where = ' c.customer_no  = ? AND c.is_deleted = ?'; 
      $arrWhereVal = [$customer_no, 0];
 
      $res = $this->db->select($table, $column, $where, $arrWhereVal);
      $num = ($res !== false && count($res) !== 0) ? $res[0]['totalItems'] : 0;
 
      return [$num, $price];
-     // $num - カートに入っている商品個数の合計。
-     // $Price - カートに入っている商品金額の合計。
+     // $num : カートに入っている商品個数の合計。
+     // $Price : カートに入っている商品金額の合計。
   }
 
  
-  // crt_id、更新対象のカート内の商品を特定するための識別子、quantity更新される商品の数量を指定
+  // crt_id、更新対象のカート内の商品を特定するための識別子、quantity : 更新される商品の数量を指定
   public function updateCartData($crt_id, $quantity)
   {
-    $table = 'cart';
+    $table = 'carts';
     $insData = ['quantity' => $quantity];
-    // ['quantity' => $quantity] は、SET quantity = ? と同じ
+    // ['quantity' => $quantity] は、quantity = ? と同じ
     $where =  'crt_id = ? ';
     // 更新条件として、カートID (crt_id) を設定
     $arrWhereVal = [$crt_id];
@@ -198,7 +202,6 @@ class Cart
 
   public function getOrderHistoryData($user_id, $offset, $orderPerPage)
   {
-    // JOINするテーブルと取得するカラム
     $table = "orders o INNER JOIN order_details od ON o.order_id = od.order_id";
     $column = 'o.order_id, o.purchase_date, o.total_price, od.item_id, od.item_name, od.quantity, od.price, od.image';
 
@@ -222,7 +225,7 @@ class Cart
     return ($res !== false) ? $res[0]['total_count'] : 0;
   }
 
-  // 個人情報詳細
+  // 個人情報詳細、ページネーション
   public function getOrders($user_id, $offset, $orderPerPage)
   {
     $table = "orders o LEFT JOIN order_details od ON o.order_id = od.order_id";
@@ -261,85 +264,13 @@ class Cart
   // c.item_id = i.item_id ';
   // WHERE
   // c.customer_no = ? AND c.delete_flg = ? ';
-  $table = ' cart c LEFT JOIN order_details od  ON c.item_id = od.item_id  '; //　LEFT 
+  $table = ' carts c LEFT JOIN order_details od  ON c.item_id = od.item_id'; 
   $column = ' c.crt_id, od.item_id, od.item_name, od.price, od.image, od.quantity ';
-  $where = ' od . user_id = ? , c.delete_flg = ?';
+  $where = ' od . user_id = ? , c.is_deleted = ?';
   $arrVal = [$user_id, 0];
 
   return $this->db->select($table, $column, $where, $arrVal);
   }
-
-  public function getAdminOrderList()
-  {
-    try {
-        $table = 'orders o INNER JOIN order_details od ON o.order_id = od.order_id LEFT JOIN signup s ON o.user_id = s.user_id';
-        $column = 'o.order_id, o.user_id, o.shipping_fee, o.total_price, o.payment_method, o.purchase_date, od.item_id, od.item_name, od.image, od.quantity, od.price';
-        $where = 'od.delete_flg = ?';
-        $arrVal = [0];
-        return $this->db->select($table, $column, $where, $arrVal);
-     } catch(\Exception $e) {
-        error_log('getAdminOrderListでエラーが発生しました : ' . $e->getMessage());
-        throw new \Exception('管理者注文リストの取得に失敗しました。');
-     }
-  }
-
-  public function delAdminOrderList($order_id)
-  { 
-    $table = 'orders';
-    $insData = ['delete_flg' => 1];
-    $where = 'order_id = ?'; //削除対象のカートID
-    $arrVal = [$order_id]; 
-    $this->db->update($table, $insData, $where, $arrVal);
-
-    $orderDetailsTable = 'order_details';
-    $this->db->update($orderDetailsTable, $insData, $where, $arrVal);
-  }  
-
-  public function getAdminContact()
-  {
-    try {
-    $table = 'contact';
-    $column = 'id, username, email, contents, created_at';
-    $where = 'delete_flg = ?';
-    $arrVal = [0];
-    return $this->db->select($table, $column, $where, $arrVal); 
-    } catch(\Exception $e) {
-      error_log('getAdminContactでエラーが発生しました : ' . $e->getMessage());
-      throw new \Exception('管理者お問い合わせリストの取得に失敗しました。');
-    }
-  }
-
-  public function delAdminContact($id)
-  {
-    $table = 'contact';
-    $insData = ['delete_flg' => 1];
-    $where = 'id = ?';
-    $arrVal = [$id];
-    return $this->db->update($table, $insData, $where, $arrVal);
-  }
-
-  public function getAdminSignup()
-  {
-    try {
-        $table = 'signup';
-        $column = 'user_id, family_name, first_name, family_name_kana, first_name_kana, sex, year, month, day, zip1, zip2, address, email, tel1, tel2, tel3';
-        $where = 'delete_flg = ?';
-        $arrVal = [0];
-        return $this->db->select($table, $column, $where, $arrVal);
-     } catch(\Exception $e) {
-        error_log('getAdminSignupでエラーが発生しました : ' . $e->getMessage());
-        throw new \Exception('管理者新規情報登録リストの取得に失敗しました。');
-     } 
-  }
-
-  public function delAdminSignup($user_id)
-  {
-    $table = 'signup';
-    $insData = ['delete_flg' => 1];
-    $where = 'user_id = ?';
-    $arrVal = [$user_id];
-    return $this->db->update($table, $insData, $where, $arrVal); 
-  } 
 
 }
 

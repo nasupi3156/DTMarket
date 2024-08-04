@@ -1,7 +1,5 @@
 <?php
-/**
- * ファイル名 : cart.php(カートページの処理を制御するコントローラー)
- */
+// コントローラー
 namespace shopping;
 
 require_once dirname(__FILE__) . '/Bootstrap.class.php';
@@ -23,7 +21,7 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 $ses->checkSession();
-// セッションにセッションIDを設定する
+
 $customer_no = $_SESSION['customer_no'];
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
 
@@ -44,9 +42,10 @@ $qtySelect = (isset($_GET['qtySelect']) === true && preg_match('/^\d+$/',$_GET['
 
 $price = isset($_POST['price']) &&  is_numeric($_POST['price']) ? (float)$_POST['price'] : 0;
 
+// quantity, qty数量同じ
 $quantity = (isset($_POST['quantity']) && preg_match('/^\d+$/', $_POST['quantity'])) ? (int)$_POST['quantity'] : 1;
 
-// qtyは数量
+
 $qty = (isset($_GET['qty']) === true && preg_match('/^\d+$/',$_GET['qty']) === 1) ? $_GET['qty'] : '1';
 
 
@@ -54,7 +53,6 @@ $qty = (isset($_GET['qty']) === true && preg_match('/^\d+$/',$_GET['qty']) === 1
 // insCartData : カートに商品データを挿入する役割。
 if ($item_id !== '') {
   $res = $cart->insCartData($customer_no, $item_id, $qty);
-  //登録に失敗した場合、エラーページを表示する
   if ($res === false) {
     echo "商品購入に失敗しました。";
     exit();
@@ -62,14 +60,12 @@ if ($item_id !== '') {
 }
 
 // カート内の商品の数量を更新する
-// qtyとquantityは本来同じ値を持ってるので引数からメソッドに渡された時にquantityでも同じ
 if ($qtySelect && $crt_id && $qty) {
    $cart->updateCartData($crt_id, $qty);
     echo true;
     exit();
   }
 
-// crt_idが空ではない場合のみ処理
 if ($crt_id !== '') {
   $res = $cart->delCartData($crt_id);
 }
@@ -91,7 +87,7 @@ if ($item_id > 0 && $quantity > 0 && $price > 0) {
   $itemCart = $cart->addItemCart($customer_no, $item_id, $quantity, $qty, $price);
   
   if($itemCart) {
-    header ('Location' . Bootstrap::ENTRY_URL . 'cart.php');
+    header('Location: ' . Bootstrap::ENTRY_URL . 'cart.php');
     exit();
     } else {
       echo "カートに追加できませんでした。";

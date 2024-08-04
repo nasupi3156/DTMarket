@@ -9,6 +9,7 @@ use shopping\lib\PDODatabase;
 use shopping\lib\Session;
 use shopping\lib\Item;
 use shopping\lib\Cart;
+use shopping\lib\User;
 use shopping\lib\Error;
 
 $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS, Bootstrap::DB_NAME, Bootstrap::DB_TYPE);
@@ -16,6 +17,7 @@ $db = new PDODatabase(Bootstrap::DB_HOST, Bootstrap::DB_USER, Bootstrap::DB_PASS
 $ses = new Session($db);
 $itm = new Item($db);
 $cart = new cart($db);
+$user = new User($db);
 $error = new Error($db);
 
 $loader = new \Twig\Loader\FilesystemLoader(Bootstrap::TEMPLATE_DIR);
@@ -38,7 +40,7 @@ $duplicateEmail = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST['delete'])) {
     // 退会
-    $userDelete = $db->logicalDeleteUser($user_id);
+    $userDelete = $user->logicalDeleteUser($user_id);
     if ($userDelete) {
       session_destroy();
       // sessionを破壊
@@ -48,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       echo "退会できませんでした。";
     }
   } else {
-    // プロフィール
+  
     $dataArr = [
       'family_name' => filter_input(INPUT_POST, 'family_name', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
       'first_name' => filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
@@ -62,7 +64,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       'tel1' => filter_input(INPUT_POST, 'tel1', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
       'tel2' => filter_input(INPUT_POST, 'tel2', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
       'tel3' => filter_input(INPUT_POST, 'tel3', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
-      // 'password' => filter_input(INPUT_POST, 'password', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? ''
   ]; 
 
   // 更新

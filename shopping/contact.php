@@ -6,7 +6,6 @@ require_once dirname(__FILE__) .'/Bootstrap.class.php';
 
 use shopping\Bootstrap;
 use shopping\lib\PDODatabase;
-use shopping\lib\Initial;
 use shopping\lib\Cart;
 use shopping\lib\Error;
 use shopping\lib\Session;
@@ -22,16 +21,21 @@ $cart = new Cart($db);
 $error = new Error();
 
 $ses->checkSession();
-$customer_no = $_SESSION['customer_no'];
+$customer_no = isset($_SESSION['customer_no']) ? ($_SESSION['customer_no']) : null;
+$user_id = isset($_SESSION['user_id']) ? ($_SESSION['user_id']) : null;
 
-$dataArr =[];
-$errArr =[];
+
+
+$dataArr = [];
+$errArr = [];
 $duplicateEmail = false;
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $dataArr = [
-  'username' => filter_input(INPUT_POST, 'username', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
+  'user_id' => $user_id,
+  'family_name' => filter_input(INPUT_POST, 'family_name', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
+  'first_name' => filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
   'email' => filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL) ?? '',
   'contents' => filter_input(INPUT_POST, 'contents', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
   ];
