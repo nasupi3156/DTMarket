@@ -9,7 +9,7 @@ class Session
   public $session_key = ''; 
   public $db = NULL; 
   public $user = NULL;
-  // private $user;
+ 
    
   public function __construct($db)
   {  
@@ -80,8 +80,7 @@ class Session
     } else {
         error_log("ログアウト時にユーザーIDが見つかりませんでした。");
     }
-    // $user_id = $_SESSION['user_id'];
-    // $this->user->updateLoginStatus($user_id, 0);
+    
     unset($_SESSION['customer_no']);
     // 必要に応じて、特定のセッション変数をアンセット
     unset($_SESSION['family_name']);

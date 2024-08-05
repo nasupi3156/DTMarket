@@ -98,9 +98,9 @@ $context = [
   'categories' => $categories,
   // 全てのアイテムを取得
   'totalItemCount' => $totalItemCount,
-  // 現在のページ番号を表す変数
+  // 現在のページ番号を取得
   'currentPage' => $page,  
-   // 全体のページ数を表す変数
+   // 全体のページ数を取得
   'totalPages' => $totalPages, 
   'order' => $order,
   'currentCtg' => $currentCtg,
