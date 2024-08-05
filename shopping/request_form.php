@@ -39,26 +39,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['click'])) {
       
   mb_language("Japanese");
   mb_internal_encoding("UTF-8");
+  
+  // 変数から送信者のメールアドレスを取得
+  $fromEmail = getenv('SENDING_EMAIL');
 
-  $to = $email; // これは受信者のメールアドレス
-
+  // メールヘッダを設定
+  $header = "From : $fromEmail\n";
+  $header .= "Content-Type : text/plain";
+  
+    
+  // 受信者のメールアドレス
+  $to = $email; 
+  
   $url = "http://localhost/DTMarket/shopping/password_reset.php?token=$token";
-
+  
   $subject = 'パスワードリセット用URLをお送りします';
-  // ヒアドキュメント,<<<DODとEODまで : それを$bodyに代入
-  // "や'でくくることなく、変数や改行を含む複数行の文字列を定義{$url}を埋め込む事ができる。
+  
+  // メール本文を設定、複数行の文字列にURLを含む(この例では2つ改行)
   $body = 
   '1時間以内に下記のURLへアクセスし、パスワードの変更を完了してください' . "\r\n\r\n" . $url . "\r\n\r\n" . 'このメールは送信用です。';
-
-
-  // 送信者情報の設定
-
-  $header = "From : nasubi54kk@gmail.com\n"; 
-  // これは送信者のメールアドレス
-
-  $header .= "Content-Type : text/plain";
-  // text/htmlを指定し、html形式で送ることも可能
-
   
   // メール送信
   $response = mb_send_mail($to, $subject, $body, $header);
