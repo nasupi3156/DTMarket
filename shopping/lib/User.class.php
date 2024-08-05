@@ -4,7 +4,7 @@ namespace shopping\lib;
 
 class User {
 
-  public $db = null;
+  private $db = null;
   
 
   public function __construct($db)

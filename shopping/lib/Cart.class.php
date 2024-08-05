@@ -27,7 +27,7 @@ class Cart
       // $this->updateCartData($qtyItem[0]['crt_id'], $qtyItem[0]['quantity']);
     } else {   
     // 新しい商品をカートに追加
-    // insertされた瞬間はブラウザーに表示しない。AJAXリクエストでページのリロード中にselectで最新のデータを取得
+    // insertされ、AJAXリクエストでページのリロード中にselectで最新のデータを取得
     // ユーザーが過去に購入したが、現在のカートには存在しない商品を再購入する場合、新しいアイテムとしてカートに追加する必要がある
       $insData = [
         'customer_no' => $customer_no,
@@ -189,14 +189,15 @@ class Cart
   {
     $table = 'carts';
     $insData = ['quantity' => $quantity];
-    // ['quantity' => $quantity] は、quantity = ? と同じ
+  
     $where =  'crt_id = ? ';
-    // 更新条件として、カートID (crt_id) を設定
+  
     $arrWhereVal = [$crt_id];
-    // 条件に使用する値として、カートID(crt_id)を設定
+    
     return $this->db->update($table, $insData, $where, $arrWhereVal);
     // UPDATE テーブル名 SET 列1 = 値1, 列2 = 値2, ... WHERE 条件
-    // UPDATE cart SET quantity = $quantity WHERE crt_id = ?
+    // UPDATE cart SET quantity = ? WHERE crt_id = ?
+    // updateでinsDataとarrWhereValで値を合体した配列をexecuteでバインド
   }
   
 

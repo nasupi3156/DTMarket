@@ -1,7 +1,5 @@
 <?php
 
-// Model
-
 namespace shopping\lib;
 
   class PDODatabase 
@@ -59,7 +57,7 @@ namespace shopping\lib;
           // getMessage : PDOでもともと用意
           exit();
         }  
-          // return $dbh;
+          return $dbh;
          
     }
 
@@ -92,7 +90,7 @@ namespace shopping\lib;
     // 外部キーで繋がってる場合などに使う。外部キーのid同士の確認
 
   
-    // 今回は使われていない
+    // 今回は使わない
     public function setQuery($query = '', $arrVal = [])
     {
       $stmt = $this->dbh->prepare($query);
@@ -120,8 +118,8 @@ namespace shopping\lib;
         // while : ループ処理、fetchがデータを取得するたびに実行
         // fetch_assoc : 1行ずつ連想配列
         while ($result = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-        // array_push : resultの連想配列からdataに変わりdataの多次元配列
-        // data配列の中にfetchでとってきた配列(キーと値)の多次元配列がループしていくつかある
+        // array_push : resultの連想配列からdataに変わりdataが多次元配列
+        // data配列の中にfetchでとってきた配列(キーと値)の多次元配列がループ
         array_push($data, $result);
       }
       return $data;
@@ -247,7 +245,7 @@ namespace shopping\lib;
       $arrPreSt = [];
       foreach ($insData as $col => $val) {
         $arrPreSt[] = $col . " =? ";
-        // delCartDataでdelete_flg ' => 1がinsDataなので$colに入りdelete_flg ' = ?が作られ、配列[]なのでimplodeで文字列に処理
+        // delCartDataでdelete_flg ' => 1がinsDataなので$colに入りdelete_flg ' = ?が作られ、配列なのでimplodeで文字列に処理
       }
 
       $preSt = implode(',', $arrPreSt);
@@ -262,7 +260,7 @@ namespace shopping\lib;
 
       $updateData = array_merge(array_values($insData), $arrWhereVal);
       // array_merge : 値を単一の配列に結合するために使用、executeは全てのパラメータを単一の配列で受け取る必要がある
-      // array_values : 配列からキーを除外して値だけ取り出す関数
+      // array_values : 配列からキーを除外して値だけ取り出す関数、関数は()で囲む
       // 更新データ$insData,更新条件（$arrWhereVal）を結合、一つの配列 $updateData
       $this->sqlLogInfo($sql, $updateData);
 
