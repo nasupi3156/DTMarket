@@ -29,7 +29,6 @@ a {
 /* 濃い色になるのはactiveクラスが指定してるから、デフォルトの上書きする必要がある */
 .navbar-nav .nav-link.active {
   color:  #222; 
-  /* 希望の色に置き換える */
   font-weight: normal;
 }
 

@@ -77,7 +77,7 @@ label {
   border-radius: 2px;
 }
 
-/* 郵便番号、ここだけregist_dataからzip */
+ /* 郵便番号 */
 .regist_zip input[type="text"] {
   padding: 5px;
   width: 80px;
@@ -154,9 +154,8 @@ input[type="submit"] {
   background-color: #00bfff;
   border: none;
   border-radius: 3px;
-  /* opacity: 0.8; 初期の透明度を設定 */
   letter-spacing: 0.05em;
-  /* opacity の変化をアニメーション化 */
+ 
   transition: opacity 0.3s; 
 }
 
@@ -169,7 +168,6 @@ input[type="submit"]:hover {
 /* error */
 .input_error {
   /* border: 2px solid #ffc1c1 !important; */
-  /* background-color: #ffcccc; */
   background-color: #ffd6d6;
   /* outline: none !important; */
 }
