@@ -350,7 +350,7 @@ namespace shopping\lib;
     }
   } 
   
-  // purchase
+
   public function userPurchaseProfile($params, $user_id)
   {
     try {
@@ -373,7 +373,7 @@ namespace shopping\lib;
       throw new \Exception("購入情報の更新中にエラーが発生しました。");
   }
 }
-  // profile
+  
   public function updateUserProfile($params, $user_id) 
   {
     try {
