@@ -103,8 +103,8 @@ li {
 
 /* 検索入力欄がフォーカスされた時 */
 .form-control:focus {
-  border-color: #4caf50;
-  /* 枠線の色 */
+  border: solid 2px #4caf50; 
+  background-color: #e8f5e9; 
   border-width: 1px;
   /* 枠線の太さ */
   outline: none;

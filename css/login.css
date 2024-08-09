@@ -58,9 +58,12 @@ input[type="password"] {
 /* 擬似クラス */
 input[type="email"]:focus,
 input[type="password"]:focus {
-  background-color: #e8f0fe; /* フォーカス時の背景色 */
-  border: solid 2px #66afe9; /* フォーカス時のボーダーの色 */
-  outline: none; /* デフォルトのアウトラインを削除  */
+  background-color: #e8f0fe; 
+  /* フォーカス時の背景色 */
+  border: solid 2px #66afe9; 
+  /* フォーカス時のボーダーの色 */
+  outline: none; 
+  /* デフォルトのアウトラインを削除  */
   border-radius: 3px;
 }
 
