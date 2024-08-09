@@ -254,16 +254,6 @@ img {
   text-align: center;
 }
 
-/* 商品カート */
-/* #cart_list {
-  grid-area: side;
-  height: 150px;
-  margin: 20px;
-  text-align: center;
-  border: solid 1px #999;
-  background-color: whitesmoke;
-} */
-
 .item ul .name {
   font-size: 11px;
 }
