@@ -116,8 +116,6 @@ CREATE TABLE contacts (
 );
 
 
-
-; 顧客の認識	
 CREATE TABLE sessions (	
   customer_no int unsigned not null auto_increment,	
   session_key varchar(32),	
