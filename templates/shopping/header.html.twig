@@ -8,7 +8,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav ms-auto my-2 my-lg-2 d-flex align-items-center">
-        {# ms-auto : 要素を左から右に寄せる、my-lg-1上下の余白(大きい画面)#}
+        {# ms-auto : 要素を右に寄せる #}
           <form class="d-flex search-form" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
             <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
             <button class="btn btn-outline-success" type="submit">search</button>
