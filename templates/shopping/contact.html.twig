@@ -40,9 +40,6 @@
                       {% endif %}
                       <input type="text" class="contact_first mb-2" id="family_name" name="first_name" value={{ dataArr.first_name }}>
                     
-                      {# {% if errArr.family_name | length > 0 %}
-                        <p class="color">{{ errArr.family_name }}</p>
-                      {% endif %} #}
                       {% if errArr.first_name | length > 0 %}
                         <p class="color">{{ errArr.first_name}}</p>
                       {% endif %}
