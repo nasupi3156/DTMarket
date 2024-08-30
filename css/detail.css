@@ -10,14 +10,15 @@ body {
   background-color: #fcfcfc;
 }
 
-
 .row {
   margin-right: 10px;
   margin-top: 50px;
 }
 
 .item_image img {
-  width: 84%;
+  width: 100%;
+  max-width: 420px;
+  /* height: auto; */
   margin-top: 30px;
   margin-left: 40px;
   border-radius: 3px;
@@ -37,23 +38,30 @@ body {
 
 .item_name {
   display: flex;
+  margin-left: 20px;
   font-size: 20px;
 }
 
 .item_name dd {
-  font-size: 21px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .item_detail {
-  padding-top: 16px;
+  padding-top: 12px;
+  margin-left: 20px;
   font-size: 19px;
 }
 
 .item_detail dt {
+  font-size: 18px;
   line-height: 1.5;
   font-weight: normal;
   margin-bottom: 15px;
+}
+
+.item_price {
+  margin-left: 20px;
 }
 
 .money {
@@ -68,11 +76,12 @@ body {
 
 
 .detail_back {
-  width: 25%;
+  width: 210px;
+  /* width: 25%; */
   height: 52px;
   margin-right: 34px;
   margin-top: 15px;
-  margin-left: 36px;
+  margin-left: 56px;
   background-color: #fdfdfd;
   border: 1px solid #1eaa39;
   color: #1eaa39;
@@ -83,14 +92,14 @@ body {
 }
 
 .detail_cart {
-  width: 36%;
+  width: 280px;
   height: 54px;
   background-color: #1eaa39;
   color: #fff;
   border: none;
 
   /* footerの上下幅 */
-  margin-bottom: 24.5em;
+  margin-bottom: 19.4em;
 }
 
 .detail_cart:hover {
@@ -99,10 +108,225 @@ body {
 
 .detail_back,
 .detail_cart {
-  font-size: 18px;
+  font-size: 17px;
+  margin-top: 12px;
   border-radius: 5px;
   transition: 0.3s;
   cursor: pointer;
 }
+
+@media (max-width: 1200px) {
+
+  .detail_list {
+    padding: 30px 20px 0px 20px;
+  }
+
+.item_image img {
+  max-width: 370px;
+}
+
+.item_name {
+
+  margin-top: -2px;
+  margin-left: 25px;
+}
+
+.item_name dt {
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.item_name dd {
+  font-size: 18px;
+  padding-top: 1px; 
+}
+
+.item_detail {
+  margin-left: 25px;
+}
+
+.item_detail dt {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.item_price {
+  margin-top: -6px;
+  margin-left: 25px;
+}
+
+.money {
+  font-size: 20px;
+}
+
+.tax {
+  font-weight: 550;
+}
+
+.detail_back {
+
+  width: 180px;
+  height: 45px;
+}
+
+.detail_cart {
+  width: 250px;
+  height: 45px;
+  /* footerの上下幅 */
+  margin-bottom: 24.5em;
+}
+
+
+.detail_back,
+.detail_cart {
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+}
+
+@media (max-width: 992px) {
+
+  .item_image img {
+    
+    max-width: 320px;
+  }
+  
+.item_name {
+  margin-top: -15px;
+}
+
+.item_name dt {
+  font-size: 17px;
+}
+
+.item_name dd {
+  font-size: 16px;
+}
+
+
+.item_detail {
+  padding-top: 6px;
+  margin-left: 25px;
+}
+
+.item_detail dt {
+  font-size: 15px;
+  line-height: 1.5;
+
+}
+
+.item_price {
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.money {
+  font-size: 20px;
+
+  font-weight: 500;
+}
+
+.detail_back {
+
+  max-width: 150px; 
+  height: 40px;
+  padding: 0 15px;
+  margin-right: 20px;
+}
+
+.detail_cart {
+ 
+  max-width: 220px; 
+  height: 40px;
+  padding: 0 15px;
+}
+
+.detail_back,
+.detail_cart {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+}
+
+@media (max-width: 767px) {
+  .item_image img {
+    /* width: calc(100% - 68px);  */
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    display: block;
+
+  }
+
+  .item_name {
+    text-align: center;
+    display: block;
+    
+  }
+
+  .item_name dt {
+    font-size: 17px;
+  }
+  
+  .item_name dd {
+  font-size: 16px;
+  }
+
+  .item_name dt, .item_name dd {
+    display: inline-block; 
+    /* dtとddをインラインにして垂直から水平に */
+  }
+
+  .detail_list {
+    /* text-align: center; */
+  }
+
+
+.item_detail {
+  margin: 0 28px;
+  padding-top: 6px;
+ 
+}
+
+.item_price {
+  margin-left: 1.8em;
+}
+
+.money {
+  font-size: 20px;
+
+  font-weight: 500;
+}
+
+  .detail_back {
+    max-width: 150px; 
+    /* ボタンの幅が150pxより小さくならない */
+    height: 40px;
+    margin-left: 47px;
+  }
+
+  .detail_cart {
+    max-width: 220px; 
+    height: 40px;
+    padding: 0 15px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .item_image img {
+    max-width: 350px;
+    margin: 0 auto;
+   
+
+  }
+}
+
+
+
+
 
 

@@ -10,8 +10,17 @@ a {
   text-decoration: none;
 }
 
+
+.navbar .navbar-brand {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+
+
 .navbar {
-  padding: 1.5em 0px 1.2em 2.8em;
+  padding: 1.5em 0px 1.2em 1.5em;
+  text-align: center;
   background-color: #23b740 !important;
 
 }
@@ -32,6 +41,7 @@ a {
 }
 
 .navbar .navbar-brand {
+  margin: 0 auto;
   font-size: 32px;
   font-weight: 600;
 }

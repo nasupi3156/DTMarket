@@ -4,8 +4,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline:1px solid red; */
-  /* 全要素に色がつき分かりやすい */
 }
 
 html,
@@ -14,7 +12,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  /* overflow-x: hidden;  */
+  overflow-x: hidden; 
   /* 余分なスペースによる水平スクロールを防ぐ */
 }
 
@@ -38,14 +36,14 @@ body {
 }
 
 .item_confirm {
-  padding: 36px 10px 8px 30px;
+  padding: 32px 10px 8px 38px;
   font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .item_data {
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .table th,
@@ -62,10 +60,11 @@ body {
 }
 
 .table th {
-  padding: 0 8px;
+  padding: 5px 8px;
   background-color: #1eaa39;
   font-size: 18px;
   color: white;
+  
 }
 
 .table td {
@@ -75,9 +74,9 @@ body {
 
 .cart_information th,
 .order_detail th {
-  width: 150px;
-  /* テキストがセル(cell=td,th)の幅を超えても折り返さず一行で表示。ヘッダセルが一定の幅を持ち内容がはみ出さない */
+  width: 162px;
   white-space: nowrap; 
+  /* テキストがセル(cell=td,th)の幅を超えても折り返さず一行で表示。ヘッダセルが一定の幅を持ち内容がはみ出さない */
 }
 
 .cart_information td,
@@ -102,11 +101,11 @@ body {
 }
 
 .cart_confirm {
-  margin-left: 5em;
+  margin-left: 3.4em;
   padding: 18px 24px;
   border: 1px solid #222;
   border-radius: 5px;
-  width: 585px;
+  width: 42%;
   height: 730px;
   margin-bottom: 55px;
 }
@@ -117,7 +116,7 @@ body {
 }
 
 h5 {
-  font-size: 18.2px;
+  font-size: 18px;
   font-weight: 600;
 }
 
@@ -127,24 +126,31 @@ td {
 
 }
 
-th {
+.cart_information th {
   font-size: 18px;
   line-height: 2;
 }
 
-td {
+.cart_information td {
   font-size: 17px;
   letter-spacing: 0.02rem;
-
 }
 
 .order_detail h5 {
   padding-top: 10px;
 }
 
+.order_detail th {
+  font-size: 18px;
+}
+
 .order_detail td {
   padding-left: 12px;
   font-size: 18px;
+}
+
+.order_detail th, .order_detail td {
+  line-height: 2.2;
 }
 
 .order_detail p {
@@ -197,7 +203,8 @@ td {
   background-color: #1eaa39;
   color: white;
   font-weight: 540;
-  width: 535px;
+  /* width: 535px; */
+  width: 100%;
   height: 52px;
   font-weight: 600;
   transition: 0.3s;
@@ -212,15 +219,13 @@ td {
 }
 
 .list_back {
-  /* display: inline-block; */
-  /* 幅とパディングの設定を可能にする */
   display: block;
   /* リンク全体をブロック要素にする */
   padding: 11px;
   margin-top: 25px;
   margin-right: 8em;
   margin-bottom: 55px;
-  width: 535px;
+  width: 100%;
   height: 52px;
   border: 1px solid #1eaa39;
   border-radius: 5px;
@@ -241,7 +246,7 @@ td {
 /* 編集 */
 .edit {
   margin-left: 1em;
-  /* font-size: 2px; */
+ 
 }
 
 .btn-edit {
@@ -258,10 +263,9 @@ td {
 /* modal */
 .modal-dialog {
   width: 100%;
-  /* 画面の80%の幅を使用 */
   max-width: 500px;
-  /* 最大幅を800pxに設定 */
-
+  top: 80px;
+  right: 60px;
 }
 
 .modal-header {
@@ -278,7 +282,7 @@ td {
 .modal-body .form-label {
   font-size: 1.25rem;
   padding-left: 1.1rem;
-  padding-top: 0.8rem;
+  padding-top: 0.5rem;
 }
 
 .modal-body .form-control {
@@ -297,29 +301,33 @@ td {
 
 /* 位置変更 */
 .modal-position {
-  /* position: fixed; */
-  /* transform: translate(0, 0); */
   top: 10%;
   left: 28%;
-  /* 中央寄せの設定を上書き */
 }
+
+.family-name.first-name {
+  min-width: 30%;
+} 
 
 .zip-number {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .zip-input {
-  max-width: 48%;
+  min-width: 30%;
 }
 
 .phone-number {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .phone-input {
-  max-width: 32%;
+  min-width: 30%;
+
 }
 
 .button-modal {
@@ -336,6 +344,7 @@ td {
   font: 18px;
   margin-right: 20px;
   background-color: #9a9a9a;
+  border: none;
 }
 
 .modal-footer .btn-right {
@@ -343,6 +352,7 @@ td {
   width: 240px;
   font-size: 18px;
   background-color: #1eaa39;
+  border: none;
 }
 
 /* 手数料 */
@@ -351,3 +361,249 @@ td.shipping_fee_color {
   color: #f00;
   font-weight: 550;
 } */
+
+@media (max-width: 1200px) {
+  
+  .table th,
+  .table td {
+    font-size: 17px;
+
+    border: none;
+  }
+
+  .image img {
+    width: 110px;
+    height: auto;
+  }
+}
+@media (max-width: 992px) {
+
+.item_confirm {
+  padding: 36px 10px 8px 38px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  }
+
+  .btn-edit {
+    font-size: 17px;
+    color: #0000ff;
+    padding-left: 4em;
+  }
+
+  .table th,
+  .table td {
+  }
+
+  .table th {
+    padding: 4px 8px;
+    background-color: #1eaa39;
+    font-size: 15px;
+  }
+
+  .table td {
+    font-size: 15px;
+  }
+
+  .image img {
+    width: 95px;
+    height: auto;
+  }
+
+  .cart_confirm {
+    margin-left: 2.4em;
+    width: 42%;
+    height: 645px;
+  } 
+
+  h5 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .cart_information th {
+    font-size: 15px;
+    line-height: 2;
+  }
+  
+  .cart_information td {
+    font-size: 14px;
+    padding-right: 8px;
+    width: 200px;
+    letter-spacing: 0.02rem;
+  }
+
+  .order_detail h5 {
+    padding-top: 10px;
+  }
+
+  .order_detail th {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+  
+  .order_detail td {
+    padding-left: 12px;
+    font-size: 15px;
+    width: 200px;
+  }
+
+  .pay {
+    padding-top: 16px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .cash_label {
+    display: block;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 18px;
+    padding-top: 2px;
+  }
+  
+  .cash_label input[type="radio"] {
+    transform: scale(1.2);
+    /* ラジオボタンを大きくする */
+    margin-right: 6px;
+    font-size: 15px;
+  }
+  
+  .price th {
+    font-size: 19px;
+
+    letter-spacing: 0.05rem;
+   
+  }
+
+  .price td {
+    font-size: 19px;
+    font-weight: 550;
+    letter-spacing: 0.05rem;
+  }  
+
+  .custom-submit {    
+    font-size: 16px;
+    width: 100%;
+    height: 44px;
+  }
+
+  .list_back {
+    height: 44px;
+
+  }
+
+  .list_back a {
+    font-size: 16px;
+  }
+
+  .modal-dialog {
+    max-width: 450px;
+    top: 80px;
+    right: 60px;
+  }
+
+  .modal-body .form-label {
+    font-size: 19px;
+    padding-top: 8px;
+  }
+  
+  .modal-body .form-control {
+    font-size: 17px;
+    margin-top: 1rem;
+    margin: 0;
+    padding: 6px;
+    width: 460px;
+  }
+
+  #modalFamilyName, #modalFirstName {
+    max-width: 100%; 
+  }
+
+  #modalAddress {
+    max-width: 100%;
+  }
+
+  .modal-footer .btn-left {
+    width: 160px;
+    height: 50px;
+    font: 17px;
+    margin-right: 15px;
+  }
+  
+  .modal-footer .btn-right {
+    height: 50px;
+    width: 210px;
+    font-size: 17px;
+  }
+  
+}
+
+
+@media (max-width: 768px) {
+  .item_data {
+    width: 90%;
+  }
+
+  .cart_confirm {
+    margin-left: 3.8em;
+    width: 80%;
+    height: 645px;
+  } 
+
+
+  .list_back {
+    height: 44px;
+    padding: 8px;
+  }
+
+  .modal-dialog {
+    max-width: 420px;
+    top: 60px;
+  }
+
+  .modal-body .form-label {
+    font-size: 18px;
+    padding-top: 8px;
+  }
+  
+  .modal-body .form-control {
+    font-size: 16px;
+    margin-top: 1rem;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .modal-footer .btn-left {
+    width: 152px;
+    height: 48px;
+    font: 17px;
+    margin-right: 15px;
+  }
+  
+  .modal-footer .btn-right {
+    height: 48px;
+    width: 195px;
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .modal-dialog {
+    max-width: 400px;
+    top: 75px;
+    left: 25px;
+  }
+
+
+  .modal-footer .btn-left {
+    width: 142px;
+    height: 48px;
+    margin-right: 15px;
+  }
+  
+  .modal-footer .btn-right {
+    height: 48px;
+    width: 185px;
+  }
+}

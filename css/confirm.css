@@ -8,7 +8,7 @@ body {
   background-color: #f2f2f2;
 }
 
-.error_confirm {
+/* .error_confirm {
   color: red;
   font-size: 18px;
   background-color: #f8d7da;
@@ -16,15 +16,17 @@ body {
   padding: 10px;
   text-align: center;
   border-radius: 5px;
-}
+} */
 
 .container {
   background-color: #f2f2f2;
 }
 
 .confirm_form {
-  margin: 40px 240px;
-  /* width: 80%; */
+  /* margin: 40px 240px; */
+  margin: 60px auto;
+  width: 90%;
+  max-width: 900px;
   padding: 32px 0 25px;
   background-color: #fff;
 }
@@ -32,7 +34,7 @@ body {
 .confirm_form h1 {
   text-align: center;
   font-size: 30px;
-  margin-bottom: 16px;
+  margin-bottom: 30px;
 }
 
 .confirm_table {
@@ -43,6 +45,7 @@ body {
 .complete_form {
   padding: 30px 0 40px;
   text-align: center;
+  margin-left: 45px;
 }
 
 .confirm_name {
@@ -53,11 +56,11 @@ body {
 
 .confirm_data {
   font-size: 18px;
-  width: 200px;
+  width: 150px;
 }
 
 .complete_form {
-  margin-right: 40px;
+  
 }
 
 .back_button {
@@ -66,7 +69,8 @@ body {
   background-color: #d3d3d3;
   border: none;
   border-radius: 3px;
-  width: 220px;
+  width: 100%;
+  max-width: 220px;
   height: 60px;
   letter-spacing: 0.05em;
 }
@@ -79,7 +83,8 @@ body {
   border-radius: 3px;
   letter-spacing: 0.05em;
   transition: opacity 0.3s;
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   height: 62px;
 }
 
@@ -94,3 +99,82 @@ body {
   background-color: #1e90ff;
 }
 
+@media (max-width: 768px) {
+  .confirm_form {
+    margin: 60px auto;
+    width: 90%;
+    max-width: 900px;
+  }
+  
+  .confirm_form h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+
+  .confirm_name {
+    font-size: 17px;
+    width: 180px;
+  }
+  
+  .confirm_data {
+    font-size: 16px;
+    width: 140px;
+  }
+
+  .complete_form {
+    margin-left: 20px;
+  }
+  
+  .back_button {
+    margin-right: 25px;
+
+    max-width: 190px;
+    height: 60px;
+  }
+  
+  .regist_button {
+ 
+    max-width: 240px;
+    height: 60px;
+  }
+  
+}
+
+@media (max-width: 575px) {
+
+  .complete_form {
+    margin-left: 8px;
+  }
+  
+  .back_button {
+    margin-right: 22px;
+    font-size: 16px;
+    max-width: 160px;
+    height: 56px;
+  }
+  
+  .regist_button {
+    font-size: 19px;
+    max-width: 200px;
+    height: 56px;
+  }
+  
+}
+
+/* デフォルト設定を100%に設定し縮小をなめらかに */
+@media (min-width: 992px) {
+  .container, .container-lg, .container-md, .container-sm {
+      max-width: 100%; /* または他の任意の値 */
+  }
+}
+@media (min-width: 768px) {
+  .container, .container-md, .container-sm {
+      max-width: 100%; /* 上書きして調整 */
+  }
+}
+@media (min-width: 576px) {
+  .container, .container-sm {
+      max-width: 100%; /* または他の任意の値 */
+  }
+}

@@ -1,24 +1,52 @@
 @charset "UTF-8";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f2f2f2;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  padding-top: 30px;
-  margin: 50px auto;
-  width: 48%;
-  /* width: 750px; */
-  height: 550px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  width: 85%;
+  height: 480px;
+  max-width: 800px; 
   text-align: center;
   border-radius: 3px;
   background-color: #fff;
   box-shadow: 0 2px 4px #a3a3a3;
 }
 
+
+
 .login_inner {
-  padding-top: 8px;
-  line-height: 3;
+  margin: 100px 0px;
+  height: 20%;
+  line-height: 2.6;
+  padding: 12px 20px;
+ 
+}
+
+.login {
+  font-size: 15px;
+  margin-top: 18px;
+  font-weight: 600;
+}
+
+
+.email p {
+  font-size: 17px;
+  display: block;
+  margin-bottom: -5px;
 }
 
 input[type="email"],
@@ -29,10 +57,18 @@ input[type="password"] {
 /* 擬似クラス */
 input[type="email"]:focus,
 input[type="password"]:focus {
-  background-color: #d7ffdf;
-  border: solid 2px #48d765;
-  outline: none;
+  background-color: #e8f0fe; 
+  /* フォーカス時の背景色 */
+  border: solid 2px #66afe9; 
+  /* フォーカス時のボーダーの色 */
+  outline: none; 
+  /* デフォルトのアウトラインを削除  */
   border-radius: 3px;
+}
+
+.password p {
+  /* エラー文字とlogin_btnの上下幅 */
+  margin-bottom: -15px;
 }
 
 .email label,
@@ -43,33 +79,47 @@ input[type="password"]:focus {
 .email input,
 .password input {
   width: 35%;
-  height: 42px;
+  height: 40px;
   padding: 10px;
   outline: none;
 }
 
-.email p {
-  margin-bottom: -5px;
-}
-
-.password p {
-  /* エラーの文字とbtnの幅 */
-  margin-bottom: -15px;
-}
-
 .login_btn {
   font-size: 18px;
-  margin-top: 45px;
-  height: 58px;
+  margin-top: 40px;
+  height: 50px;
   width: 35%;
   border: none;
   border-radius: 3px;
   color: #fff;
-  /* background-color: #00bfff; */
   background-color: #e861e8;
-  /* background-color: #f91b5a; */
   letter-spacing: 0.03em;
-  /* display: inline-block; */
+}
+
+.login_btn:hover {
+  background-color: #ce30ce;
+  transition: all 0.3s;
+}
+
+
+@media (max-width: 992px) {
+  .login h1 {
+    font-size: 2.4em;
+  }
+
+.email input,
+.password input {
+  width: 240px;
+}
+
+.login_btn {
+  width: 240px;
+}
+
+.sign_up {
+  width: 240px;
+}
+
 }
 
 

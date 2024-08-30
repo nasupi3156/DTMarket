@@ -8,16 +8,13 @@
   display: flex;
   flex-direction: column;
   /* 項目を縦に積む */
-  /* background-color: #f5f5f5;
-  width: 52%;
-  height: 350px; */
 }
 
 .list-ctg {
   font-size: 22px;
-  font-weight: 550;
+  font-weight: 600;
   padding-top: 11px;
-  padding-left: 42px;
+  padding-left: 12px;
   margin-bottom: 15px;
 }
 
@@ -25,12 +22,12 @@
 .underline-text {
   border-bottom: solid #bbbbbb;
   padding-right: 15px;
-  padding-bottom: 7px;
+  padding-bottom: 12px;
 }
 
 .list-info {
   color: #222;
-  padding: 8px 5px 5px 45px;
+  padding: 8px 5px 5px 15px;
   padding-top: 12px;
   margin-bottom: 5px;
   font-size: 18px;
@@ -39,4 +36,103 @@
 .list-info:hover {
   color: #6a6a6a;
   text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .list-ctg {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list-info {
+    font-size: 17px;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  .list-group {
+    margin-left: -15px;
+  }
+
+  .list-ctg {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .list-info {  
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .list-group {
+    display: none; 
+  }
+}
+
+@media (max-width: 576px){
+
+  .list-group {
+    margin-top: -10px;
+    margin-left: -38px;
+  }
+
+  .underline-text {
+    padding-right: 2px;
+    padding-bottom: 12px;
+  }
+
+  .list-ctg {
+    font-size: 16px;
+    font-weight: 600; 
+  }
+
+  .list-info {
+    font-size: 13px;
+    
+  }
+}
+
+.dropdown-custom {
+  margin-top: -18px; 
+  margin-bottom: 24px;
+}
+
+
+/* ボタンの外観を調整 */
+#dropdownMenuButton {
+  width: 100%;
+  
+  background-color: #ffffff; 
+ 
+  color: #333;
+  padding: 10px 20px; 
+  
+  border-radius: 3px; 
+}
+
+/* ドロップダウンメニューコンテナ */
+.dropdown-menu {
+  width: 96.3%; 
+  background-color: #ffffff; 
+  /* border: none;  */
+  /* ボーダーを削除してすっきりした外観に */
+  color: #333;
+  padding: 5px 5px;
+
+}
+
+/* ドロップダウン項目のスタイル */
+.dropdown-item {  
+  letter-spacing: 0.05rem;
+}
+
+
+.dropdown-item:hover {
+  
+  background-color: #008000; 
+  color: #ffffff; 
+
 }

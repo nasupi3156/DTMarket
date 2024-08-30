@@ -27,7 +27,6 @@
   /* セルの内側余白を全て削除 */
 }
 
-/* background-color: #4CAF50; */
 .table th {
   padding: 0 8px;
   background-color: #1eaa39;
@@ -40,14 +39,8 @@
   font-size: 18px;
 }
 
-.text-center {
-  color: red;
-  font-size: 18px;
-  font-weight: 500;
-}
-
 .image img {
-  width: 140px;
+  width: 120px;
   height: auto;
 }
 
@@ -58,7 +51,8 @@
   
   border: 1px solid #222;
   border-radius: 5px;
-  width: 410px;
+  /* width: 410px; */
+  width: 42%;
   height: 495px;
 }
 
@@ -69,27 +63,27 @@
 
 .cart_information th {
   width: 65px;
+  font-size: 16px;
   white-space: nowrap; 
 }
 
 .cart_information td {
+  font-size: 16px;
   padding-left: 50px;
-  /* 左右の幅 */
+
 }
 
 h5 {
-  font-size: 17.2px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 th,
 td {
   font-weight: normal;
-  /* 通常の文字の太さ */
 }
 
 th {
-  font-size: 16.5px;
   line-height: 2;
 }
 
@@ -170,15 +164,238 @@ td {
   transition: background-color 0.3s;
 }
 
-
-footer {
-  padding: 50px;
-  align-items: center;
-  text-align: center;
-  background-color: #1eaa39;
-  margin-top: 27em;
+.no-history {
+  color: #0C6DFD;
+  font-size: 19px;
+  padding: 25px 0;
 }
 
-footer p {
-  font-size: 26px;
+.customer-info {
+  color: #f00;
+  padding: 20px 0;
 }
+
+.login-link {
+  text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+
+  .order-date {
+    font-size: 17px;
+    padding-left: 12px;
+  }
+
+  .table th {
+    padding: 0 8px;
+
+    font-size: 16px;   
+  }
+
+  .table td {
+    font-size: 15px;
+  }
+  
+  .image img {
+    width: 92px;
+    height: auto;
+  }
+
+  .cart_confirm {
+    margin-left: 40px;
+    width: 42%;
+    height: 475px;
+  }
+
+  h5 {
+    font-size: 16px;
+   
+  }
+
+  .cart_information th {
+    font-size: 16px;
+    width: 65px;
+  }
+  
+  .cart_information td {
+    font-size: 14px;
+    padding-left: 50px;
+  }
+
+.order_detail td {
+
+  font-size: 16px;
+}
+.order_detail th {
+  font-size: 16px;
+}
+
+
+
+.pay {
+ 
+  font-size: 16px;
+}
+
+
+.delivery {
+  font-size: 15px;
+
+}
+
+
+.price {
+  margin-top: -5px;
+}
+
+.price th {
+  font-size: 18px;
+}
+
+.price td {
+  padding-left: 49px;
+  font-size: 18px;
+}
+}
+
+@media (max-width: 922px) {
+
+  .order-date {
+    font-size: 15px;
+    padding-left: 12px;
+  }
+  
+  .table th {
+    padding: 2px 5px;
+    font-size: 13px;   
+  }
+
+  .table td {
+    padding: 12px 2px 0px 8px;
+    font-size: 13px;
+  }
+  
+  .image img {
+    width: 70px;
+    height: auto;
+  }
+
+
+  .cart_confirm {
+    margin-left: 23px;
+    width: 44%;
+    height: 445px;
+  }
+
+  h5 {
+    font-size: 14px;
+    
+  }
+
+  .cart_information th {
+    font-size: 14px;
+    width: 65px;
+    white-space: nowrap; 
+  }
+  
+  .cart_information td {
+    font-size: 13px;
+    padding-left: 50px;
+  }
+
+  .order_detail th {
+    font-size: 14px;
+  }
+
+.order_detail td {
+  padding-left: 55px;
+  font-size: 14px;
+}
+
+
+
+.pay {
+
+  font-size: 15px;
+}
+
+.delivery {
+  font-size: 14px;
+ 
+}
+
+.price {
+  margin-top: -14px;
+}
+
+.price th {
+  font-size: 17px;
+}
+
+.price td {
+ 
+  font-size: 17px;
+}
+}
+
+@media (max-width: 768px) {
+
+  .table th {
+    font-size: 16px;   
+  }
+
+  .table td {
+    font-size: 16px;
+  }
+  
+  .order-date {
+    font-size: 16px;
+    padding-left: 5em;
+  }
+
+  .item_data {
+    margin-left: 4.6em;
+    width: 100%; 
+  }
+  
+  .image img {
+    width: 70px;
+    height: auto;
+  }
+
+  .cart_confirm {
+    margin-left: 5.8em;
+    width: 90%;
+    height: 435px;
+  }
+
+  h5 {
+    font-size: 14px;
+    margin-top: 7px;
+  }
+
+  .cart_information th {
+    font-size: 14px;
+  }
+  
+  .cart_information td {
+    font-size: 14px;
+    padding-left: 50px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .table th {
+    font-size: 15px;   
+  }
+
+  .table td {
+    font-size: 15px;
+  }
+
+  .order-date {
+    font-size: 15px;
+  }
+}
+

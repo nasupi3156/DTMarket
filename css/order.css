@@ -1,29 +1,25 @@
 @charset "UTF-8";
 
+h3 {
+  margin-top: -2px;
+  font-size: 26px;
+  font-weight: 599;
+}
+
 .total-amount {
   margin-left: 25px;
-  
 }
 
 .order-date {
   padding-top: 14px;
   font-size: 18px;
-  font-weight: 540;
-}
-
-h3 {
-  margin-top: -2px;
+  font-weight: 599;
 }
 
 .table-line {
+  min-width: 100%;
   border: 1px solid #1daa39 !important;
-}
-
-/* cart履歴右側 (cart.twig) */
-.item_confirm {
-  padding: 62px 20px 20px 50px;
-  font-size: 18px;
-  font-weight: 600;
+  
 }
 
 .table th,
@@ -37,6 +33,7 @@ h3 {
   color: white;
   font-size: 18px;
 }
+
 
 .text-center {
   color: red;
@@ -58,19 +55,6 @@ img {
   height: auto;
 }
 
-.cart_list {
-  border: 1px solid #333;
-  padding: 25px 23px;
-
-  margin-left: 50px;
-  text-align: center;
-  width: 420px;
-  height: 380px;
-}
-
-.cart_list p {
-  line-height: 2;
-}
 
 .cart_list th,
 td {
@@ -118,6 +102,12 @@ td {
   border-radius: 5px;
 }
 
+.repurchase {
+  font-size: 15px;
+  width: 70%;
+  height: 40px;
+}
+
 .list_back a {
   font-size: 18px;
   display: block;
@@ -143,16 +133,159 @@ td {
   transition: background-color 0.3s;
 }
 
+.no-history {
+  color: #0C6DFD;
+  font-size: 19px;
+  padding: 25px 0;
+}
+
+.customer-info {
+  color: #f00;
+  padding: 20px 0;
+}
+
+.login-link {
+  text-decoration: underline;
+}
+
 footer {
-  padding: 50px;
-  align-items: center;
-  text-align: center;
-  background-color: #1eaa39;
-  margin-top: 27em;
+  margin-top: 13.5em;
 }
 
-footer p {
-  font-size: 26px;
+@media (max-width: 1200px) {
+
+  .table-line {
+    line-height: 1.4;
+  }
+  
+  .table th {
+    font-size: 17px;
+  }
+
+  .item_id {
+    font-size: 17px;
+  }
+
+  .item_name {
+    font-size: 17px;
+  }
+
+  img {
+    width: 130px;
+    height: auto;
+  }
+
+  .quantity {
+    font-size: 17px;
+  }
+
+  .price {
+    font-size: 17px;
+  }
+
+  .repurchase {
+    font-size: 13px;    
+    width: 86%;       
+    height: 40px;  
+  }
 }
 
+@media (max-width: 992px) {
+  h3 {
+    font-size: 25px;
+    font-weight: 599;
+  }
+  
 
+  .order-date {
+    font-size: 16px;
+    font-weight: 599;
+  }
+
+  .table-line {
+    line-height: 1.3;
+  }
+  
+  .table th {
+    font-size: 15px;
+  }
+
+ 
+  .item_id {
+    font-size: 15px;
+  }
+
+  .item_name {
+    font-size: 14px;
+  }
+
+  img {
+    width: 92px;
+    height: auto;
+  }
+
+  .quantity {
+    font-size: 15px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .repurchase {
+    font-size: 12px;    
+    width: 94%;       
+    height: 35px;  
+  }
+}
+
+@media (max-width:  768px) {
+  h3 {
+    margin-left: 8px;
+    font-size: 21px;
+    font-weight: 599;
+  }
+
+  .order-date {
+    margin-left: 5px;
+    font-size: 15px;
+    font-weight: 599;
+  }
+
+  .table-line {
+    line-height: 1.3;
+    margin-bottom: 22px;
+  }
+
+  .repurchase {
+    font-size: 12px;    
+    width: 75%;        
+  }
+  
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 20px;
+    font-weight: 599;
+  }
+
+  .order-date {
+    font-size: 15px;
+    font-weight: 599;
+  }
+
+  .item_name {
+    font-size: 13px;
+  }
+
+  img {
+    width: 90px;
+    height: auto;
+  }
+
+  .repurchase {
+    font-size: 12px;
+    width: 92%;         
+  }
+}

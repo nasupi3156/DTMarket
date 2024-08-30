@@ -1,64 +1,65 @@
 @charset "UTF-8";
 
 h3 {
-  padding: 20px 0 10px 12px;
+  font-size: 24px;
+  font-weight: 599;
+  padding: 40px 0 10px 72px;
   margin-bottom: -5px;
 }
 
-/* .container, .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-} */
-/* bootstrapはデフォルトでpaddingが設定してあるのでfooterなどの左右に
-余白がある場合は、containerのpaddingを調整、削除することで隙間を取り除く */
-
-/* table {
-  width: 100%;
-    border-collapse: collapse;
-} */
 
 .table-info {
-  width: 520px;
   height: 200px;
-  width: 70%;
+  width: 63%;
+  margin-left: 60px;
 }
 
 .td-info {
   font-size: 18px;
-  padding: 20px 30px 25px 22px;
+  padding: 20px 30px 25px 20px;
   border-bottom: 1px solid #9b9b9b; 
- 
-  width: 200px;
+  width: 240px;
   /* テキストがセル(cell=td,th)の幅を超えても折り返さず一行で表示。ヘッダセルが一定の幅を持ち内容がはみ出さない */
   white-space: nowrap; 
-  /* line-height: 2; */
-  /* margin: 10px; */
 }
 
 .th-info {
   font-weight: normal;
-  padding-left: 23px;
+  padding-left: 22px;
   border-bottom: 1px solid #9b9b9b;
   font-size: 18px;
   letter-spacing: 0.01rem;
+  
 }
 
 .customer_info {
 }
 
 /* モーダル */
-.modal-content {
-  /* border: none;  */
-  /* margin-top: 50px; */
-}
 
 /* 全体 */
 .modal-dialog {
   width: 100%;
-  /* 画面の80%の幅を使用 */
+
   max-width: 500px;
-  /* 最大幅を800pxに設定 */
+  top: 90px;
+  right: 38px;
 }
+
+
+/* textの外の文字と幅 */
+.modal-body .form-label {
+  font-size: 18px;
+  padding-left: 2px;
+  padding-top:10px;
+}
+
+/* textの中の文字と幅 */
+.modal-body .form-control {
+  font-size: 16px;
+  padding: 8px;
+}
+
 
 .current {
   padding-left: 20px;
@@ -74,18 +75,44 @@ h3 {
   padding-left: 1rem;
 }
 
-.modal-body .form-label {
-  font-size: 1.25rem;
-  padding-left: 1.1rem;
-  padding-top: 0.8rem;
+#modalFamilyName, #modalFirstName {
+  min-width: 250px; 
+  max-width: 100%; 
 }
 
-.modal-body .form-control {
-  font-size: 18px;
-  margin-top: 1rem;
-  margin: 0;
-  width: 460px;
+.Birthdate-number {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
 }
+
+.Birthdate-input {
+  flex: 1; 
+  /* 各フィールドを同じ幅で広げる */
+  min-width: 30%;
+   /* 各フィールドの最小幅を指定して、狭くなりすぎないようにする */
+}
+
+.zip-number {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+}
+
+.zip-input {
+  min-width: 30%;
+}
+
+.phone-number {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; 
+}
+
+.phone-input {
+  min-width: 30%;
+}
+
 
 .modal-footer {
   margin-top: -10px;
@@ -99,22 +126,18 @@ h3 {
 
 /* 位置変更 */
 .modal-position {
-  /* position: fixed; */
-  /* transform: translate(0, 0); */
   top: 20%;
   left: 2%;
-  /* 中央寄せの設定を上書き */
 }
-
-/* 上のコードは消すけど一応 */
 
 /* 編集の位置 */
 .btn-edit {
+  font-size: 17px;
   border: solid 1.5px #1eaa39;
   color: #1eaa39;
-  padding: 8px 28px;
-  margin-top: -4.2em;
-  margin-left: 28em;
+  padding: 8px 30px;
+  margin-top: -58PX;
+  margin-left: 57.5%;
 }
 
 .btn-edit:hover {
@@ -122,111 +145,363 @@ h3 {
   color: #ffffff;
 }
 
-.Birthdate-number {
-  display: flex;
-  justify-content: space-between;
-}
-
-.Birthdate-input {
-  max-width: 32%;
-}
-
-.zip-number {
-  display: flex;
-  justify-content: space-between;
-}
-
-.zip-input {
-  max-width: 48%;
-  /* display: flex; */
-}
-
-.phone-number {
-  display: flex;
-  justify-content: space-between;
-}
-
-.phone-input {
-  /* flex: 1; */
-  max-width: 32%;
-}
-
 .button-modal {
   margin-top: 15px;
 }
 
 .modal-footer .btn {
-  /* margin-top: 60px; */
-  /* padding-top: 20px; */
-  /* text-align: center; */
-  /* padding: 0.75rem 1.5rem; */
-  /* font-size: 1.1rem;  */
   margin: 0 auto;
-  /* margin-right: 24px;  */
+
 }
 
 .modal-footer .btn-left {
-  width: 180px;
+  width: 100%;
+  max-width: 180px;
+  min-width: 100px; 
   height: 50px;
-  font: 18px;
+  font-size: 18px;
   margin-right: 20px;
-  background-color: #9a9a9a;
+  background-color: #a9a9a9;
+  border: none;  
 }
 
 .modal-footer .btn-right {
+  width: 100%;
+  max-width: 240px;
+  min-width: 120px;
   height: 50px;
-  width: 240px;
   font-size: 18px;
-  background-color: #1eaa39;
+  /* background-color: #1eaa39; */
+  background-color: #28a745;
+  border: none;       
 }
 
-
-/* ログアウト時のprofile、全画面のfooter上下の隙間 */
-/* .profile-f {
-  margin-bottom: 18.6em;
-} */
-
-.btn-custom {
+.btn-delete {
   border: 1.5px solid #1eaa39;
   letter-spacing: 0.05em;
   font-size: 18px;
   color: #1eaa39;
-  padding: 0.7em 5.5em;
-  margin: 2em 14em;
+  padding: 0.7em 8em;
+  margin: 1.9em 12.5em;
 }
 
-.btn-custom:hover {
+.btn-delete:hover {
   background-color: #1eaa39;
   color: #fff;
 }
+
+.customer-info {
+  color: #f00;
+  padding: 20px 0;
+}
+
+.login-link {
+  text-decoration: underline;
+}
+
 
 footer {
   /* paddingで出来たfooter部分の左右余白を埋める */
   margin-left: -15px;
   margin-right: -15px;
-  padding: 50px;
-  align-items: center;
-  text-align: center;
-  background-color: #1eaa39;
-  margin-top: 27em;
 }
 
-footer p {
-  font-size: 26px;
+@media (max-width: 1200px) {
+  h3 {
+    font-size: 22px;
+    font-weight: 599;
+    padding-left: 65px;
+  }
+
+  .table-info {
+    height: 200px;  
+    width: 68%;
+  }
+
+  .td-info {
+    font-size: 17px;
+    padding: 20px 30px 25px 16px;
+  }
+
+  .th-info {
+    padding-left: 20px;
+    font-size: 17px;
+  }
+
+  .btn-edit {
+    font-size: 16px;
+    padding: 8px 28px;
+    margin-left: 34em;
+    margin-left: 62%;
+  }
+
+  .btn-delete {
+    font-size: 17px;
+    margin: 2.2em 13em;
+    padding: 12px 7em;
+  }  
 }
 
-/* @media (min-width: 1200px) {
-  footer {
-    margin-left: -15px;
-    margin-right: -15px;
-    padding: 50px;
-    align-items: center;
+@media (max-width: 992px) {
+  h3 {
+    font-size: 21px;
+    margin-left: -27px;
+    font-weight: 599;
+  }
+
+  .table-info {
+    margin-left: 35px;
+    width: 84%;
+  }
+
+  .td-info {
+    font-size: 16px;
+  }
+
+  .th-info {
+    width: 60%;
+    padding-right: 15px;
+    font-size: 16px;
+  }
+
+  .btn-edit {
+    font-size: 15px;
+    margin-top: -61PX;
+    margin-left: 73%;
+  }
+
+  
+  .btn-delete {
+    font-size: 16px;
+    width: 45%;
+    max-width: 400px;
+    padding: 0.8em 1.5em;
+    margin: 2.2em 11em;
+  
+  }
+
+  /* 全体 */
+.modal-dialog {
+  max-width: 450px;
+  right: 38px;
+}
+
+
+/* textの外の文字と幅 */
+.modal-body .form-label {
+  font-size: 18px;
+  padding-left: 2px;
+  padding-top:10px;
+}
+
+/* textの中の文字と幅 */
+.modal-body .form-control {
+  font-size: 16px;
+  padding: 8px;
+}
+
+
+
+  .modal-footer .btn-left {
+    width: 100%;
+    max-width: 170px;
+    min-width: 100px; 
+    height: 50px;
+    font-size: 18px;
+    margin-right: 20px;
+    background-color: #a9a9a9;
+    border: none;  
+  }
+  
+  .modal-footer .btn-right {
+    width: 100%;
+    max-width: 200px;
+    min-width: 120px;
+    height: 50px;
+    font-size: 18px;
+    /* background-color: #1eaa39; */
+    background-color: #28a745;
+    border: none;       
+  }
+}
+
+@media (max-width: 768px) {
+  h3 {
+    font-size: 22px;
+    font-weight: 599;
+    padding-top: -5px;
+    padding-left: 4.6em;
+  }
+
+  .col-12.col-md-9 {
+    max-width: 75%;
+  }
+
+  .table-info {
+    width: 100%;
+    height: 200px; 
+    margin-left: 4.5em;
+  }
+
+  .td-info {
+    font-size: 15px;
+    padding: 20px 20px 20px 10px;
+  }
+
+  .th-info {
+    width: 380px;
+    padding-right: 18px;
+    margin-left: 3em;
+    font-size: 14px;
+  }
+
+  .btn-edit {
+    font-size: 14px;
+    padding: 7px 22px;
+    width: 19%; 
+    height: 42px;
+    margin-top: -62PX;
+    margin-left: 94%;
+  }
+
+  
+  .btn-delete {
+    font-size: 15px;
+    padding: 10px 20px; 
+    width: 50%; 
+    max-width: 400px; 
+    height: 50px;
+    margin: 2.5em 15em; 
+  }
+
+  .customer-info {
+    color: #f00;
     text-align: center;
-    background-color: #1eaa39;
-    margin-top: 27em;
+    font-size: 14px; 
   }
 
-  footer p {
-    font-size: 26px;
+  .login-link {
+    font-size: 14px;
+}
+
+
+.modal-dialog {
+  max-width: 400px;
+  top: 60px;
+  right: 90px;
+}
+
+.modal-body .form-label {
+  font-size: 16px;
+  margin-top: -5px;
+}
+
+/* 全体の文字と幅の大きさ */
+.modal-body .form-control {
+  font-size: 15px;  
+  padding: 6px;  
+}
+
+
+.modal-footer .btn-left {
+  max-width: 147px;
+  height: 48px;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.modal-footer .btn-right {
+  max-width: 180px;
+  height: 48px;
+  font-size: 16px;
+}
+
+}
+
+@media (max-width: 576px){
+  h3 {
+    font-size: 19px;
+    margin: 0 -19px 0px -28px;
+    padding-left: 5.3em;
   }
-} */
+
+  .table-info {
+    width: 100%;
+    height: 200px; 
+    margin-left: 4.3em;
+  }
+
+  .td-info {
+    font-size: 13px;
+    font-weight: 599;
+    width: 185px;
+    padding: 22px 8px;
+    /* padding: 8px 10px 22px 10px;  */
+  }
+
+  .th-info {
+    width: 345px;
+
+    padding-left: 7px;
+    font-size: 14px;
+    
+  }
+
+  .btn-edit {
+    font-size: 13px;
+   
+    margin-top: -66PX;
+    width: 22%;
+    height: 40px;
+    margin-left: 93%;
+  }
+
+  
+  .btn-delete {
+    font-size: 14px;   
+    width: 60%;
+
+    margin: 2.5em 11em;
+  }
+
+  .customer-info {
+    color: #f00;
+   
+    font-size: 13px; 
+  }
+
+  .login-link {
+    font-size: 13px;
+}
+
+.modal-dialog {
+  max-width: 300px; 
+  top: 75px;
+  left: 3px;
+}
+
+.modal-body .form-label {
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.modal-body .form-control {
+  font-size: 14px; 
+  padding: 4px;  
+}
+
+.modal-footer .btn-left {
+  max-width: 100px;
+  height: 42px;
+  font-size: 14px;
+}
+
+.modal-footer .btn-right {
+  max-width: 127px;
+  height: 42px;
+  font-size: 14px;
+}
+
+
+
+}

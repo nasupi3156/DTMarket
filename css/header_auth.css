@@ -10,19 +10,26 @@ a {
   text-decoration: none;
 }
 
-
 .navbar {
-  padding: 24px 35px 23px 55px;
+  padding: 24px 35px 23px 40px;
 }
 
 .navbar .navbar-brand {
   font-size: 32px;
   font-weight: 600;
+  margin-top: -5px;
+}
+
+.navbar-nav {
+  display: flex !important; 
+  /* 強制的にフレックスボックスを適用 */
+  flex-direction: row; 
+  /* 横並びにする */
 }
 
 .nav-item {
   font-size: 20px;
-  padding-left: 10px;
+  padding-left: 25px;
   font-weight: 540;
 }
 
@@ -32,6 +39,50 @@ a {
   font-weight: normal;
 }
 
+@media (max-width: 992px) {
+
+  .navbar {
+    padding: 20px 22px 20px 22px;
+  }
+
+  .navbar .navbar-brand {
+    font-size: 31px;
+  }
+
+
+  .nav-item {
+    font-size: 20px;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar .navbar-brand {
+    font-size: 28px;
+  }
+
+  .navbar {
+    padding: 20px 15px 20px 15px;
+
+  }
+
+  .nav-item {
+    font-size: 19px;
+    padding-left: 15px;
+  }
+  
+}
+
+@media (max-width: 575px) {
+  .navbar .navbar-brand {
+    font-size: 26px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+    padding-left: 12px;
+  }
+}
 
 
 

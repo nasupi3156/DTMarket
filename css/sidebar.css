@@ -12,7 +12,7 @@
 
 .list-ctg {
   font-size: 22px;
-  font-weight: 550;
+  font-weight: 600;
   padding-top: 11px;
   padding-left: 42px;
   margin-bottom: 15px;
@@ -36,4 +36,105 @@
 .list-info:hover {
   color: #6a6a6a;
   text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+  .list-ctg {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .list-info {
+    font-size: 17px;
+  }
+  
+}
+
+@media (max-width: 992px) {
+  .list-group {
+    margin-left: -15px;
+  }
+
+  .list-ctg {
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .list-info {  
+    font-size: 16px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .list-group {
+    display: none; 
+  }
+}
+
+@media (max-width: 576px){
+
+  .list-group {
+    margin-top: -10px;
+    margin-left: -38px;
+  }
+
+  .underline-text {
+    padding-right: 2px;
+    padding-bottom: 12px;
+  }
+
+  .list-ctg {
+    font-size: 16px;
+    font-weight: 600; 
+  }
+
+  .list-info {
+    font-size: 13px;
+    
+  }
+}
+
+.dropdown-custom {
+  margin-top: -18px; 
+  margin-bottom: 24px;
+}
+
+
+/* ボタンの外観を調整 */
+#dropdownMenuButton {
+  width: 100%;
+  background-color: #ffffff; 
+  color: #333;
+  padding: 10px 20px; 
+  
+  border-radius: 3px; 
+}
+
+/* ドロップダウンメニューコンテナ */
+.dropdown-menu {
+  width: 96.3%; 
+  background-color: #ffffff; 
+  color: #333;
+  padding: 5px 5px;
+
+}
+
+/* ドロップダウン項目のスタイル */
+.dropdown-item {  
+  letter-spacing: 0.05rem;
+}
+
+
+.dropdown-item:hover {
+  
+  background-color: #008000; 
+  color: #ffffff; 
+}
+
+@media (max-width: 576px) {
+  #dropdownMenuButton {
+    color: #333;
+    padding: 6px; 
+  }
 }

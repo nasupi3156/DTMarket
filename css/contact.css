@@ -1,13 +1,20 @@
 @charset "UTF-8";
 
 .Entire {
-  padding-top: 3px;
-  margin-bottom: 2.8em;
+  width: 100%; 
+  max-width: 850px; 
+  margin: 0 25px;
+}
+
+
+.border {
+  background-color: #f8f9fa; 
+  line-height: 2;
 }
 
 .contact h3 {
    font-size: 26px;
-   margin: 8px 0;
+   text-align: center;
 }
 
 .contact_name {
@@ -19,7 +26,7 @@
 }
 
 .contact_family {
-  width: 320px; 
+  width: 45%;
   margin: 0 8px 0 0;
   padding-left: 5px;
 }
@@ -30,7 +37,7 @@
 }
 
 .contact_first {
-  width: 320px; 
+  width: 45%;
   padding-left: 5px;
 }
 
@@ -44,7 +51,7 @@
 
 .contact_email_form {
   padding-left: 5px;
-  width: 652.7px;
+  width: 91.5%;
 }
 
 .contacts {
@@ -57,8 +64,7 @@
 
 .contact_form {
   padding: 3px 0 0 8px;
-
-  width: 652.7px;
+  width: 91.5%;
 }
 
 input[type="text"]:focus,
@@ -70,16 +76,10 @@ textarea:focus  {
   /* デフォルトの青枠線を削除 */
 }
 
-
-.border {
-  background-color: #f8f9fa; 
-  line-height: 2;
-  max-width: 980px;
-}
-
 .btn-custom {
   margin-top: 20px;
-  padding: 15px;
+  margin-left: 22px;
+  padding: 8px;
   width: 180px;
   height: 50px;
 }
@@ -99,4 +99,229 @@ footer {
 
 footer p {
   font-size: 26px;
+}
+
+@media (max-width: 1200px) {
+  .Entire {
+    width: 100%;
+    max-width: 690px; 
+    margin: 0 12px;
+  }
+
+  .contact h3 {
+    font-size: 24px;
+    margin: 6px 0;
+
+ }
+
+ .contact_name_data {
+  margin-left: 50px;
+ }
+
+ .contact_family {
+  width: 45%;
+  
+}
+
+
+
+.contact_first {
+  width: 45%; 
+
+  padding-left: 5px;
+}
+
+.contact_email_data {
+  margin-left: 50px;
+}
+
+.contact_email_form {
+  width: 92%;
+}
+
+.contact_data {
+  margin-left: 50px;
+}
+
+.contact_form {
+  width: 92%;
+  height: 160px;
+}
+
+.btn-custom {
+  margin-top: 20px;
+  margin-left: 30px;
+  padding: 12px;
+  width: 180px;
+  height: 48px;
+}
+ 
+
+}
+
+@media (max-width: 992px) {
+  .Entire {
+    width: 100%; 
+    max-width: 545px; 
+    margin: 0 12px;
+  }
+
+  .contact h3 {
+    font-size: 22px;
+    padding-left: 12px;
+    margin: 5px 0;
+ }
+
+ .contact_name_data {
+  margin-left: 30px;
+  margin-top: -5px;
+}
+
+.contact_name {
+  font-size: 15px;
+}
+
+ .contact_family {
+  width: 45%; 
+  height: 30px;
+  margin: 0 8px 0 0;
+  padding-left: 5px;
+}
+
+.contact_first {
+  width: 45%; 
+  height: 30px;
+  padding-left: 5px;
+}
+
+.contact_email_data {
+  margin-left: 30px;
+}
+
+.contact_email {
+  font-size: 15px;
+}
+
+.contact_email_form {
+  height: 32px;
+  width: 92%;
+}
+
+.contact_data {
+  margin-left: 30px;
+}
+
+.contacts {
+  font-size: 15px;
+}
+
+.contact_form {
+  width: 92%;
+  height: 130px;
+}
+
+.btn-custom {
+  padding: 5px;
+  width: 165px;
+  height: 42px;
+  margin-top: 14px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+  .Entire {      
+      width: calc(100% - 64px); 
+      /* 左右の外側の要素幅を32pxずつ開ける */
+      /* padding: 0 32px;  */
+      /* 左右の内側の要素幅を開ける */
+      max-width: 700px; 
+      margin: 0 auto; 
+  }
+
+  .contact h3 {
+    font-size: 22px;
+    padding-left: 12px;
+    margin: 6px 0;
+ }
+
+  .contact_family {
+
+    height: 33px;
+    margin: 0 8px 0 0;
+    padding-left: 5px;
+  }
+  
+  .contact_first {
+
+    height: 33px;
+    padding-left: 5px;
+  }
+
+  .contact_email_data {
+    margin-left: 30px;
+  }
+  
+  .contact_email_form {
+  }
+  
+  .contact_data {
+    margin-left: 30px;
+  }
+  
+  .contact_form {
+    width: 92%;
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {  
+
+  .contact h3 {
+    font-size: 21px;
+    padding-left: 12px;
+    margin: 6px 0;
+ }
+
+  .contact_name {
+    font-size: 14px;
+  }
+
+  .contact_email {
+    font-size: 14px;
+  }
+
+  .contacts {
+    font-size: 14px;
+  }
+
+  .contact_family {
+ 
+    height: 28px;
+ 
+  }
+  
+  .contact_first {
+ 
+    height: 28px;
+    
+  }
+
+  .contact_email_form {
+    width: 94.2%;
+    height: 30px;
+  }
+
+  .contact_form {
+    width: 94.2%;
+    height: 135px;
+  }
+
+  .btn-custom {
+    padding: 8px;
+    width: 155px;
+    height: 42px;
+  }
+
 }

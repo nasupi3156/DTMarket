@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 * {
   margin: 0;
   padding: 0;
@@ -14,14 +16,16 @@ body {
 }
 
 .form_section {
+  width: 80%;
+  max-width: 800px; 
+  min-width: 300px;
+  margin: 0 auto;
   background-color: #fff;
-  margin: 10px 300px;
 }
 
 .form_section h1 {
   font-size: 28px;
-  padding: 38px 2px 3px;
-  padding-right: 18px;
+  padding: 38px 2px 5px 8px;
   font-weight: 545;
   margin: 36px 0 20px;
   text-align: center;
@@ -144,7 +148,8 @@ input[type="password"] {
 }
 
 input[type="submit"] {
-  width: 575px;
+  max-width: 590px;
+  width: 100%;
   height: 60px;
   margin: 0 auto;
   display: block;
@@ -167,7 +172,145 @@ input[type="submit"]:hover {
 
 /* error */
 .input_error {
-  /* border: 2px solid #ffc1c1 !important; */
   background-color: #ffd6d6;
-  /* outline: none !important; */
+}
+
+@media (max-width: 922px) {
+
+  .form_section {
+    width: 80%;
+    max-width: 800px; 
+    padding-left: 10px;
+  }
+
+  .form_section h1 {
+    font-size: 27px;
+  }
+
+  .regist_name {
+    font-size: 17px;
+    width: 140px;
+  }
+
+  .regist_data input[type="text"] {
+    max-width: 180px;
+  }
+
+  .regist_address input[type="text"] {
+    width: 365px;
+  }
+
+  input[type="submit"] {
+    max-width: 520px;
+    font-size: 21px;
+    margin-top: -1px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .red {
+    font-size: 14px;
+  }
+  
+  .form_section h1 {
+    font-size: 25px;
+  }
+
+  .form_section {
+    width: 80%;
+    max-width: 800px; 
+    padding-left: 10px;
+   
+  }
+
+  .regist_name {
+    font-size: 15px;
+    width: 111px;
+    display: block;
+  }
+
+  .regist_data input[type="text"] {
+    padding: 4px;
+    max-width: 120px;
+    height: 26px;
+  }
+
+  .sex-radio {
+    width: 17px;
+    height: 18px;
+  }
+
+  label {
+    margin-left: 3px;
+    font-size: 16px;
+  }
+
+  .regist_data select {
+    height: 24px;
+  }
+
+  .regist_zip input[type="text"] {
+    padding: 5px;
+    width: 65px;
+    height: 26px;
+  }
+
+  input[name="address_search"] {
+    font-size: 12px;
+    padding: 5px;
+    margin-left: 2px;
+    width: 110px;
+  }
+  
+  .regist_address input[type="text"] {
+    padding: 5px;
+    width: 255px;
+    height: 30px;
+  }
+ 
+.regist_email input[type="text"] {
+  padding: 5px;
+  max-width: 225px;
+  height: 30px;
+}
+
+.regist_tel input[type="text"] {
+  display: inline-block;
+  width: 100px;
+  height: 32px;
+}
+
+.tel-input {
+  width: 100px;
+  height: 28px;
+}
+
+.regist_data input[type="password"] {
+  max-width: 150px;
+  height: 30px;
+}
+
+input[type="submit"] {
+  max-width: 400px;  
+  font-size: 20px;
+  margin-top: -1px;
+}  
+}
+
+@media (max-width: 575px) {
+  .red {
+    font-size: 13px;
+  }
+
+  .form_section {
+    padding-right: 5px;
+  }
+
+  input[type="submit"] {
+    max-width: 370px;
+    margin-right: 10px;
+    height: 57px;   
+    font-size: 20px;
+  }
 }
