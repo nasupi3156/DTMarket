@@ -170,7 +170,13 @@ list($sumNum, $sumPrice) = $cart->getItemAndSumPrice($customer_no);
 $dataArr = $cart->getCartData($customer_no);
 
 // 表示用に計算
-$shipping_fee = calculateShippingFee($sumPrice);
+if ($sumNum > 0) {
+  $shipping_fee = calculateShippingFee($sumPrice);
+} else {
+  $shipping_fee = 0;
+  $sumPrice = 0;
+}
+
 
 $context = [
   'family_name' => !empty($_SESSION['family_name']) ? $_SESSION['family_name'] : 'ゲスト',

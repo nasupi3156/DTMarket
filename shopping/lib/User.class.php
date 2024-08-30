@@ -161,7 +161,7 @@ public function insertUserPassword($userId, $password)
     $stmt = $this->db->prepare($sql);
     $stmt -> bindParam(':email', $email, \PDO::PARAM_STR);
     $stmt -> execute();
-    // 単一の列の値を取得する、fetchColumn()を使用してis_deleted列の値を取得し、その値が1であればtrueを返す
+    // 単一の列の値を取得する、fetchColumn()を使用してis_列の値を取得し、その値が1であればtrueを返す
     return $stmt->fetchColumn() == 1;
   }
 

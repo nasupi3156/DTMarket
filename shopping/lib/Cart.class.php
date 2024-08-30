@@ -94,16 +94,17 @@ class Cart
   }
   
   // 再購入
-  public function addItemCart($customer_no, $item_id, $quantity, $qty)
+  public function addItemCart($customer_no, $item_id, $qty)
   {
     // カートに同じ商品が既に存在するか確認
     $table = 'carts';
     $where =  'customer_no = ? AND item_id = ? AND is_deleted = 0';
     $arrVal = [$customer_no, $item_id];
+    // テーブルでアイテムがすでにカートに存在するかどうかを確認, // * すべての列を選択
     $cartItem = $this->db->select($table, '*', $where, $arrVal);
-
+    
     if ($cartItem) {
-    // 既に存在する場合は数量を更新
+      // 既に存在する場合は数量を更新
       $newQuantity = $cartItem[0]['num'] + $qty; // 数量を加算
       $insData = ['num' => $newQuantity];
       $where =  'customer_no = ? AND item_id = ?';
@@ -114,7 +115,7 @@ class Cart
       $insData = [
         'customer_no' => $customer_no,
         'item_id' => $item_id,
-        'num' => $quantity,
+        'num' => $qty,
       ];
       return $this->db->insert($table, $insData);
     }

@@ -39,11 +39,35 @@ $currentCtg = $_GET['ctg_id'] ?? '';
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 
 $ctg_id = isset($_GET['ctg_id']) && preg_match('/^[0-9]+$/' , $_GET['ctg_id']) ? (int)$_GET['ctg_id'] : '';
-$order = (isset($_GET['order']) && $_GET['order'] == 'asc') ? 'price ASC' : 'price DESC';
+// $order = (isset($_GET['order']) && $_GET['order'] == 'asc') ? 'price ASC' : 'price DESC';
+
+// $order = (isset($_GET['order'])&& $_GET['order'] == 'asc') ? 'name ASC' : 'name DESC';
 
 $page = isset($_GET['page']) && preg_match('/^[0-9]+$/', $_GET['page']) ? (int)$_GET['page'] : 1;
 
-  
+$order = 'price ASC';
+// デフォルト値
+
+if (isset($_GET['order'])) {
+  switch ($_GET['order']) {
+    case 'price ASC':
+      $order = 'price ASC';
+      break;
+    case 'price DESC':
+      $order = 'price DESC';
+      break;
+    case 'item_name ASC';
+      $order = 'item_name ASC';
+      break;
+    case 'item_name DESC';
+      $order = 'item_name DESC';
+      break;
+    default:
+      $order = 'price ASC'; 
+      // デフォルト
+      break;
+  }
+}
 
 $totalItemCount = $itm->getTotalItemCount($ctg_id);
  
