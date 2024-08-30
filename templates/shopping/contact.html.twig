@@ -11,6 +11,7 @@
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/header.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/sidebar.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/contact.css" rel="stylesheet" type="text/css" />
+    <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/footer.css" rel="stylesheet" type="text/css" />
 
     <script src="{{constant('shopping\\Bootstrap::APP_URL')}}js/logout.js"></script>
     <title>profile</title>
@@ -25,9 +26,9 @@
         
         {% include 'sidebar.html.twig' %}
         
-         <div class="col-7 Entire">
+         <div class="col-12 col-md-9 Entire">
           <div class="border p-4">
-            <div class="text-center contact mb-4">
+            <div class="contact mb-4">
               <h3>お問い合わせ</h3>
             </div>
               <form action="contact.php" method="post">

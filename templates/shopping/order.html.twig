@@ -11,6 +11,7 @@
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/header.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/sidebar.css" rel="stylesheet" type="text/css" />
     <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/order.css" rel="stylesheet" type="text/css" />
+    <link href="{{constant('shopping\\Bootstrap::APP_URL')}}css/footer.css" rel="stylesheet" type="text/css" />
 
     <script src="{{constant('shopping\\Bootstrap::APP_URL')}}js/logout.js"></script>
 
@@ -29,8 +30,7 @@
 
         {% include 'sidebar.html.twig' %}
        
-          <!-- 右側のコンテンツ -->
-        <div class="col-8">
+        <div class="col-12 col-md-8">
           {% if loggedIn %}
           {% if groupOrderHistory | length > 0 %}
           {# 1つ以上の要素が存在、何らかの注文履歴データが存在している場合 #}
@@ -56,18 +56,18 @@
                   {% for order in data.orders %}
                   {# groupOrderHistoryのdataとその中のordersのアイテム情報を組み合わせ多次元配列 #}
                     <tr>
-                      <td>{{ order.item_id }}</td>
-                      <td>{{ order.item_name}}</td>
-                      <td><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{ order.image }}" alt="{{ order.item_name }}"></td>
-                      <td>{{ order.quantity }}</td>
-                      <td>&yen;{{ order.price }}</td>
+                      <td class="item_id">{{ order.item_id }}</td>
+                      <td class="item_name">{{ order.item_name}}</td>
+                      <td class="image"><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{ order.image }}"  alt="{{ order.item_name }}" class="image"></td>
+                      <td class="quantity">{{ order.quantity }}</td>
+                      <td class="price">&yen;{{ order.price }}</td>
                       <td>
                         <form action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}cart.php" method="post">
                           <input type="hidden" name="item_id" value="{{ order.item_id }}">
                           <input type="hidden" name="quantity" value="{{ order.quantity }}">
                           <input type="hidden" name="price" value="{{ order.price }}">
                           <input type="hidden" name="reorder" value="true">
-                          <button type="submit" class="btn btn-primary reorder">再購入</button>
+                          <button type="submit" class="btn btn-primary repurchase">再購入</button>
                         </form>
                       </td>
                     </tr>
@@ -80,11 +80,11 @@
           {% endfor %}
           {# 注文履歴ループ終了  #}
           {% else %}
-            <p style="color: #0C6DFD;  font-size: 20px; padding: 25px 0;">購入履歴はありません。</p>
+            <p class="no-history">購入履歴はありません</p>
           {% endif %} 
           {# 購入履歴チェック終了 #}
           {% else %}
-            <p style="color: #f00; padding: 20px 0;">注文履歴を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
+            <p class="customer-info">注文履歴を表示するには、<a href="login.php"  class="login-link">新規会員登録またはログイン</a>してください。</p>
           {% endif %}
           {# ログインチェック終了  #}
           </div>

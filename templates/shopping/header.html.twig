@@ -1,17 +1,36 @@
 
 <header> 
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php">DT-Health </a>
+
+      <form class="search-form d-md-none ms-auto" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
+        <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
+      </form>
+
+      {# ハンバーガー #}
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+       <li class="nav-item">
+         <a class="nav-link cart d-md-none" href="cart.php">
+           <i class="bi bi-cart position-relative" style="font-size: 26px;">
+             <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
+              {# rounded-pillからrounded-circle #}
+              {{ sumNum == 0 ? '0' : sumNum }} 
+             </span>
+           </i> 
+         </a>
+       </li>
+    
+      {# 閉じる開く #}
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav ms-auto my-2 my-lg-2 d-flex align-items-center">
         {# ms-auto : 要素を右に寄せる #}
-          <form class="d-flex search-form" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
+          <form class="d-flex search-form d-md-flex d-none" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
             <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
-            <button class="btn btn-outline-success" type="submit">search</button>
+            {# <button class="btn btn-outline-success" type="submit">search</button> #}
           </form>
           {# 検索結果を表示、サジェスト結果をここに表示 #}
           <div id="suggestions"></div>
@@ -32,7 +51,7 @@
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link cart" href="cart.php">
+              <a class="nav-link cart d-md-flex d-none" href="cart.php">
                 <i class="bi bi-cart position-relative" style="font-size: 26px;">
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
                     {# rounded-pillからrounded-circle #}
@@ -44,9 +63,9 @@
             </li>
           <li class="nav-item login-out">
             {% if isUserLogin %}
-              <a id="logoutButton" class="nav-link click" href="./login.php?logout=1" onclick="return logoutConfirm();">ログアウト</a>
+              <a id="logoutButton" class="nav-link click logout-in" href="./login.php?logout=1" onclick="return logoutConfirm();">ログアウト</a>
             {% else %}
-              <a class="nav-link click" href="./login.php">ログイン</a>
+              <a class="nav-link click logout-in" href="./login.php">ログイン</a>
             {% endif %}
           </li>
           {# ログアウトボタンに onclick イベントを追加し、JavaScriptの関数logoutConfirm()を呼び出す。 #}

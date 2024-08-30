@@ -23,7 +23,7 @@
     <section>
       <div class="container">
         <div class="row cart-f">
-          <div class="col-md-8">
+          <div class="col-12 col-md-7 cart-info">
            <!-- カート情報 -->
             <table class="table table-hover" >
               <thead>
@@ -44,13 +44,13 @@
                       <img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}" />
                     </td>
                   <td>
-                    <p>{{value.quantity}}</p>
+                    <p class="quantity">{{value.quantity}}</p>
                   </td>
                   <td>
-                    <p>&yen;{{(value.price)|number_format(0, '.', ',')}}</p>
+                    <p class="price">&yen;{{(value.price)|number_format(0, '.', ',')}}</p>
                   </td>
                   <td>
-                    <select class="" onchange="qtySelect({{ value.crt_id }}, this.value)">
+                    <select class="qty-select" onchange="qtySelect({{ value.crt_id }}, this.value)">
                     {# onchange : 数値を選択、javascriptのqtyChange関数呼び出される #}
                       {% for num in 1..10 %}
                       <option value="{{ num }}" {% if num == value.quantity %}selected{% endif %}>{{ num }}</option>
@@ -59,7 +59,7 @@
                     {# 数量 #}
                   </td>
                   <td>
-                    <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php?crt_id={{value.crt_id}}">削除
+                    <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php?crt_id={{value.crt_id}}" class="delete">削除
                     </a>
                   </td>
                 </tr>
@@ -73,15 +73,15 @@
           </div>
           {# col-md-8 #}
           
-          <div class="col-md-3 cart_list">
+          <div class="col-12 col-md-5 cart-list">
           
-            <table>
+            <table class="item-total">
               <tr>
-                <th>カート内商品数 : </td>
-                <td class="cart_qty">{{ sumNum == 0 ? '0' : sumNum }}個</td>
+                <th class="item-qty">カート内商品数 : </td>
+                <td class="cart-qty">{{ sumNum == 0 ? '0' : sumNum }}個</td>
                 </tr>
               <tr>
-                  <div class="cart_price">
+                  <div class="cart-price">
                     <th>合計金額 :</th>
                     <td>&yen;{{sumPrice|number_format(0, '.', ',')}}</td>
                   </div>

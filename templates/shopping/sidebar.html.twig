@@ -1,5 +1,6 @@
 
- <div class="col-3">
+ {# <div class="col-3"> #}
+ <div class="col-12 col-md-3">
   <div class="list-group">
     <p class="list-ctg"><span class="underline-text">カテゴリー</span></p>
 
@@ -8,4 +9,17 @@
     <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order_detail.php" class="list-info">注文履歴詳細</a>
     <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}contact.php" class="list-info">お問い合わせ</a>
   </div>
+</div>
+
+{# ドロップダウンメニュー #}
+<div class="dropdown dropdown-custom d-block d-md-none">
+ <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+    カテゴリーを選択
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}profile.php">お客様情報</a></li>
+    <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order.php">注文履歴</a></li>
+    <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order_detail.php">注文履歴詳細</a></li>
+    <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}contact.php">お問い合わせ</a></li>
+  </ul>
 </div>

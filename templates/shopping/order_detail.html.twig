@@ -34,7 +34,7 @@
                   <p class="order-date">ご注文日 : {{ order.purchase_date }}</p>
                     <div class="order-group mb-4">
                       <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-12 col-md-6">
                           <table class="table item_data" >
                             <thead> 
                               <tr>
@@ -60,7 +60,7 @@
                           </table>
                         </div>
                         {# col-6 #}
-                        <div class="col-mb-6 cart_confirm">
+                        <div class="col-12 col-mb-6 cart_confirm">
                           <h5>お届け先</h5>
                             <table class="cart_information">
                               <tr>
@@ -114,11 +114,11 @@
                               {% endfor %}
 
                             {% else %}
-                              <p style="color: #0C6DFD; font-size: 20px; padding: 25px 0;">注文履歴はありません。</p>
+                              <p class="no-history">購入履歴はありません</p>
                             {% endif %}
 
                             {% else %}
-                              <p style="color: #f00; padding: 20px 0;">注文履歴詳細を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
+                              <p class="customer-info">注文履歴詳細を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
                           {% endif %}
                         {# </div>             #}
                       </div>

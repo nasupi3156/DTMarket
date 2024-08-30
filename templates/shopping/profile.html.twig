@@ -26,7 +26,7 @@
 
           {% include 'sidebar.html.twig' %}
 
-        <div class="col-7 customer_info">
+        <div class="col-12 col-md-9 customer_info">
           {% if isUserLogin %}
             <h3>お客様情報</h3>
             {# modal btn #}
@@ -68,15 +68,15 @@
     
               <form method="post" action="profile.php" id="delete">
               
-                <button type="button" class="btn btn-custom" onclick="confirmWithDelete()">退会</button>
+                <button type="button" class="btn btn-delete" onclick="confirmWithDelete()">退会</button>
                 <input type="hidden" name="delete" value="1">
               </form>
               
               {% else %}
-                <p style="color: #f00; padding: 20px 0;">お客様情報を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>  
+                <p class="customer-info">お客様情報を表示するには、<a href="login.php" class="login-link">新規会員登録またはログイン</a>してください。</p>  
               {% endif %}
             </div>
-            {# col-7 #}
+            {# col-9 #}
           </div>
         </div>
       </section>

@@ -81,9 +81,12 @@
       <div class="item_order">
         <div class="order">
           <select id="sortOrder">
-            <option value="asc" {% if order == 'price ASC' %}selected{% endif %}>安い価格</option>
+            <option value="price ASC" {% if order == 'price ASC' %}selected{% endif %}>安い価格</option>
             {# valueのascなどはgetリクエストの一部としてサーバーに送信されサーバーはこの値を読み取り、クエリ結果をどのように並べ替えるかを決める   #}
-            <option value="desc" {% if order == 'price DESC' %}selected{% endif %}>高い価格</option>
+            <option value="price DESC" {% if order == 'price DESC' %}selected{% endif %}>高い価格</option>
+            <option value="item_name ASC" {% if order == 'item_name ASC' %}selected
+            {% endif %}>アルファベット(A-Z)</option>
+            <option value="item_name DESC" {% if order == 'item_name DESC' %}selected{% endif %}>アルファベット(Z-A)</option> 
           </select>
         </div>
       </div>
@@ -121,7 +124,7 @@
         <ul class="pagination">
           {% for page in 1..totalPages %}
             <li class="page-item {% if page == currentPage %}active{% endif %}">
-              <a class="page-link" href="?query={{ query }}&ctg_id={{ ctg_id }}&page={{ page }}&order={{ order == 'price ASC' ? 'asc' : 'desc' }}">{{ page }}</a>
+              <a class="page-link" href="?query={{ query }}&ctg_id={{ ctg_id }}&page={{ page }}&order={{ order }}">{{ page }}</a>
             </li>
           {% endfor %}
         </ul>
@@ -167,6 +170,7 @@
       }
     }
    </script>
+
 
 </body>
 </html> 
