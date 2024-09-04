@@ -281,13 +281,13 @@ td {
 
 .modal-body .form-label {
   font-size: 1.25rem;
-  padding-left: 1.1rem;
+  padding-left: 1rem;
   padding-top: 0.5rem;
 }
 
 .modal-body .form-control {
   font-size: 17px;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   margin: 0;
   width: 460px;
 }

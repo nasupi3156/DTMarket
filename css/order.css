@@ -149,7 +149,7 @@ td {
 }
 
 footer {
-  margin-top: 13.5em;
+  margin-top: 21em;
 }
 
 @media (max-width: 1200px) {
@@ -261,6 +261,26 @@ footer {
     font-size: 12px;    
     width: 75%;        
   }
+
+  .customer-info {
+    color: #f00;
+    padding-left: 15px;
+    font-size: 15px; 
+  }
+
+  .login-link {
+    font-size: 14px;
+  }
+
+  .no-history {
+    color: #0C6DFD;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  footer {
+    margin-top: 22.2em;
+  }
   
 }
 
@@ -287,5 +307,9 @@ footer {
   .repurchase {
     font-size: 12px;
     width: 92%;         
+  }
+
+  footer {
+    margin-top: 23.5em;
   }
 }

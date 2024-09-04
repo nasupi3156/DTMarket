@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .container {
   max-width: 100%;
 }
@@ -177,6 +183,10 @@ td {
 
 .login-link {
   text-decoration: underline;
+}
+
+footer {
+  margin-top: 21em;
 }
 
 @media (max-width: 1200px) {
@@ -383,6 +393,27 @@ td {
     padding-left: 50px;
   }
 
+   .customer-info {
+    color: #f00;
+    padding-left: 15px;
+    font-size: 15px; 
+  }
+
+  .login-link {
+    font-size: 14px;
+  }
+
+  .no-history {
+    color: #0C6DFD;
+    font-size: 18px;
+    text-align: center;
+    /* padding-left: 14em; */
+  }
+
+  footer {
+    margin-top: 21.3em;
+  }
+
 }
 
 @media (max-width: 576px) {
@@ -396,6 +427,10 @@ td {
 
   .order-date {
     font-size: 15px;
+  }
+
+  footer {
+    margin-top: 22.6em;
   }
 }
 
