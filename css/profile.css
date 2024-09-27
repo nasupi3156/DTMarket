@@ -387,7 +387,6 @@ footer {
   .customer-info {
     color: #f00;
     padding-left: 10px;
-    /* text-align: center; */
     font-size: 15px; 
   }
 
@@ -519,7 +518,5 @@ footer {
   height: 42px;
   font-size: 14px;
 }
-
-
 
 }

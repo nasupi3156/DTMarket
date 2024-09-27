@@ -30,10 +30,8 @@ p {
   box-shadow: 0 2px 4px #a3a3a3;
 }
 
-
-
 .login_inner {
-  margin: 100px 0px;
+  margin: 45px 0px;
   height: 20%;
   line-height: 2.6;
   padding: 12px 20px;
@@ -161,4 +159,10 @@ input[type="password"]:focus {
   width: 240px;
 }
 
+}
+
+@media (max-width: 576px) {
+  .login h1 {
+    font-size: 2.1em;
+}
 }

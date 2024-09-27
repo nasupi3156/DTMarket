@@ -174,7 +174,7 @@ body {
   width: 250px;
   height: 45px;
   /* footerの上下幅 */
-  margin-bottom: 24.5em;
+  margin-bottom: 15em;
 }
 
 
@@ -240,7 +240,7 @@ body {
  
   max-width: 220px; 
   height: 40px;
-  padding: 0 15px;
+  margin-bottom: 17.1em;
 }
 
 .detail_back,
@@ -311,7 +311,7 @@ body {
   .detail_cart {
     max-width: 220px; 
     height: 40px;
-    padding: 0 15px;
+    margin-bottom: 10em;
   }
 }
 

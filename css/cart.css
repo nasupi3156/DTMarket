@@ -72,13 +72,15 @@ html {
   border: 1px solid #333;
   padding: 25px 23px;
   
-  margin-bottom: 16.8em;
   margin-left: 46px;
   text-align: center;
   /* width: 420px; */
   width: 30%;
   /* width: 32%; */
   height: 22.6em;
+
+  /* footer */
+  margin-bottom: 16.8em;
 }
 
 .cart-list p {
@@ -349,29 +351,31 @@ td {
     width: 92%;
   }
 
+  .not-item {
+    font-size: 18px;
+    padding-top: 10px;
+  }
 
   .cart-list {
     padding: 23px 23px;
-  
     margin-left: 45px;
-
     width: 85%;
-    
     height: 17.8em;
+    margin-top: 30px;
+    
+    /* footer */
+    margin-bottom: 5em;
   }
 
 
   .cart-list th {  
-   font-size: 16px;
- 
+   font-size: 17px;
    padding-left: 4em;
-   
 
   }
 
   .cart-list td {
-    font-size: 16px;
-    
+    font-size: 17px;
   }
 
   .submit {    
@@ -386,8 +390,23 @@ td {
     margin-right: 8em;
     height: 45px;  
   }
-  
 
 }
 
+@media (max-width: 576px) {
 
+  .cart-list {
+    padding: 25px 23px;   
+    margin-left: 46px;
+    margin-top: 30px;
+
+    /* footer */
+    margin-bottom: 5em;
+  }
+  
+ .not-item {
+  font-size: 18px;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+}
