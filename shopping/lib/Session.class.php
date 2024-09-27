@@ -27,7 +27,7 @@ class Session
     // セッションIDがある(過去にショッピングカートに来たことがある)
     $customer_no = $this->selectSession();
     if ($customer_no !== false) {
-      // ユーザーのセッション情報を保持します。
+      // ユーザーのセッション情報を保持
       $_SESSION['customer_no'] = $customer_no;
     } else {
      // セッションIDがない(初めてこのサイトに来ている)

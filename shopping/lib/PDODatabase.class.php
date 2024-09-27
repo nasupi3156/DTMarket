@@ -36,13 +36,17 @@ namespace shopping\lib;
       {
         // 接続エラー発生 → PDOExceptionオブジェクトがスローされる → 例外処理をキャッチする
         switch ($db_type) {
-          // データベースに接続する処理
+
           case 'mysql':
-            $dsn = 'mysql:host =' . $db_host . ';dbname=' . $db_name;
+            $db_host = $db_host ?: 'db'; 
+            // ホストが指定されていない場合 'db' を使用
+            
+            $dsn = 'mysql:host=' . $db_host . ';port=3306;dbname=' . $db_name . ';
+            charset=utf8mb4';
+            // portを統一して明示的に指定しないとエラー
             $dbh = new \PDO($dsn, $db_user, $db_pass);
-            // データベース接続 
-            $dbh->query('SET NAMES utf8'); 
-            // 文字コード指定
+            $dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $dbh->query('SET NAMES utf8mb4'); 
             break;
 
           case 'pgsql': // 使わない 
@@ -53,8 +57,8 @@ namespace shopping\lib;
         $dbh->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         return $dbh;
       } catch (\PDOException $e) {
-          var_dump($e->getMessage());
-          // getMessage : PDOでもともと用意
+        error_log("データベース接続に失敗しました: " . $e->getMessage());
+        echo "データベース接続に失敗しました";
           exit();
         }  
           return $dbh;
@@ -74,7 +78,7 @@ namespace shopping\lib;
 
     public function commit()
     {
-      return $this->dbh->commit();
+      return $this->dbh->commit();  
     }
 
     public function rollBack()
@@ -174,7 +178,7 @@ namespace shopping\lib;
       switch ($type) {
         case 'select':
           $columnKey = ($column !== '') ? $column : "*";
-          // 三項演算子
+       
         break;        
    
         case 'count':

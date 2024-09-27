@@ -39,9 +39,6 @@ $currentCtg = $_GET['ctg_id'] ?? '';
 $query = isset($_GET['query']) ? $_GET['query'] : '';
 
 $ctg_id = isset($_GET['ctg_id']) && preg_match('/^[0-9]+$/' , $_GET['ctg_id']) ? (int)$_GET['ctg_id'] : '';
-// $order = (isset($_GET['order']) && $_GET['order'] == 'asc') ? 'price ASC' : 'price DESC';
-
-// $order = (isset($_GET['order'])&& $_GET['order'] == 'asc') ? 'name ASC' : 'name DESC';
 
 $page = isset($_GET['page']) && preg_match('/^[0-9]+$/', $_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -133,7 +130,7 @@ $context = [
   'errorMessage' => $errorMessage,
   
   // session変数を確認し、ログインしてるかどうか確認
-  'isUserLogin' => $ses->isUserLogin()
+  'isUserLogin' => $ses->isUserLogin(),
 ];
 
 $template = $twig->loadTemplate('list.html.twig');
