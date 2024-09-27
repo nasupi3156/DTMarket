@@ -23,8 +23,8 @@ $twig = new \Twig\Environment($loader, [
 
 // 初期化
 $errArr = []; 
-
 $dataArr = [];
+
 
 // セッションからフォームデータを取得
 if (isset($_SESSION['formData'])) {
@@ -38,7 +38,7 @@ if (isset($_SESSION['formData'])) {
   if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['complete'])) {
     $dataArr = $_SESSION['formData'];
 
-    // セッションからパスワードを取得(usersとuser_passwordsを分けたから)
+    // セッションからパスワードを取得(usersとuser_passwordsを分けた)
     $password = $dataArr['password'];
     
     try {

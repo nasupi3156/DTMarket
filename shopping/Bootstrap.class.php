@@ -1,6 +1,4 @@
 <?php
-
-// 設定
  
 namespace shopping;
 
@@ -10,19 +8,28 @@ require_once dirname(__FILE__) . './../vendor/autoload.php';
 
 class Bootstrap
 {
+  /* docker環境を使う場合 */
+  // const DB_HOST = 'db'; 
+  // const APP_DIR = '/var/www/html/'; 
+  // const APP_URL = 'http://localhost:8888/';
+  
+
+  /* local環境を使う場合 */
   const DB_HOST = 'localhost'; 
+  const APP_DIR = '/Applications/MAMP/htdocs/DTMarket/';
+  const APP_URL = 'http://localhost/DTMarket/';
+
+
   const DB_NAME = 'DTshopping_db';
   const DB_USER = 'DTshopping_user';
   const DB_PASS = 'DTshopping_pass';
   const DB_TYPE = 'mysql';
-  // MSLF
-  const APP_DIR = '/Applications/MAMP/htdocs/DTMarket/';
+  
+
   const TEMPLATE_DIR = self::APP_DIR . 'templates/shopping/';
   const CACHE_DIR = false;
-  //const CACHE_DIR = self::APP_DIR . 'templates_c/shopping/';
-  const APP_URL = 'http://localhost/DTMarket/';
-
   const ENTRY_URL = self::APP_URL . 'shopping/';
+  // const CACHE_DIR = self::APP_DIR . 'templates_c/shopping/';
 
   public static function loadClass($class)
   {

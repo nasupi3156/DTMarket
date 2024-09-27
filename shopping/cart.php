@@ -36,8 +36,7 @@ if (isset($_GET['item_id']) && preg_match('/^\d+$/', $_GET['item_id'])) {
   $item_id = $_POST['item_id']; 
 }
 
-// qtySelectはなぜ必要か？数量変更を区別するためにコードの理解とメンテナンスをしやすくする為
-// 数量変更
+// qtySelectはなぜ必要か？数量変更を区別するためとメンテナンスをしやすくする為
 $qtySelect = (isset($_GET['qtySelect']) === true && preg_match('/^\d+$/',$_GET['qtySelect']) === 1) ? $_GET['qtySelect'] : '';
 
 $price = isset($_POST['price']) &&  is_numeric($_POST['price']) ? (float)$_POST['price'] : 0;
