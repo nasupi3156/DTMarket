@@ -7,10 +7,10 @@
   
     {% for value in categories %}
     {% if value.ctg_id != '' %}
-    <li class="{{ currentCtg == value.ctg_id ? 'active' : '' }}">
-    <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php?ctg_id={{ value.ctg_id }}&order={{ order }}"><span class="ctg_name">{{ value.category_name }}</span><span class="ctg_number">({{ value.total_count }})</span></a>
-    </li>
-     {% endif %}
-     {% endfor %}
+      <li class="{{ currentCtg == value.ctg_id ? 'active' : '' }}">
+      <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php?ctg_id={{ value.ctg_id }}&order={{ order }}"><span class="ctg_name">{{ value.category_name }}</span><span class="ctg_number">({{ value.total_count }})</span></a>
+      </li>
+    {% endif %}
+    {% endfor %}
   </ul>
 </div>
