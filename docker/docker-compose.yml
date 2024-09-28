@@ -20,6 +20,8 @@ services:
 
   db:
     image: mysql:5.7
+
+    platform: linux/amd64
  
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}

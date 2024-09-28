@@ -70,7 +70,7 @@ CREATE TABLE carts (
   is_deleted tinyint(1) unsigned not null default 0,	
   primary key( crt_id ),	
   index crt_idx( customer_no, is_deleted ),
-  FOREIGN KEY (item_id) REFERENCES items(item_id),	
+  FOREIGN KEY (item_id) REFERENCES items(item_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE orders (
@@ -102,7 +102,7 @@ CREATE TABLE order_details (
   price INT UNSIGNED NOT NULL,
   is_deleted TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
   FOREIGN KEY (order_id) REFERENCES orders(order_id),
-  FOREIGN KEY (item_id) REFERENCES items(item_id),
+  FOREIGN KEY (item_id) REFERENCES items(item_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 CREATE TABLE contacts (
@@ -154,11 +154,18 @@ CREATE TABLE postcodes (
 
 
 ; mac
-LOAD DATA LOCAL INFILE '/Applications/MAMP/htdocs/DTMarket/DB/postcodes.csv' INTO TABLE `postcodes` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"';
+LOAD DATA LOCAL INFILE '/Applications/MAMP/htdocs/DTMarket/mysql/postcodes.csv'
+INTO TABLE `postcodes`
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES;
 
 ; windows
-LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\DTMarket\\DB\\postcodes.csv' INTO TABLE `postcodes` FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"';
-
+LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\DTMarket\\mysql\\postcodes.csv'
+INTO TABLE `postcodes`
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
 
 
 INSERT INTO category VALUES ( 1, '野菜' );

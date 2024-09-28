@@ -114,9 +114,7 @@ namespace shopping\lib;
         // エラーがあればエラーを返す処理
         $this->catchError($stmt->errorInfo());
       }
-
-        
-      
+            
         // データを保存するために配列を初期化
         $data = [];
         // while : ループ処理、fetchがデータを取得するたびに実行
