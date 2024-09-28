@@ -1,4 +1,6 @@
 # macOS システムファイルを無視
 .DS_Store
 
+.env
+
 /vendor
