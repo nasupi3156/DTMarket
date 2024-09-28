@@ -9,7 +9,7 @@ USE DTshopping_db;
     first_name VARCHAR(20) NOT NULL,
     family_name_kana VARCHAR(20) NOT NULL,
     first_name_kana VARCHAR(20) NOT NULL,
-    sex TINYINT UNSIGNED NOT NULL, 
+    sex TINYINT UNSIGNED NOT NULL,
     year VARCHAR(4) NOT NULL,
     month VARCHAR(2) NOT NULL,
     day VARCHAR(2) NOT NULL,
@@ -58,18 +58,21 @@ CREATE TABLE IF NOT EXISTS items (
   FOREIGN KEY (ctg_id) REFERENCES categories(ctg_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-  -- カート(取引)	
-CREATE TABLE IF NOT EXISTS carts (	
-  crt_id int unsigned not null auto_increment,	
-  customer_no int unsigned not null,	
-  item_id int unsigned not null,	
-  num tinyint(1) unsigned not null default 1,	
+
+-- カート(取引)	
+CREATE TABLE IF NOT EXISTS carts (
+  crt_id int unsigned not null auto_increment,
+  customer_no int unsigned not null,
+  item_id int unsigned not null,
+  num tinyint(1) unsigned not null default 1,
   quantity tinyint(1) unsigned not null default 1,
-  is_deleted tinyint(1) unsigned not null default 0,	
+  is_deleted tinyint(1) unsigned not null default 0,
   primary key( crt_id ),	
   index crt_idx( customer_no, is_deleted ),
-  FOREIGN KEY (item_id) REFERENCES items(item_id),		
+  FOREIGN KEY (item_id) REFERENCES items(item_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
 
 CREATE TABLE IF NOT EXISTS orders (
   order_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -90,6 +93,8 @@ CREATE TABLE IF NOT EXISTS orders (
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
+
+
 CREATE TABLE IF NOT EXISTS order_details (
   detail_id INT AUTO_INCREMENT PRIMARY KEY,
   order_id INT NOT NULL,
@@ -100,8 +105,10 @@ CREATE TABLE IF NOT EXISTS order_details (
   price INT UNSIGNED NOT NULL,
   is_deleted TINYINT(1) UNSIGNED NOT NULL DEFAULT 0,
   FOREIGN KEY (order_id) REFERENCES orders(order_id),
-  FOREIGN KEY (item_id) REFERENCES items(item_id),
+  FOREIGN KEY (item_id) REFERENCES items(item_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
 
 CREATE TABLE IF NOT EXISTS contacts (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -115,11 +122,12 @@ CREATE TABLE IF NOT EXISTS contacts (
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-  
+
+
 CREATE TABLE IF NOT EXISTS sessions (	
-  customer_no int unsigned not null auto_increment,	
-  session_key varchar(32),	
-  primary key(customer_no)	
+  customer_no int unsigned not null auto_increment,
+  session_key varchar(32),
+  primary key(customer_no)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
@@ -131,6 +139,8 @@ CREATE TABLE IF NOT EXISTS password_resets (
   expires_at TIMESTAMP NOT NULL,
   FOREIGN KEY (user_id) REFERENCES users(user_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+
 
 CREATE TABLE IF NOT EXISTS postcodes (
   jis varchar(5),
