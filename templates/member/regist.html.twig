@@ -101,11 +101,11 @@
         
         <tr class="regist_row">
           <th class="regist_name">電話番号<span class="red">*</span></th>
-          <td class="regist_data">
-            <input type="text" name="tel1" value="{{dataArr.tel1}}" size="6" maxlength="6"> - 
+          <td class="regist_tel">
+            <input type="text" name="tel1" class="tel-input" value="{{dataArr.tel1}}" size="6" maxlength="6"> - 
             {# maxlength文字数  size,文字数に合わせて幅も6にしてるだけ #}
-            <input type="text" name="tel2" value="{{dataArr.tel2}}" size="6" maxlength="6"> - 
-            <input type="text" name="tel3" value="{{dataArr.tel3}}" size="6" maxlength="6">
+            <input type="text" name="tel2" class="tel-input" value="{{dataArr.tel2}}" size="6" maxlength="6"> - 
+            <input type="text" name="tel3" class="tel-input" value="{{dataArr.tel3}}" size="6" maxlength="6">
             {% if errArr.tel1 | length > 0 %}<br><span class="red">{{errArr.tel1}}</span>{% endif %}
             {% if errArr.tel2 | length > 0 %}<br><span class="red">{{errArr.tel2}}</span>{% endif %}
             {% if errArr.tel3 | length > 0 %}<br><span class="red">{{errArr.tel3}}</span>{% endif %}
