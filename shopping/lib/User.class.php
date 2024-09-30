@@ -15,8 +15,8 @@ class User {
   public function insertUser($dataArr)
   {
     try {
-        $sql = "INSERT INTO users (family_name, first_name, family_name_kana, first_name_kana, sex, year, month, day, email, zip1, zip2, address, tel1, tel2, tel3, regist_at) 
-                VALUES (:family_name, :first_name, :family_name_kana, :first_name_kana, :sex, :year, :month, :day, :email, :zip1, :zip2, :address, :tel1, :tel2, :tel3, :regist_at)";
+        $sql = "INSERT INTO users (family_name, first_name, family_name_kana, first_name_kana, sex, year, month, day, email, zip1, zip2, address, tel1, tel2, tel3, registed_at) 
+                VALUES (:family_name, :first_name, :family_name_kana, :first_name_kana, :sex, :year, :month, :day, :email, :zip1, :zip2, :address, :tel1, :tel2, :tel3, :registed_at)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':family_name', $dataArr['family_name'], \PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $dataArr['first_name'], \PDO::PARAM_STR);
@@ -36,7 +36,7 @@ class User {
 
         // 変数に代入してから渡す
         $registedAt = date('Y-m-d H:i:s');
-        $stmt->bindParam(':regist_at', $registedAt, \PDO::PARAM_STR);
+        $stmt->bindParam(':registed_at', $registedAt, \PDO::PARAM_STR);
         return $stmt->execute();
     } catch (\PDOException $e) {
         error_log("ユーザー挿入エラー: " . $e->getMessage());
