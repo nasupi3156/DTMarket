@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y locales \
 
 ENV LANG=ja_JP.UTF-8
 
+
 # ECサイトのファイルをDockerコンテナ内のApacheディレクトリにコピー
 COPY . /var/www/html
 
