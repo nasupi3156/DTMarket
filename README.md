@@ -2,15 +2,11 @@
 
 ![DT-Health メイン](./shopping/images/readme/DT.png)
 ## カテゴリー
-![DT-Health 購入](./shopping/images/readme/DT-s.gif)
-## 検索
-![DT-Health 検索](./shopping/images/readme/DT-s.gif)
+![DT-Health 検索](./shopping/images/readme/DT-h.gif)
 ## マイアカウント
 ![DT-Health マイアカウント](./shopping/images/readme/DT-m.gif)
 ## ログイン 会員登録
 ![DT-Health ログイン 会員登録](./shopping/images/readme/DT-u.gif)
-## 管理者用の管理パネル
-![DT-Health 管理者用の管理パネル](./shopping/images/readme/DT-a.gif)
 
 ## 概要
 野菜果物中心の商品と商品の季節や栄養素を簡単に閲覧・購入できるECサイトです。
