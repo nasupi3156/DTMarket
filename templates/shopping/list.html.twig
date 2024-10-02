@@ -42,20 +42,20 @@
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"> 
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="images/slider/colorful-vegetables.jpg" class="d-block w-100" alt="色とりどりの野菜">
+          <img src="../images/slider/colorful-vegetables.jpg" class="d-block w-100" alt="色とりどりの野菜">
           <div class="carousel-caption">
         
             <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/slider/colorful-fruits.jpg" class="d-block w-100" alt="色とりどりの果物">
+          <img src="../images/slider/colorful-fruits.jpg" class="d-block w-100" alt="色とりどりの果物">
           <div class="carousel-caption">
              <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="images/slider/fresh-vegetables.jpg" class="d-block w-100" alt="新鮮な野菜">
+          <img src="../images/slider/fresh-vegetables.jpg" class="d-block w-100" alt="新鮮な野菜">
           <div class="carousel-caption">
              <p class="buyNow"><a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php">今すぐ購入</a></p>
           </div>
@@ -100,12 +100,12 @@
           <div class="item">
             <ul>   
               <li class="image">
-                <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}"><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}" /></a>
+                <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}"><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}" /></a>
               </li>
 
               <div class="name_price">
               <li>
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}detail.php?item_id={{value.item_id}}">{{value.item_name}}</a>
+              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}">{{value.item_name}}</a>
               </li>
               <li class="price">&yen;{{value.price|number_format(0, '.', ',')}}
               {# <span class="tax">(税込)<span> #}

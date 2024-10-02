@@ -59,7 +59,7 @@
                     {# 数量 #}
                   </td>
                   <td>
-                    <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}cart.php?crt_id={{value.crt_id}}" class="delete">削除
+                    <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/cart.php?crt_id={{value.crt_id}}" class="delete">削除
                     </a>
                   </td>
                 </tr>
@@ -89,14 +89,14 @@
             </table>
 
             {# session確認ログインしていればpurchase、していなければlogin #}
-            <form action="{% if isUserLogin %}{{constant('shopping\\Bootstrap::ENTRY_URL')}}purchase.php{% else %}{{constant('shopping\\Bootstrap::ENTRY_URL')}}login.php{% endif %}" method="post">
+            <form action="{% if isUserLogin %}{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/purchase.php{% else %}{{constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php{% endif %}" method="post">
               <input type="hidden" name="item_id" value="{{value.item_id}}">
               <input type="hidden" name="total_price" value="{{sumPrice}}">
               <input type="hidden" name="sum_num" value="{{sumNum}}">
               <button type="submit" class="submit" name="purchase">レジへ進む</button>
             </form> 
             <p class="list_back">
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php">商品一覧へ戻る</a>
+              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/list.php">商品一覧へ戻る</a>
             </p>
 
           </div>

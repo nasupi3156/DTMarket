@@ -2,9 +2,9 @@
 <header> 
   <nav class="navbar navbar-expand-md bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php">DT-Health </a>
+      <a class="navbar-brand" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/list.php">DT-Health </a>
 
-      <form class="search-form d-md-none ms-auto" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
+      <form class="search-form d-md-none ms-auto" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/list.php" method="get">
         <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
       </form>
 
@@ -14,7 +14,7 @@
       </button>
 
        <li class="nav-item">
-         <a class="nav-link cart d-md-none" href="cart.php">
+         <a class="nav-link cart d-md-none" href="order/cart.php">
            <i class="bi bi-cart position-relative" style="font-size: 26px;">
              <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
               {# rounded-pillからrounded-circle #}
@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav ms-auto my-2 my-lg-2 d-flex align-items-center">
         {# ms-auto : 要素を右に寄せる #}
-          <form class="d-flex search-form d-md-flex d-none" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}list.php" method="get">
+          <form class="d-flex search-form d-md-flex d-none" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/list.php" method="get">
             <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" autocomplete="on">
             {# onkeyup="suggest(this.value)" #}
             {# <button class="btn btn-outline-success" type="submit">search</button> #}
@@ -45,17 +45,16 @@
               マイアカウント
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}profile.php">お客様情報</a></li>
-              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order.php">注文履歴</a></li>
-              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order_detail.php">注文履歴詳細</a></li>
-              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}contact.php">お問い合わせ</a></li>
+              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/profile.php">お客様情報</a></li>
+              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/order.php">注文履歴</a></li>
+              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/order_detail.php">注文履歴詳細</a></li>
+              <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/contact.php">お問い合わせ</a></li>
             </ul>
 
             <li class="nav-item">
-              <a class="nav-link cart d-md-flex d-none" href="cart.php">
+              <a class="nav-link cart d-md-flex d-none" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}order/cart.php">
                 <i class="bi bi-cart position-relative" style="font-size: 26px;">
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
-                    {# rounded-pillからrounded-circle #}
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">    
                     {{ sumNum == 0 ? '0' : sumNum }} 
                     <!-- ここにカート内のアイテム数を動的に表示 -->
                   </span>
@@ -64,9 +63,9 @@
             </li>
           <li class="nav-item login-out">
             {% if isUserLogin %}
-              <a id="logoutButton" class="nav-link click logout-in" href="./login.php?logout=1" onclick="return logoutConfirm();">ログアウト</a>
+              <a id="logoutButton" class="nav-link click logout-in" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php?logout=1" onclick="return logoutConfirm();">ログアウト</a>
             {% else %}
-              <a class="nav-link click logout-in" href="./login.php">ログイン</a>
+              <a class="nav-link click logout-in" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php">ログイン</a>
             {% endif %}
           </li>
           {# ログアウトボタンに onclick イベントを追加し、JavaScriptの関数logoutConfirm()を呼び出す。 #}

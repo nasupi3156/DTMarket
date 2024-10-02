@@ -62,7 +62,7 @@
                       <td class="quantity">{{ order.quantity }}</td>
                       <td class="price">&yen;{{ order.price }}</td>
                       <td>
-                        <form action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}cart.php" method="post">
+                        <form action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/cart.php" method="post">
                           <input type="hidden" name="item_id" value="{{ order.item_id }}">
                           <input type="hidden" name="quantity" value="{{ order.quantity }}">
                           <input type="hidden" name="price" value="{{ order.price }}">

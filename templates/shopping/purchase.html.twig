@@ -135,7 +135,7 @@
             </form>
 
             <p class="list_back">
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}list.php">商品一覧へ戻る</a>
+              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/list.php">商品一覧へ戻る</a>
             </p> 
           </div>
           {# col-md- #}
@@ -160,11 +160,11 @@
             <div id="message"></div>
             <div class="mb-3">
               <label for="modalFamilyName" class="form-label">名前(氏)</label>
-              <input type="text" class="form-control" id="modalFamilyName" name="family-name" value="{{user.family_name}}">
+              <input type="text" class="form-control" id="modalFamilyName" name="family_name" value="{{user.family_name}}">
             </div>
             <div class="mb-3">
               <label for="modalFirstName" class="form-label">名前(名)</label>
-              <input type="text" class="form-control" id="modalFirstName" name="first-name" value="{{user.first_name}}">
+              <input type="text" class="form-control" id="modalFirstName" name="first_name" value="{{user.first_name}}">
             </div>
             <div class="mb-3">
               <label for="modalZipcode" class="form-label">郵便番号</label>
