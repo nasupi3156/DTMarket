@@ -13,7 +13,7 @@ $twig = new \Twig\Environment($loader, [
 ]);
 
 
-header("Location: ../shopping/list.php");
+header("Location: ../shopping/order/list.php");
 
 exit();
 
