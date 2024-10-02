@@ -15,7 +15,7 @@ $(function(){
       // ajaxリクエストの送信
       $.ajax({
         type : "get",
-        url : entry_url + "/postcode_search.php?zip1=" + escape(zip1) + "&zip2=" + escape(zip2),
+        url : entry_url + "auth/postcode_search.php?zip1=" + escape(zip1) + "&zip2=" + escape(zip2),
         // postcode.phpでデータベースから値を取得、それを使いurlパラメータを構築
       }) .then(
         
