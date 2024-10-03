@@ -12,12 +12,12 @@ $twig = new \Twig\Environment($loader, [
 'cache' => Bootstrap::CACHE_DIR,
 ]);
 
-/** dockerを使う場合 */
+/** docker環境 */
 // header("Location: ../shopping/order/list.php");
+// exit();
 
-/** ローカルを使う場合 */
+/** ローカル環境 */
 header('Location:' . Bootstrap::ENTRY_URL . 'order/list.php');
-
 exit();
 
 $context = [];
