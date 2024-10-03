@@ -77,22 +77,26 @@ DTMarket
 │   │   └── 000-default.conf
 │   ├── db
 │   │   ├── DTshopping.sql
-│   │   ├── my.cnf
-│   │   └── postcodes.csv
+│   │   └── my.cnf
 │   ├── docker-compose.yml
-│   ├── php
-│   │   └── Dockerfile
-│   └── .env
+│   └── php
+│       └── Dockerfile
+├── index.php
 ├── js
 │   └── shopping.js
 ├── mysql
-│   └── DTshopping_db  
+│   └── DTshopping_sql
 ├── shopping
-│   ├── list.php
-│   ├── lib     
-│   └── images
-│       ├── abokado.jpg
-│       └── slider    
+│   ├── admin
+│   │   └── admin_login.php
+│   ├── auth
+│   │   └── login.php
+│   ├── images
+│   │   └── pumpkin.jpg
+│   ├── lib
+│   │   └── PDODatabase.class.php
+│   └── order
+│       └── list.php
 ├── templates
 │   └── shopping
 │       └── list.html.twig
@@ -102,6 +106,7 @@ DTMarket
     ├── composer
     ├── symfony
     └── twig
+    
 ```
 # 環境構築
 
@@ -237,7 +242,7 @@ docker compose down -v
 ```
 
 ###  コンテナの起動や実行中にエラーが発生した場合は、次のコマンドを使用してください
-**また必要に応じてエラーの調査を行なってください**
+また必要に応じてエラーの調査を行なってください
 ```bash
 docker compose logs
 ```
