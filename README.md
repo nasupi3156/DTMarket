@@ -106,7 +106,7 @@ DTMarket
     ├── composer
     ├── symfony
     └── twig
-    
+
 ```
 # 環境構築
 
@@ -150,7 +150,7 @@ const DB_USER = 'your_username';       // 例: 'DTshopping_user'
 const DB_PASS = 'your_password';       // 例: 'DTshopping_pass'
 const DB_TYPE = 'mysql';
 ```
-また使用する環境に応じて、**コメントアウト**で切り替えます。
+また使用する環境に応じて、**コメントアウト**で切り替えてください。
 
 
 ```php
@@ -165,6 +165,21 @@ const APP_URL = 'http://localhost:8888/';
 const DB_HOST = 'localhost';
 const APP_DIR = '/Applications/MAMP/htdocs/DTMarket/';
 const APP_URL = 'http://localhost/DTMarket/';
+```
+
+## index.phpの設定
+今回は、indexを使ってないので、index.phpからlist.phpへリダイレクトします。Docker環境とローカル環境の両方に対応しています。
+
+また使用する環境に応じて、**コメントアウト**で切り替えてください。
+### Docker環境
+```php
+header("Location: ../shopping/order/list.php");
+exit();
+```
+### ローカル環境
+```php
+header('Location:' . Bootstrap::ENTRY_URL . 'order/list.php');
+exit();
 ```
 
 ## githubからプロジェクトをクローン
