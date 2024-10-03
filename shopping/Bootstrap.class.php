@@ -8,13 +8,13 @@ require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
 class Bootstrap
 {
-  /* docker環境を使う場合 */
+  /** docker環境を使う場合 */
   // const DB_HOST = 'db'; 
   // const APP_DIR = '/var/www/html/'; 
   // const APP_URL = 'http://localhost:8888/';
   
 
-  /* local環境を使う場合 */
+  /** local環境を使う場合 */
   const DB_HOST = 'localhost'; 
   const APP_DIR = '/Applications/MAMP/htdocs/DTMarket/';
   const APP_URL = 'http://localhost/DTMarket/';
