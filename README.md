@@ -112,6 +112,19 @@ DTMarket
 ```
 # 環境構築
 
+
+## githubからプロジェクトをクローン
+
+```bash
+git clone https://github.com/nasupi3156/DTMarket.git
+```
+
+### プロジェクトのルートディレクトリーに移動
+
+```bash
+cd /path/to/DTMarket
+``` 
+
 ## Composerのインストール
 ### 1. Composerを使用して、必要なPHPパッケージをインストールします
 
@@ -156,14 +169,14 @@ const DB_TYPE = 'mysql';
 
 
 ```php
-// Docker環境
+/** Docker環境 */
 const DB_HOST = 'db'; 
 const APP_DIR = '/var/www/html/'; 
 const APP_URL = 'http://localhost:8888/';
 ```
 
 ```php
-// ローカル環境
+/** ローカル環境 */
 const DB_HOST = 'localhost';
 const APP_DIR = '/Applications/MAMP/htdocs/DTMarket/';
 const APP_URL = 'http://localhost/DTMarket/';
@@ -173,28 +186,18 @@ const APP_URL = 'http://localhost/DTMarket/';
 今回は、indexを使わなかったので、index.phpからlist.phpへリダイレクトします。Docker環境とローカル環境の両方に対応しています。
 
 また使用する環境に応じて、**コメントアウト**で切り替えてください。
-### Docker環境
+
 ```php
+/** Docker環境 */
 header("Location: ../shopping/order/list.php");
 exit();
 ```
-### ローカル環境
+
 ```php
+/**　ローカル環境 */
 header('Location:' . Bootstrap::ENTRY_URL . 'order/list.php');
 exit();
 ```
-
-## githubからプロジェクトをクローン
-
-```bash
-git clone https://github.com/nasupi3156/DTMarket.git
-```
-
-### プロジェクトのルートディレクトリーに移動
-
-```bash
-cd /path/to/DTMarket
-``` 
 
 ## Dockerの環境構築
 
