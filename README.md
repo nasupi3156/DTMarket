@@ -318,6 +318,7 @@ mysqlフォルダー内の`DTshopping.sql`にあるテーブルやインサー�
 **注意：**  一度に沢山をインポートするとエラーが起きる可能性が高いので、一つずつテーブルやインサートをインポートするのがオススメです。
 
 ```sql
+
 CREATE TABLE users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
   family_name VARCHAR(20) NOT NULL,
@@ -331,6 +332,7 @@ CREATE TABLE user_passwords (
   ...
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ...
+
 ```
 
 
