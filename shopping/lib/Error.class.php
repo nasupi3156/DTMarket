@@ -4,7 +4,8 @@ namespace shopping\lib;
 
 class Error {
  
-  // 配列にユーザーの入力データをセット。初期化、他のユーザーが同じクラスを使用する際に前回のデータが残らないようにする
+  // 配列にユーザーの入力データをセット。
+  // 初期化、他のユーザーが同じクラスを使用する際に前回のデータが残らないようにする
   private $dataArr = [];  
   
   private $errArr = [];   
@@ -225,7 +226,7 @@ class Error {
     }
   }
 
-  // err_checkでエラーチェック
+  // err_check : エラーチェック
   // $err_check = true : 初めはエラーがないと仮定
   // $this->errArrを$key => $valueでループ
   // 空文字列はエラーなし、非空文字列はエラー
