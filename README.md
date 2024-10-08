@@ -2,7 +2,7 @@
 
 ![DT-Health メイン](./shopping/images/readme/DT.png)
 ## カテゴリー
-![DT-Health 検索](./shopping/images/readme/DT-h.gif)
+![DT-Health 購入](./shopping/images/readme/DT-h.gif)
 ## マイアカウント
 ![DT-Health マイアカウント](./shopping/images/readme/DT-m.gif)
 ## ログイン 会員登録
