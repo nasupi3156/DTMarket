@@ -41,7 +41,7 @@ class Item
   // ctg_idの引数をデフォルト値で空にすることで全てとカテゴリーの両方に対応
   public function getTotalItemCount($ctg_id = '') {
     $table = 'items';
-    $col = 'COUNT(*) as total_count';
+    $col = 'COUNT(*) as total_count';  // レコード数をカウント
     $where = ($ctg_id !== '') ? 'ctg_id = ?' : '';
     $arrVal = ($ctg_id !== '') ? [$ctg_id] : [];
 

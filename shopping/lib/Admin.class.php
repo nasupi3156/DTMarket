@@ -67,7 +67,7 @@ class Admin
   public function getAdminOrderList()
   {
     try {
-        $table = 'orders o INNER JOIN order_details od ON o.order_id = od.order_id LEFT JOIN signup s ON o.user_id = s.user_id';
+        $table = 'orders o INNER JOIN order_details od ON o.order_id = od.order_id LEFT JOIN users u ON o.user_id = u.user_id';
         $column = 'o.order_id, o.user_id, o.shipping_fee, o.total_price, o.payment_method, o.purchase_date, od.item_id, od.item_name, od.image, od.quantity, od.price';
         $where = 'od.is_deleted = ?';
         $arrVal = [0];
