@@ -284,17 +284,17 @@ docker compose logs
 **MAMPを使用する場合 (Mac)**
 
 ```bash
-$ cd /Applications/MAMP/Library/bin
+cd /Applications/MAMP/Library/bin
 ```
 **XAMPPを使用する場合 (Windows)**
 ```bash
-$ cd C:\xampp\mysql\bin
+cd C:\xampp\mysql\bin
 ```
 
 #### 2. 次に、MySQLにrootユーザーで接続します。
 
 ```bash
-$ ./mysql -u root -p
+./mysql -u root -p
 ```
 
 #### 3. 接続できたら、下記のコードを順番にコピーして貼り付けてください。
