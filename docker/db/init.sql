@@ -180,179 +180,179 @@ INSERT IGNORE INTO items VALUES ( 4, 'なす', 'なす(熊本県産)旬の季節
 
 INSERT IGNORE INTO items VALUES ( 5, 'ねぎ', 'ねぎ(千葉県産)旬の季節は、冬です。栄養素は、アリシン（抗菌・抗ウイルス作用）、ビタミンC、鉄、食物繊維が豊富に含まれています', 110, 'negi.jpg', 1 );
 
-INSERT INTO items VALUES ( 6,  'ほうれんそう', 'ほうれんそう(埼玉県産)旬の季節は、冬から秋です。栄養素は、β-カロテン、ビタミンC、ビタミンK、鉄、葉酸が豊富に含まれています。', 80, 'hourenso.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 6,  'ほうれんそう', 'ほうれんそう(埼玉県産)旬の季節は、冬から秋です。栄養素は、β-カロテン、ビタミンC、ビタミンK、鉄、葉酸が豊富に含まれています。', 80, 'hourenso.jpg', 1 );
 
-INSERT INTO items VALUES ( 7,  'みかん', 'みかん(愛媛県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンA、カリウム、食物繊維が豊富に含まれています。', 250, 'mikan.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 7,  'みかん', 'みかん(愛媛県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンA、カリウム、食物繊維が豊富に含まれています。', 250, 'mikan.jpg', 2 );
 
-INSERT INTO items VALUES ( 8,  'しめじ', 'しめじ(新潟県産)旬の季節は、秋です。栄養素は、β-グルカン（免疫力を高める）、ビタミンD、ビタミンB群、鉄分が豊富に含まれています。', 100, 'simeji.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 8,  'しめじ', 'しめじ(新潟県産)旬の季節は、秋です。栄養素は、β-グルカン（免疫力を高める）、ビタミンD、ビタミンB群、鉄分が豊富に含まれています。', 100, 'simeji.jpg', 1 );
 
-INSERT INTO items VALUES ( 9,  'はくさい', 'はくさい(茨城県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンK、食物繊維、カルシウムが豊富に含まれています。', 200, 'hakusai.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 9,  'はくさい', 'はくさい(茨城県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンK、食物繊維、カルシウムが豊富に含まれています。', 200, 'hakusai.jpg', 1 );
 
-INSERT INTO items VALUES ( 10,  'さつまいも', '旬の季節は、秋です。栄養素は、β-カロテン、ビタミンC、ポタシウム、食物繊維が豊富に含まれています。', 290, 'satumaimo.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 10,  'さつまいも', '旬の季節は、秋です。栄養素は、β-カロテン、ビタミンC、ポタシウム、食物繊維が豊富に含まれています。', 290, 'satumaimo.jpg', 1 );
 
-INSERT INTO items VALUES ( 11,  'バナナ', 'バナナ(フィリピン産)一年中(輸入)、栄養素は、カリウム、ビタミンB6、ビタミンC、マグネシウムが豊富に含まれています。。', 130, 'banana.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 11,  'バナナ', 'バナナ(フィリピン産)一年中(輸入)、栄養素は、カリウム、ビタミンB6、ビタミンC、マグネシウムが豊富に含まれています。。', 130, 'banana.jpg', 2 );
 
-INSERT INTO items VALUES ( 12,  'キャベツ', 'キャベツ(群馬県産)旬の季節は、春から初夏、秋から冬です。栄養素は、ビタミンC、ビタミンK、食物繊維、葉酸が豊富に含まれています。', 160, 'kyabetu.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 12,  'キャベツ', 'キャベツ(群馬県産)旬の季節は、春から初夏、秋から冬です。栄養素は、ビタミンC、ビタミンK、食物繊維、葉酸が豊富に含まれています。', 160, 'kyabetu.jpg', 1 );
 
-INSERT INTO items VALUES ( 13, 'エリンギ', 'エリンギ(長野県産)一年通して収穫できます。栄養素は、ビタミンD、食物繊維、カリウム、β-グルカンが豊富に含まれています。。', 90, 'eringi.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 13, 'エリンギ', 'エリンギ(長野県産)一年通して収穫できます。栄養素は、ビタミンD、食物繊維、カリウム、β-グルカンが豊富に含まれています。。', 90, 'eringi.jpg', 1 );
 
-INSERT INTO items VALUES ( 14,  'なし', 'なし(千葉県産)旬の季節は、秋です。栄養素は、ビタミンC、ビタミンK、食物繊維、カリウムが豊富に含まれています。。', 350, 'nasi.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 14,  'なし', 'なし(千葉県産)旬の季節は、秋です。栄養素は、ビタミンC、ビタミンK、食物繊維、カリウムが豊富に含まれています。。', 350, 'nasi.jpg', 2 );
 
-INSERT INTO items VALUES ( 15, 'ブロッコリー', 'ブロッコリー(茨城県産)旬の季節は、冬から春です。栄養素は、ビタミンC、ビタミンK、葉酸、カルシウム、硫黄化合物（発がん性物質の抑制に役立つ）が豊富に含まれています。', 180, 'burokori.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 15, 'ブロッコリー', 'ブロッコリー(茨城県産)旬の季節は、冬から春です。栄養素は、ビタミンC、ビタミンK、葉酸、カルシウム、硫黄化合物（発がん性物質の抑制に役立つ）が豊富に含まれています。', 180, 'burokori.jpg', 1 );
 
-INSERT INTO items VALUES ( 16,  '豚肉', '豚肉(国産)年間通して食べられる人気の年間通して食べられる人気の食材です。栄養素は、ビタミンB1（チアミン）、高品質のタンパク質、鉄分、亜鉛、セレン(抗酸化物質であり、細胞の健康を守る)が豊富に含まれています。', 550, 'buta.jpg', 3 );
+INSERT IGNORE INTO items VALUES ( 16,  '豚肉', '豚肉(国産)年間通して食べられる人気の年間通して食べられる人気の食材です。栄養素は、ビタミンB1（チアミン）、高品質のタンパク質、鉄分、亜鉛、セレン(抗酸化物質であり、細胞の健康を守る)が豊富に含まれています。', 550, 'buta.jpg', 3 );
 
-INSERT INTO items VALUES ( 17,  'アボカド', 'アドカド(海外産)1年中収穫されますが、旬は春です。栄養素は、不飽和脂肪酸、ビタミンE、カリウムが豊富に含まれています。', 100, 'abokado.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 17,  'アボカド', 'アドカド(海外産)1年中収穫されますが、旬は春です。栄養素は、不飽和脂肪酸、ビタミンE、カリウムが豊富に含まれています。', 100, 'abokado.jpg', 2 );
 
-INSERT INTO items VALUES ( 18,  'ぶどう', 'ぶどう(山梨県産)旬の季節は夏の終わりから秋です。栄養素はビタミンCやポリフェノール（特にレスベラトロール）が豊富で、抗酸化作用があります。', 400, 'budo.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 18,  'ぶどう', 'ぶどう(山梨県産)旬の季節は夏の終わりから秋です。栄養素はビタミンCやポリフェノール（特にレスベラトロール）が豊富で、抗酸化作用があります。', 400, 'budo.jpg', 2 );
 
-INSERT INTO items VALUES ( 19,  'ごぼう', 'ごぼう(青森県産)旬の季節は、秋から冬です。栄養素は、食物繊維が非常に豊富で、特にイヌリンの含有量が高いです。またカリウムやビタミンB群も含まれています。', 140, 'gobo.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 19,  'ごぼう', 'ごぼう(青森県産)旬の季節は、秋から冬です。栄養素は、食物繊維が非常に豊富で、特にイヌリンの含有量が高いです。またカリウムやビタミンB群も含まれています。', 140, 'gobo.jpg', 1 );
 
-INSERT INTO items VALUES ( 20,  'マイタケ', 'マイタケ(新潟県産)旬の季節は秋です。栄養素は、ビタミンD、特にマイタケにはβ-グルカンという免疫系をサポートする繊維質が含まれています。', 80, 'maitake.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 20,  'マイタケ', 'マイタケ(新潟県産)旬の季節は秋です。栄養素は、ビタミンD、特にマイタケにはβ-グルカンという免疫系をサポートする繊維質が含まれています。', 80, 'maitake.jpg', 1 );
 
-INSERT INTO items VALUES ( 21,  'シイタケ', 'シイタケ(長野県産)旬の季節は秋から春です。栄養素は、ビタミンD、ビタミンB、銅、セレン(抗酸化ミネラルで、免疫力を高め、細胞の損傷を防ぎます)が豊富です。', 110, 'sitake.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 21,  'シイタケ', 'シイタケ(長野県産)旬の季節は秋から春です。栄養素は、ビタミンD、ビタミンB、銅、セレン(抗酸化ミネラルで、免疫力を高め、細胞の損傷を防ぎます)が豊富です。', 110, 'sitake.jpg', 1 );
 
-INSERT INTO items VALUES ( 22,  'とうもろこし', 'とうもろこし(北海道産)旬の季節は、夏の終わりから秋です。栄養素は、ビタミンB群と食物繊維が含まれており、健康な消化系を支えるのに役立ちます。', 220, 'tomorokosi.jpg', 2 );
-
-
-INSERT INTO items VALUES ( 23,  'りんご', 'りんご(青森県産)旬の季節は、秋です。栄養素は、食物繊維、ビタミンC、カリウム、ポリフェノールが豊富に含まれています。', 230, 'apple.jpg', 2 );
-
-INSERT INTO items VALUES ( 24,  'ブラックベリー', 'ブラックベリー(海外産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維、マンガンが豊富に含まれています。', 550, 'blackberry.jpg', 2 );
-
-INSERT INTO items VALUES ( 25,  'ブルーベリー', 'ブルーベリー(群馬県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、マンガン、抗酸化物質が豊富に含まれています。', 360, 'blueberry.jpg', 2 );
-
-INSERT INTO items VALUES ( 26,  'カブ', 'カブ(千葉県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンK、葉酸、食物繊維が豊富に含まれています。', 150, 'kabu.jpg', 1 );
-
-INSERT INTO items VALUES ( 27,  'トマト', 'トマト(熊本県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、リコピンが豊富に含まれています。', 120, 'tomato.jpg', 1 );
-
-INSERT INTO items VALUES ( 28,  '桃', '桃(福島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、食物繊維、カリウムが豊富に含まれています。', 350, 'momo.jpg', 2 );
-
-INSERT INTO items VALUES ( 29,  'ラズベリー', 'ラズベリー(海外産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維、マンガンが豊富に含まれています。', 600, 'razuberry.jpg', 2 );
-
-INSERT INTO items VALUES ( 30,  'スイカ', 'スイカ(茨城県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、リコピンが豊富に含まれています。', 1200, 'suika.jpg', 2 );
-
-INSERT INTO items VALUES ( 31, 'びわ', 'びわ(長崎県産)旬の季節は、春です。栄養素は、ビタミンA、ビタミンC、カリウムが豊富に含まれています。', 560, 'biwa.jpg', 2 );
-
-INSERT INTO items VALUES ( 32,  '牛肉', '牛肉(宮崎県産)旬の季節は、年中です。栄養素は、タンパク質、鉄分、ビタミンB12、亜鉛が豊富に含まれています。', 1200, 'beef.jpg', 3 );
-
-INSERT INTO items VALUES ( 33,  'ミニトマト', 'ミニトマト(愛知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、リコピン、カリウムが豊富に含まれています。', 180, 'minitomato.jpg', 1 );
-
-INSERT INTO items VALUES ( 34,  'シシトウ', 'シシトウ(高知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、食物繊維が豊富に含まれています。', 140, 'sisito.jpg', 1 );
-
-INSERT INTO items VALUES ( 35,  'マッシュルーム', 'マッシュルーム(静岡県産)旬の季節は、年中です。栄養素は、ビタミンB群、セレン、カリウム、食物繊維が豊富に含まれています。', 220, 'mushroom.jpg', 1 );
-
-INSERT INTO items VALUES ( 36,  '松茸', '松茸(長野県産)旬の季節は、秋です。栄養素は、ビタミンD、カリウム、ナイアシン、食物繊維が豊富に含まれています。', 10000, 'matutake.jpg', 1 );
-
-INSERT INTO items VALUES ( 37,  '栗', '栗(愛媛県産)旬の季節は、秋です。栄養素は、ビタミンC、カリウム、食物繊維、葉酸が豊富に含まれています。', 700, 'kuri.jpg', 1 );
-
-INSERT INTO items VALUES ( 38,  'カリフラワー', 'カリフラワー(愛知県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンK、葉酸、食物繊維が豊富に含まれています。', 240, 'cauliflower.jpg', 1 );
-
-INSERT INTO items VALUES ( 39,  'ビーツ', 'ビーツ(北海道県産)旬の季節は、秋から冬です。栄養素は、葉酸、マグネシウム、鉄分、ビタミンCが豊富に含まれています。', 400, 'beets.jpg', 1 );
-
-INSERT INTO items VALUES ( 40,  'かぼちゃ', 'かぼちゃ(神奈川県産)旬の季節は、秋です。栄養素は、ビタミンA、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 290, 'pumpkin.jpg', 1 );
-
-INSERT INTO items VALUES ( 41, 'ドラゴンフルーツ', 'ドラゴンフルーツ(沖縄県産)旬の季節は夏です。栄養素としては、ビタミンC、ビタミンB、食物繊維、カリウムが豊富に含まれています。', 550, 'dragonFruits.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 22,  'とうもろこし', 'とうもろこし(北海道産)旬の季節は、夏の終わりから秋です。栄養素は、ビタミンB群と食物繊維が含まれており、健康な消化系を支えるのに役立ちます。', 220, 'tomorokosi.jpg', 2 );
 
 
-INSERT INTO items VALUES ( 42, 'アスパラガス', 'アスパラガス(北海道産)旬の季節は、春です。栄養素は、ビタミンK、葉酸、ビタミンC、ビタミンAが豊富に含まれています。', 360, 'asupara.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 23,  'りんご', 'りんご(青森県産)旬の季節は、秋です。栄養素は、食物繊維、ビタミンC、カリウム、ポリフェノールが豊富に含まれています。', 230, 'apple.jpg', 2 );
 
-INSERT INTO items VALUES ( 43, '卵', '卵(国産)年中食べられる人気の食材です。栄養素は、タンパク質、ビタミンB12、ビタミンD、セレンが豊富に含まれています。', 250, 'egg.jpg', 3 );
+INSERT IGNORE INTO items VALUES ( 24,  'ブラックベリー', 'ブラックベリー(海外産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維、マンガンが豊富に含まれています。', 550, 'blackberry.jpg', 2 );
 
-INSERT INTO items VALUES ( 44, 'じゃがいも', 'じゃがいも(北海道産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンB6、カリウム、食物繊維が豊富に含まれています。', 200, 'jagaimo.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 25,  'ブルーベリー', 'ブルーベリー(群馬県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、マンガン、抗酸化物質が豊富に含まれています。', 360, 'blueberry.jpg', 2 );
 
-INSERT INTO items VALUES ( 45, 'いちご', 'いちご(栃木県産)旬の季節は、冬から春です。栄養素は、ビタミンC、葉酸、食物繊維が豊富に含まれています。', 580, 'ichigo.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 26,  'カブ', 'カブ(千葉県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンK、葉酸、食物繊維が豊富に含まれています。', 150, 'kabu.jpg', 1 );
 
-INSERT INTO items VALUES ( 46, 'レタス', 'レタス(長野県産)旬の季節は、春から夏です。栄養素は、ビタミンK、ビタミンA、葉酸、食物繊維が豊富に含まれています。', 200, 'retasu.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 27,  'トマト', 'トマト(熊本県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、リコピンが豊富に含まれています。', 120, 'tomato.jpg', 1 );
 
-INSERT INTO items VALUES ( 47, 'ささみ', 'ささみ(国産)年中食べられる人気の食材です。栄養素は、タンパク質、ビタミンB6、ナイアシン、リンが豊富に含まれています。', 300, 'sasami.jpg', 3 );
+INSERT IGNORE INTO items VALUES ( 28,  '桃', '桃(福島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、食物繊維、カリウムが豊富に含まれています。', 350, 'momo.jpg', 2 );
 
-INSERT INTO items VALUES ( 48, 'しそ', 'しそ(愛知県産)旬の季節は、夏です。栄養素は、ビタミンK、ビタミンA、カルシウム、鉄が豊富に含まれています。', 150, 'shiso.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 29,  'ラズベリー', 'ラズベリー(海外産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維、マンガンが豊富に含まれています。', 600, 'razuberry.jpg', 2 );
 
-INSERT INTO items VALUES ( 49, '大根', '大根(神奈川県産)旬の季節は、冬です。栄養素は、ビタミンC、葉酸、カリウム、食物繊維が豊富に含まれています。', 150, 'daikon.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 30,  'スイカ', 'スイカ(茨城県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、リコピンが豊富に含まれています。', 1200, 'suika.jpg', 2 );
 
-INSERT INTO items VALUES ( 50, 'パッションフルーツ', 'パッションフルーツ(鹿児島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、食物繊維、カリウムが豊富に含まれています。', 400, 'passion.
+INSERT IGNORE INTO items VALUES ( 31, 'びわ', 'びわ(長崎県産)旬の季節は、春です。栄養素は、ビタミンA、ビタミンC、カリウムが豊富に含まれています。', 560, 'biwa.jpg', 2 );
+
+INSERT IGNORE INTO items VALUES ( 32,  '牛肉', '牛肉(宮崎県産)旬の季節は、年中です。栄養素は、タンパク質、鉄分、ビタミンB12、亜鉛が豊富に含まれています。', 1200, 'beef.jpg', 3 );
+
+INSERT IGNORE INTO items VALUES ( 33,  'ミニトマト', 'ミニトマト(愛知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、リコピン、カリウムが豊富に含まれています。', 180, 'minitomato.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 34,  'シシトウ', 'シシトウ(高知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウム、食物繊維が豊富に含まれています。', 140, 'sisito.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 35,  'マッシュルーム', 'マッシュルーム(静岡県産)旬の季節は、年中です。栄養素は、ビタミンB群、セレン、カリウム、食物繊維が豊富に含まれています。', 220, 'mushroom.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 36,  '松茸', '松茸(長野県産)旬の季節は、秋です。栄養素は、ビタミンD、カリウム、ナイアシン、食物繊維が豊富に含まれています。', 10000, 'matutake.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 37,  '栗', '栗(愛媛県産)旬の季節は、秋です。栄養素は、ビタミンC、カリウム、食物繊維、葉酸が豊富に含まれています。', 700, 'kuri.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 38,  'カリフラワー', 'カリフラワー(愛知県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンK、葉酸、食物繊維が豊富に含まれています。', 240, 'cauliflower.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 39,  'ビーツ', 'ビーツ(北海道県産)旬の季節は、秋から冬です。栄養素は、葉酸、マグネシウム、鉄分、ビタミンCが豊富に含まれています。', 400, 'beets.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 40,  'かぼちゃ', 'かぼちゃ(神奈川県産)旬の季節は、秋です。栄養素は、ビタミンA、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 290, 'pumpkin.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 41, 'ドラゴンフルーツ', 'ドラゴンフルーツ(沖縄県産)旬の季節は夏です。栄養素としては、ビタミンC、ビタミンB、食物繊維、カリウムが豊富に含まれています。', 550, 'dragonFruits.jpg', 2 );
+
+
+INSERT IGNORE INTO items VALUES ( 42, 'アスパラガス', 'アスパラガス(北海道産)旬の季節は、春です。栄養素は、ビタミンK、葉酸、ビタミンC、ビタミンAが豊富に含まれています。', 360, 'asupara.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 43, '卵', '卵(国産)年中食べられる人気の食材です。栄養素は、タンパク質、ビタミンB12、ビタミンD、セレンが豊富に含まれています。', 250, 'egg.jpg', 3 );
+
+INSERT IGNORE INTO items VALUES ( 44, 'じゃがいも', 'じゃがいも(北海道産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンB6、カリウム、食物繊維が豊富に含まれています。', 200, 'jagaimo.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 45, 'いちご', 'いちご(栃木県産)旬の季節は、冬から春です。栄養素は、ビタミンC、葉酸、食物繊維が豊富に含まれています。', 580, 'ichigo.jpg', 2 );
+
+INSERT IGNORE INTO items VALUES ( 46, 'レタス', 'レタス(長野県産)旬の季節は、春から夏です。栄養素は、ビタミンK、ビタミンA、葉酸、食物繊維が豊富に含まれています。', 200, 'retasu.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 47, 'ささみ', 'ささみ(国産)年中食べられる人気の食材です。栄養素は、タンパク質、ビタミンB6、ナイアシン、リンが豊富に含まれています。', 300, 'sasami.jpg', 3 );
+
+INSERT IGNORE INTO items VALUES ( 48, 'しそ', 'しそ(愛知県産)旬の季節は、夏です。栄養素は、ビタミンK、ビタミンA、カルシウム、鉄が豊富に含まれています。', 150, 'shiso.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 49, '大根', '大根(神奈川県産)旬の季節は、冬です。栄養素は、ビタミンC、葉酸、カリウム、食物繊維が豊富に含まれています。', 150, 'daikon.jpg', 1 );
+
+INSERT IGNORE INTO items VALUES ( 50, 'パッションフルーツ', 'パッションフルーツ(鹿児島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、食物繊維、カリウムが豊富に含まれています。', 400, 'passion.
 jpg', 2 );
 
-INSERT INTO items VALUES ( 51, '山芋', '山芋(長野県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンB群、カリウム、食物繊維が豊富に含まれています。', 300, 'yamaimo.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 51, '山芋', '山芋(長野県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、ビタミンB群、カリウム、食物繊維が豊富に含まれています。', 300, 'yamaimo.jpg', 1 );
 
-INSERT INTO items VALUES ( 52, '菜の花', '菜の花(千葉県産)旬の季節は、春です。栄養素は、ビタミンC、ビタミンA、カルシウム、鉄が豊富に含まれています。', 250, 'nabana.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 52, '菜の花', '菜の花(千葉県産)旬の季節は、春です。栄養素は、ビタミンC、ビタミンA、カルシウム、鉄が豊富に含まれています。', 250, 'nabana.jpg', 1 );
 
-INSERT INTO items VALUES ( 53, 'チンゲンサイ', 'チンゲンサイ(静岡県産)旬の季節は、春と秋です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 150, 'chingensai.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 53, 'チンゲンサイ', 'チンゲンサイ(静岡県産)旬の季節は、春と秋です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 150, 'chingensai.jpg', 1 );
 
-INSERT INTO items VALUES ( 54, '枝豆', '枝豆(新潟県産)旬の季節は、夏です。栄養素は、タンパク質、ビタミンC、食物繊維が豊富に含まれています。', 300, 'edamame.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 54, '枝豆', '枝豆(新潟県産)旬の季節は、夏です。栄養素は、タンパク質、ビタミンC、食物繊維が豊富に含まれています。', 300, 'edamame.jpg', 1 );
 
-INSERT INTO items VALUES ( 55, 'エノキ', 'エノキ(長野県産)旬の季節は、秋から冬です。栄養素は、ビタミンB群、食物繊維が豊富に含まれています。', 200, 'enoki.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 55, 'エノキ', 'エノキ(長野県産)旬の季節は、秋から冬です。栄養素は、ビタミンB群、食物繊維が豊富に含まれています。', 200, 'enoki.jpg', 1 );
 
-INSERT INTO items VALUES ( 56, 'ゴーヤ', 'ゴーヤ(沖縄県産)旬の季節は、夏です。栄養素は、ビタミンC、カリウムが豊富に含まれています。', 250, 'goya.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 56, 'ゴーヤ', 'ゴーヤ(沖縄県産)旬の季節は、夏です。栄養素は、ビタミンC、カリウムが豊富に含まれています。', 250, 'goya.jpg', 1 );
 
 
-INSERT INTO items VALUES ( 57, '柿', '柿(奈良県産)旬の季節は、秋から冬です。栄養素は、ビタミンA、ビタミンC、食物繊維が豊富に含まれています。', 330, 'kaki.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 57, '柿', '柿(奈良県産)旬の季節は、秋から冬です。栄養素は、ビタミンA、ビタミンC、食物繊維が豊富に含まれています。', 330, 'kaki.jpg', 2 );
 
-INSERT INTO items VALUES ( 58, '小松菜', '小松菜(東京都産)旬の季節は、冬です。栄養素は、ビタミンC、カルシウム、鉄が豊富に含まれています。', 120, 'komatsuna.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 58, '小松菜', '小松菜(東京都産)旬の季節は、冬です。栄養素は、ビタミンC、カルシウム、鉄が豊富に含まれています。', 120, 'komatsuna.jpg', 1 );
 
-INSERT INTO items VALUES ( 69, 'キウイ', 'キウイ(愛媛県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンE、食物繊維が豊富に含まれています。', 210, 'kyui.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 59, 'キウイ', 'キウイ(愛媛県産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンE、食物繊維が豊富に含まれています。', 210, 'kyui.jpg', 2 );
 
-INSERT INTO items VALUES ( 70, 'きゅうり', 'きゅうり(千葉県産)旬の季節は、夏です。栄養素は、ビタミンK、ビタミンC、カリウムが豊富に含まれています。', 140, 'kyuri.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 60, 'きゅうり', 'きゅうり(千葉県産)旬の季節は、夏です。栄養素は、ビタミンK、ビタミンC、カリウムが豊富に含まれています。', 140, 'kyuri.jpg', 1 );
 
-INSERT INTO items VALUES ( 71, 'マンゴー', 'マンゴー(宮崎県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、食物繊維が豊富に含まれています。', 800, 'mango.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 61, 'マンゴー', 'マンゴー(宮崎県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、食物繊維が豊富に含まれています。', 800, 'mango.jpg', 2 );
 
-INSERT INTO items VALUES ( 72, 'メロン', 'メロン(茨城県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、カリウムが豊富に含まれています。', 1300, 'melon.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 62, 'メロン', 'メロン(茨城県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、カリウムが豊富に含まれています。', 1300, 'melon.jpg', 2 );
 
-INSERT INTO items VALUES ( 73, '水菜', '水菜(京都府産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンA、カルシウムが豊富に含まれています。', 110, 'mizuna.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 63, '水菜', '水菜(京都府産)旬の季節は、冬です。栄養素は、ビタミンC、ビタミンA、カルシウムが豊富に含まれています。', 110, 'mizuna.jpg', 1 );
 
-INSERT INTO items VALUES ( 74, 'モロヘイヤ', 'モロヘイヤ(福島県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 210, 'molohia.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 64, 'モロヘイヤ', 'モロヘイヤ(福島県産)旬の季節は、夏です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 210, 'molohia.jpg', 1 );
 
-INSERT INTO items VALUES ( 75, 'もやし', 'もやし(栃木県産)年中食べられる人気の食材です。栄養素は、ビタミンC、食物繊維が豊富に含まれています。', 40, 'moyashi.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 65, 'もやし', 'もやし(栃木県産)年中食べられる人気の食材です。栄養素は、ビタミンC、食物繊維が豊富に含まれています。', 40, 'moyashi.jpg', 1 );
 
-INSERT INTO items VALUES ( 76, 'ミョウガ', 'ミョウガ(高知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンB群が豊富に含まれています。', 220, 'myoga.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 66, 'ミョウガ', 'ミョウガ(高知県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンB群が豊富に含まれています。', 220, 'myoga.jpg', 1 );
 
-INSERT INTO items VALUES ( 77, 'ニンニク', 'ニンニク(青森県産)旬の季節は、夏です。栄養素は、ビタミンB6、マンガン、セレンが豊富に含まれています。', 229, 'ninniku.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 67, 'ニンニク', 'ニンニク(青森県産)旬の季節は、夏です。栄養素は、ビタミンB6、マンガン、セレンが豊富に含まれています。', 229, 'ninniku.jpg', 1 );
 
-INSERT INTO items VALUES ( 78, 'ニラ', 'ニラ(栃木県産)旬の季節は、冬から春です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 120, 'nira.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 68, 'ニラ', 'ニラ(栃木県産)旬の季節は、冬から春です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 120, 'nira.jpg', 1 );
 
-INSERT INTO items VALUES ( 79, 'パクチー', 'パクチー(千葉県産)旬の季節は、春から初夏です。栄養素は、ビタミンC、ビタミンA、カルシウムが豊富に含まれています。', 240, 'pakuchi.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 69, 'パクチー', 'パクチー(千葉県産)旬の季節は、春から初夏です。栄養素は、ビタミンC、ビタミンA、カルシウムが豊富に含まれています。', 240, 'pakuchi.jpg', 1 );
 
-INSERT INTO items VALUES ( 80, 'パイナップル', 'パイナップル(沖縄県産)旬の季節は、夏です。栄養素は、ビタミンC、マンガンが豊富に含まれています。', 800, 'pineapple.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 70, 'パイナップル', 'パイナップル(沖縄県産)旬の季節は、夏です。栄養素は、ビタミンC、マンガンが豊富に含まれています。', 800, 'pineapple.jpg', 2 );
 
-INSERT INTO items VALUES ( 81, '落花生', '落花生(千葉県産)旬の季節は、秋です。栄養素は、タンパク質、ビタミンE、ナイアシンが豊富に含まれています。', 310, 'rakkasei.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 71, '落花生', '落花生(千葉県産)旬の季節は、秋です。栄養素は、タンパク質、ビタミンE、ナイアシンが豊富に含まれています。', 310, 'rakkasei.jpg', 1 );
 
-INSERT INTO items VALUES ( 82, 'レモン', 'レモン(広島県産)旬の季節は、冬です。栄養素は、ビタミンC、クエン酸が豊富に含まれています。', 140, 'lemon.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 72, 'レモン', 'レモン(広島県産)旬の季節は、冬です。栄養素は、ビタミンC、クエン酸が豊富に含まれています。', 140, 'lemon.jpg', 2 );
 
-INSERT INTO items VALUES ( 83, '米', '米(新潟県産)旬の季節は、秋です。栄養素は、炭水化物、ビタミンB群が豊富に含まれています。', 400, 'rice.jpg', 3 );
+INSERT IGNORE INTO items VALUES ( 73, '米', '米(新潟県産)旬の季節は、秋です。栄養素は、炭水化物、ビタミンB群が豊富に含まれています。', 400, 'rice.jpg', 3 );
 
-INSERT INTO items VALUES ( 84, 'ルッコラ', 'ルッコラ(静岡県産)旬の季節は、春から夏です。栄養素は、ビタミンK、ビタミンA、カルシウムが豊富に含まれています。', 200, 'rukkora.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 74, 'ルッコラ', 'ルッコラ(静岡県産)旬の季節は、春から夏です。栄養素は、ビタミンK、ビタミンA、カルシウムが豊富に含まれています。', 200, 'rukkora.jpg', 1 );
 
-INSERT INTO items VALUES ( 85, 'さくらんぼ', 'さくらんぼ(山形県産)旬の季節は、春から夏です。栄養素は、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 1000, 'sakuranbo.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 75, 'さくらんぼ', 'さくらんぼ(山形県産)旬の季節は、春から夏です。栄養素は、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 1000, 'sakuranbo.jpg', 2 );
 
-INSERT INTO items VALUES ( 86, '里芋', '里芋(静岡県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 400, 'satoimo.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 76, '里芋', '里芋(静岡県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、カリウム、食物繊維が豊富に含まれています。', 400, 'satoimo.jpg', 1 );
 
-INSERT INTO items VALUES ( 87, 'スモモ', 'スモモ(山梨県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウムが豊富に含まれています。', 300, 'sumomo.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 77, 'スモモ', 'スモモ(山梨県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウムが豊富に含まれています。', 300, 'sumomo.jpg', 2 );
 
-INSERT INTO items VALUES ( 88, '生姜', '生姜(高知県産)旬の季節は、夏です。栄養素は、ジンゲロール、ビタミンC、マグネシウムが豊富に含まれています。', 170, 'syoga.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 78, '生姜', '生姜(高知県産)旬の季節は、夏です。栄養素は、ジンゲロール、ビタミンC、マグネシウムが豊富に含まれています。', 170, 'syoga.jpg', 1 );
 
-INSERT INTO items VALUES ( 89, '春菊', '春菊(千葉県産)旬の季節は、秋から冬です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 190, 'syungiku.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 79, '春菊', '春菊(千葉県産)旬の季節は、秋から冬です。栄養素は、ビタミンA、ビタミンC、カルシウムが豊富に含まれています。', 190, 'syungiku.jpg', 1 );
 
-INSERT INTO items VALUES ( 90, '筍', '筍(京都府産)旬の季節は、春です。栄養素は、ビタミンB群、食物繊維が豊富に含まれています。', 430, 'takenoko.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 80, '筍', '筍(京都府産)旬の季節は、春です。栄養素は、ビタミンB群、食物繊維が豊富に含まれています。', 430, 'takenoko.jpg', 1 );
 
-INSERT INTO items VALUES ( 91, '梅', '梅(和歌山県産)旬の季節は、夏です。栄養素は、クエン酸、ビタミンCが豊富に含まれています。', 290, 'ume.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 81, '梅', '梅(和歌山県産)旬の季節は、夏です。栄養素は、クエン酸、ビタミンCが豊富に含まれています。', 290, 'ume.jpg', 2 );
 
-INSERT INTO items VALUES ( 92, 'わさび', 'わさび(静岡県産)旬の季節は、春です。栄養素は、ビタミンC、食物繊維が豊富に含まれています。', 820, 'wasabi.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 82, 'わさび', 'わさび(静岡県産)旬の季節は、春です。栄養素は、ビタミンC、食物繊維が豊富に含まれています。', 820, 'wasabi.jpg', 1 );
 
-INSERT INTO items VALUES ( 93, '洋梨', '洋梨(山形県産)旬の季節は、秋です。栄養素は、食物繊維、ビタミンC、カリウムが豊富に含まれています。', 460, 'westernNashi.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 83, '洋梨', '洋梨(山形県産)旬の季節は、秋です。栄養素は、食物繊維、ビタミンC、カリウムが豊富に含まれています。', 460, 'westernNashi.jpg', 2 );
 
-INSERT INTO items VALUES ( 94, 'ゆず', 'ゆず(高知県産)旬の季節は、冬です。栄養素は、ビタミンC、カリウムが豊富に含まれています。', 330, 'yuzu.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 84, 'ゆず', 'ゆず(高知県産)旬の季節は、冬です。栄養素は、ビタミンC、カリウムが豊富に含まれています。', 330, 'yuzu.jpg', 2 );
 
-INSERT INTO items VALUES ( 95, 'ズッキーニ', 'ズッキーニ(長野県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウムが豊富に含まれています。', 180, 'zucchini.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 85, 'ズッキーニ', 'ズッキーニ(長野県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンA、カリウムが豊富に含まれています。', 180, 'zucchini.jpg', 1 );
 
-INSERT INTO items VALUES ( 96, 'かぼす', 'かぼす(大分県産)旬の季節は、秋です。栄養素は、ビタミンC、クエン酸が豊富に含まれています。', 340, 'kabosu.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 86, 'かぼす', 'かぼす(大分県産)旬の季節は、秋です。栄養素は、ビタミンC、クエン酸が豊富に含まれています。', 340, 'kabosu.jpg', 2 );
 
-INSERT INTO items VALUES ( 97, 'レンコン', 'レンコン(茨城県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、食物繊維、カリウムが豊富に含まれています。', 380, 'renkon.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 87, 'レンコン', 'レンコン(茨城県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、食物繊維、カリウムが豊富に含まれています。', 380, 'renkon.jpg', 1 );
 
-INSERT INTO items VALUES ( 98, 'グレープ', 'グレープ(山梨県産)旬の季節は、夏から秋です。栄養素は、ビタミンC、ビタミンK、ポリフェノールが豊富に含まれています。', 770, 'grapefruit.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 88, 'グレープ', 'グレープ(山梨県産)旬の季節は、夏から秋です。栄養素は、ビタミンC、ビタミンK、ポリフェノールが豊富に含まれています。', 770, 'grapefruit.jpg', 2 );
 
-INSERT INTO items VALUES ( 99, 'オクラ', 'オクラ(鹿児島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維が豊富に含まれています。', 190, 'okura.jpg', 1 );
+INSERT IGNORE INTO items VALUES ( 89, 'オクラ', 'オクラ(鹿児島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維が豊富に含まれています。', 190, 'okura.jpg', 1 );
 
-INSERT INTO items VALUES ( 100, 'イチジク', 'イチジク(和歌山県産)旬の季節は、夏から秋です。栄養素は、ビタミンB6、食物繊維、カリウムが豊富に含まれています。', 680, 'ichijiku.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 90, 'イチジク', 'イチジク(和歌山県産)旬の季節は、夏から秋です。栄養素は、ビタミンB6、食物繊維、カリウムが豊富に含まれています。', 680, 'ichijiku.jpg', 2 );
 
 
 
