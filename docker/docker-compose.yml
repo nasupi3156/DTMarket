@@ -40,7 +40,7 @@ services:
 
       - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./db/postcodes.csv:/docker-entrypoint-initdb.d/postcodes.csv
-      - ./db/DTshopping.sql:/docker-entrypoint-initdb.d/DTshopping.sql 
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql 
 
 volumes:
   mysql-data: 
