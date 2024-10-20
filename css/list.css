@@ -62,7 +62,7 @@ img {
 .carousel-item img {
   width: 100%;
   /* height: calc(100vh - 100px);  */
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .container {
@@ -70,17 +70,14 @@ img {
 }
 
 .order {
-  /* 小要素 */
-  position: absolute;
-  left: 21.5em;
-  margin: 10px 0;
+
+  transform: translateY(1.7em);  
+  padding-left: 55px;
+
 }
 
 #sortOrder {
-  /* orderの小要素 */
-  width: 180px;
   height: 31px;
-
   border: 1px solid #222;
 }
 
@@ -103,16 +100,19 @@ img {
   text-decoration: underline;
 }
 
+.main_content {
+  /* display: flex;
+  justify-content: space-between; */
+}
+
 .side_item {
-  /* 親要素 */
-  position: relative;
-  display: flex;
-  padding: 20px 25px 0 60px;
+  display: flex; 
+  justify-content: space-between; 
 }
 
 .side {
   padding: 30px 0px 20px 60px;
-  margin: 80px 20px 0px 0px;
+  margin: 95px 0 0 40px;
   height: 300px;
   width: 100%; 
   max-width: 205px;
@@ -174,13 +174,13 @@ img {
   display: grid;
   /* grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 0 10px; 
-  padding-top: 51px;
+  gap: 2px;
+  padding: 0 0 0 18px; 
+  padding-top: 35px;
 }
 
 .item_list .item {
-  padding: 30px 3px 0px 15px;
+  padding: 30px 40px 0px 5px;
   margin-bottom: 10px;
 }
 
@@ -189,7 +189,9 @@ img {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
   max-width: 300px;
-  height: 220px;
+  height: 220px; 
+  /* object-fit: cover; */
+  /* height: auto; */
   margin-bottom: 12px;
 }
 
@@ -239,8 +241,6 @@ img {
   padding-left: 5px;
 }
 
-
-
 .price {
   font-size: 20px;
 }
@@ -287,7 +287,6 @@ img {
 
   .carousel-item img {
     height: 320px;  
-    object-fit: cover;  
   }
 
   .buyNow {
@@ -300,26 +299,19 @@ img {
   }
 
   .order {
-    left: 16em;
-    /* margin: 10px 0; */
+    transform: translateY(1.6em);
+    padding-left: 32px;
   }
   
   #sortOrder {
-    /* orderの小要素 */
     width: 150px;
     height: 31px;
   }
 
-  .side_item {
-    /* 親要素 */
-    position: relative;
-    display: flex;
-    padding: 20px 25px 0 30px;
-  }
   
   .side {
     padding: 30px 0px 20px 47px;
-    margin: 80px 20px 0px 0px;
+    margin: 86px 0 0 18px;
     height: 300px;
     width: 100%; 
     max-width: 175px;
@@ -345,23 +337,22 @@ img {
   }
 
   .item_list {
-    grid-template-columns: repeat(3, 1fr); /* 2列に設定 */
+    grid-template-columns: repeat(3, 1fr); 
     grid-auto-rows: minmax(200px, auto);
-    /* gap: 20px;
-    padding: 0 30px;  */ 
+    padding: 0 5px; 
+    padding-top: 22px;
   }
 
   .item img {
-    /* max-width: 260px; */
+    max-width: 290px;
   }
 
   .item_list {
-    padding: 0 5px; 
-    padding-top: 51px;
+    
   }
 
   .item_list .item {
-    padding: 30px 0px 0px 0px;
+    padding: 30px 15px 0px 0px;
   }
 
  /* 画像の幅  */
@@ -393,25 +384,25 @@ img {
   }
 
   .order {
-    left: 15.5em;
-    margin: 20px 0;
+    padding-left: 36px;
+    transform: translateY(1.7em);
   }
   
   #sortOrder {
  
-    width: 120px;
+    width: 150px;
     height: 31px;
   }
 
   .side {
-    padding: 30px 0px 20px 45px;
-    margin: 95px 10px 0px 0px;
+    padding: 25px 0px 20px 45px;
+    margin: 90px 0 0px 30px;
     width: 230px;
     height: 290px;
   }
 
   .side_item {
-    padding: 20px 25px 0 35px;
+    /* padding: 20px 25px 0 35px; */
   }
       
   .side ul {
@@ -419,7 +410,7 @@ img {
   }
   
   .side li {
-    padding-top: 1.8px;
+    /* padding-top: 1.8px; */
   }
   
   .side p {
@@ -436,26 +427,27 @@ img {
   }
     
   .item img {
-    max-width: 320px;
-    margin-right: 10px;
+    max-width: 310px;
+    /* margin-right: 10px; */
   
   }
 
   .item ul {
-   margin: 2px;
-   padding: 5px;
+   /* margin: 2px;
+   padding: 5px; */
   }
 
   .item_list {
     grid-template-columns: repeat(2, 1fr); 
-    /* grid-auto-rows: minmax(200px, auto); */
-    padding: 0 10px; 
-    padding-top: 55px;
+    padding: 0 0px 0 10px; 
+    margin: 0 30px 0 0px;
+    transform: translate(-0.8em);
+    padding-top: 30px;
   }
 
 
   .item_list .item {
-    padding: 30px 0px 0px 10px;
+    padding: 30px 0px 0px 15px;
   }
 
   .page-link {
@@ -470,69 +462,79 @@ img {
     font-size: 16px;
   }
 
+  .carousel-item img {
+    max-height: 280px; 
+  }
 
   .buyNow {
-    margin-bottom: 0.4em;
+    margin-bottom: -0.1em;
   }
 
   .buyNow a{
-    padding: 10px 30px;
+    padding: 8px 28px;
   }
 
   .order {
-    left: 13em;
+    padding-left: 32px;
+    transform: translateY(1.2em);
   }
   
   #sortOrder {
-    width: 60%;
+    /* width: 90%; */
     font-size: 15px;  
     height: 28px;
   }
 
   .side {
-    padding: 30px 0px 20px 30px;
-    margin: 65px 10px 0px 0px;
-    width: 170px;
-    height: 260px;
+    padding: 30px 0px 20px 35px;
+    margin: 80px 0px 0px 15px;
+    width: 100%; 
+    max-width: 152px;
+    min-width: 152px;
+    height: 278px;
   }
 
   .side_item {
-    padding: 10px 25px 0 15px;
+  
   }
 
   .side li {
-    padding-top: 1.8px;
+    padding-top: 2px;
   }
   
   .side p {
-    font-size: 17px;
+    font-size: 18px;
   }
   
   .side li a {
-    font-size: 16px;
+    font-size: 17px;
     padding-right: 4px;
   }
 
+  .category_list {
+    margin-top: -4px;
+  }
+
   .ctg_number {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .item_list {
     grid-template-columns: repeat(2, 1fr);
-    padding: 0 30px;  
   }
 
   .item img {
-    max-width: 260px;
+    max-width: 250px;
+    min-width: 120px;
+    height: 170px;
+    margin: 0 0 0 10px;
   }
 
   .item_list {
-    padding: 0 5px; 
-    padding-top: 51px;
   }
 
   .item_list .item {
-    padding: 10px 0 0 0;
+    padding: 20px 0 0 0;
   }
 
   .item ul {
@@ -542,6 +544,11 @@ img {
   .item_list .item ul a {
     font-size: 17px;
     color: #333;
+  }
+
+  .name_price {
+    padding: 10px 0 0 12px;
+
   }
 
   .price {
@@ -563,38 +570,34 @@ img {
       /* height: 320px; */
     }
 
-  .buyNow {
-    margin-bottom: 0.4em;
-  }
-
-  .buyNow a{
-    font-size: 16px;
-    padding: 8px 28px;
-  }
-
-    .order {
-      left: 10.2em;
+    .buyNow {
+      margin-bottom: 0.4em;
     }
+
+    .buyNow a{
+      font-size: 16px;
+      padding: 8px 28px;
+    }
+
     
     #sortOrder {
-      width: 55%;
+      width: 35%;
       font-size: 14px;  
       height: 25px;
     }
 
     .side {
-      padding: 30px 0px 20px 22px;
-      margin: 70px 10px 0px 0px;
-      width: 170px;
+      padding: 28px 0px 0px 35px;
+      margin: 70px 0px 0px 10px;
+      max-width: 150px;
       height: 250px;
     }
   
     .side_item {
-      padding: 10px 25px 0 15px;
     }
     
     .side p {
-      font-size: 16px;
+      font-size: 17px;
     }
 
     .side li a {
@@ -604,18 +607,14 @@ img {
 
     .item img {
       max-width: 240px;
-      height: 170px;
+      height: 140px;
     }
 
   .item_list {
-    padding: 2px 2px; 
-    padding-top: 48px;
-    /* margin: 0px 2px 0px 4px; */
+    padding-top: 20px;
   }
 
   .item_list .item {
-    padding: 22px 0 0 0;
-    /* margin: 2px 0 12px 0; */
   }
 
   .item ul {

@@ -111,52 +111,46 @@ footer p {
   .contact h3 {
     font-size: 24px;
     margin: 6px 0;
+  }
 
- }
+  .contact_name_data {
+    margin-left: 50px;
+  }
 
- .contact_name_data {
-  margin-left: 50px;
- }
+  .contact_family {
+    width: 45%; 
+  }
 
- .contact_family {
-  width: 45%;
-  
-}
+  .contact_first {
+    width: 45%; 
 
+    padding-left: 5px;
+  }
 
+  .contact_email_data {
+    margin-left: 50px;
+  }
 
-.contact_first {
-  width: 45%; 
+  .contact_email_form {
+    width: 92%;
+  }
 
-  padding-left: 5px;
-}
+  .contact_data {
+    margin-left: 50px;
+  }
 
-.contact_email_data {
-  margin-left: 50px;
-}
+  .contact_form {
+    width: 92%;
+    height: 160px;
+  }
 
-.contact_email_form {
-  width: 92%;
-}
-
-.contact_data {
-  margin-left: 50px;
-}
-
-.contact_form {
-  width: 92%;
-  height: 160px;
-}
-
-.btn-custom {
-  margin-top: 20px;
-  margin-left: 30px;
-  padding: 12px;
-  width: 180px;
-  height: 48px;
-}
- 
-
+  .btn-custom {
+    margin-top: 20px;
+    margin-left: 30px;
+    padding: 12px;
+    width: 180px;
+    height: 48px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -232,18 +226,15 @@ footer p {
 @media (max-width: 768px) {
 
   .Entire {      
-      width: calc(100% - 64px); 
-      /* 左右の外側の要素幅を32pxずつ開ける */
-      /* padding: 0 32px;  */
-      /* 左右の内側の要素幅を開ける */
+      width: calc(100% - 20px); 
       max-width: 700px; 
-      margin: 0 auto; 
+      margin: 10px auto; 
   }
 
   .contact h3 {
     font-size: 22px;
-    padding-left: 12px;
-    margin: 6px 0;
+    padding-right: 20px;
+    margin: 5px 0;
  }
 
   .contact_family {
@@ -273,6 +264,13 @@ footer p {
   .contact_form {
     width: 92%;
     height: 150px;
+  }
+
+  .btn-custom {
+    width: 165px;
+    height: 45px;
+    margin-top: 14px;
+    margin-right: 8px;
   }
 }
 

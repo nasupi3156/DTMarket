@@ -14,6 +14,7 @@ li {
   list-style-type: none;
 }
 
+
 .navbar {
   padding: 23px 15px 17px 55px;
 }
@@ -74,6 +75,7 @@ li {
   width: 75px;
   height: 38px;
 }
+
 /* 検索ボックス */
 .search-form .form-control {
   font-size: 15px;
@@ -120,7 +122,6 @@ li {
   font-size: 18px;
 }
 
-
 .navbar-toggler:focus,
 .navbar-toggler:active { 
   box-shadow: none; 
@@ -131,8 +132,6 @@ li {
   margin-right: 15px;
   margin-top: 2px;
 }
-
-
 
 @media (max-width: 1200px) {
 
@@ -147,7 +146,6 @@ li {
     font-size: 13px;
     width: 60px;
     height: 33px;
-    
   }
 
   .search-form .form-control {
@@ -175,15 +173,13 @@ li {
 }
 
 @media (max-width: 992px) {
-
   .navbar {
-    padding: 20px 10px 17px 35px;
-    /* white-space: nowrap; */
-    /* flex-wrap: nowrap; */
+    padding: 20px 10px 16px 40px;
   }
 
   .navbar .navbar-brand {
-    font-size: 27px;
+    font-size: 28px;
+    
     margin-top: -3px;
   }
 
@@ -207,8 +203,66 @@ li {
 
 }
 
+/* list */
 @media (max-width: 767.98px) {
 
+  .list-page .navbar-toggler {
+      /* display: block; 
+      position: fixed; */
+      top: 82px;
+      right: 10px;
+      /* z-index: 10000; */
+  } 
+
+  .list-page .navbar-collapse.show .nav-link {
+    transform: translateY(100px);
+  }
+ 
+
+  .nav-custom {
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;  
+  }
+  
+  .nav-custom:hover {
+    /* outline: 2px solid rgba(0, 123, 255, 0.5);  */
+    background-color: rgba(0, 123, 255, 0.1); 
+    width: 242px;
+  }
+
+  .logout-in {
+    text-align: center;
+  }
+
+  .logout-in:hover {
+    background-color: rgba(0, 123, 255, 0.1); 
+    width: 242px;
+  }
+
+  .nav-link.click {
+    font-size: 17px;
+    font-weight: 500;
+  }
+}
+
+@media (max-width: 576px){
+  .list-page .navbar-toggler {
+    top: 78px;
+    right: 10px;
+  } 
+
+  .list-page .navbar-collapse.show .nav-link {
+    /* font-size: 16px;  */
+    transform: translateY(100px);
+    padding-top: 20px;
+    padding: 10px 0px 20px 0; 
+  }
+}
+
+/* 全ファイル */
+@media (max-width: 767.98px) {
+  
   /* ハンバーガー */
   .navbar-toggler {
     margin-top: -20px;
@@ -216,13 +270,15 @@ li {
   }
 
   .navbar-toggler {
-    display: block; 
-    position: fixed;
-    top: 42px;
-    right: 10px;
+    /* display: block; 
+    position: fixed; */
+    /* top: 42px;
+    right: 10px; */
     z-index: 10000;
+    border: none;
   }
 
+  /* 横から開く */
   .navbar-collapse {
     position: fixed;
     top: 0;
@@ -236,22 +292,31 @@ li {
 
   .navbar-collapse.show {
     right: 0; 
-    /* メニューが表示されるとき */
+    /* メニュー開いた時の位置 */
   }
 
-
   .navbar-collapse.show .nav-link {
-    font-size: 18px; 
+    /* ハンバーガー全体 */
+    font-size: 15px;
     transform: translateY(60px);
-    /* 要素の位置だけを下に下げる */
     padding-top: 20px;
-    padding: 10px 0px 20px 0; 
+    padding: 12px 0px 20px 0; 
+  }
+  
+  .navbar-toggler-icon {
+    transform: translate(18px, 9px);
+    width: 35px; 
+    /* 線の大きさ */
+    height: 42px; 
+    /* 縦幅の位置 */
+  }
 
-}
-
+  .navbar {
+    padding: 24px 10px 20px 40px;
+  }
 
   .navbar .navbar-brand {
-    font-size: 24px;
+    font-size: 26px; 
   }
 
   
@@ -265,36 +330,47 @@ li {
   }
 
   .search-form.d-md-none {
-    margin-right: 1em;
+    margin-right: 0.8em; 
   }
 
-    .cart.d-md-none {
-    margin-right: 6em;
+  .cart .d-md-none {
+    /* margin-right: 6em; */
   }
-
+  
   .nav-item .greeting {
-    font-size: 15px;
+    font-size: 16px;
     display: block;
+  }
+  
+  .nav-custom {
+    font-size: 15px;
+  }
+
+  .logout-in {
+    font-size: 14px;
   }
 
   .nav-item.dropdown .dropdown-menu {
-    transform: translateY(35px);
+    transform: translateY(30px);
+  }
+
+  .cart {
+    transform: translate(10px, -1px); 
   }
 }
 
 
 @media (min-width: 768px) {
   .navbar-toggler {
-      display: none; 
+    display: none; 
   }
 }
 
 @media (max-width: 576px){
 
   .navbar-collapse.show .nav-link {
-    font-size: 16px; 
+    font-size: 14px; 
     transform: translateY(60px);
-    /* 要素の位置だけを下に下げる */
     padding: 10px 0px 20px 0; 
   }
 
@@ -305,17 +381,45 @@ li {
   }
 
   .navbar .navbar-brand {
-    font-size: 22px;
+    font-size: 25px;
   }
 
-  .cart.d-md-none {
-    margin-right: 4.5em;
+  .navbar-toggler-icon {
+    transform: translate(15px, 8px);
+    width: 35px; 
+    /* 線の大きさ */
+    height: 42px; 
+    /* 縦幅の位置 */
   }
 
+  .nav-custom {
+    font-size: 13px;
+  }
+  
+  .nav-custom:hover {
+    width: 210px;
+  }
+
+  .logout-in {
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .logout-in:hover {
+    width: 210px;
+  }
+
+  .search-form.d-md-none {
+    margin-right: 0.5em; 
+  }
+  
   .search-form .form-control {
     width: 200px;
     height: 30px;
   }
-
-
+  .cart.d-md-none {
+    margin-right: 1.1em;
+  }
 }
+
+
