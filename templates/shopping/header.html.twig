@@ -8,13 +8,11 @@
         <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
       </form>
 
-      {# ハンバーガー #}
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      {# 上下ハンバーガー #}
 
+  
        <li class="nav-item">
-         <a class="nav-link cart d-md-none" href="order/cart.php">
+         <a class="nav-link cart d-md-none" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}order/cart.php">
            <i class="bi bi-cart position-relative" style="font-size: 26px;">
              <span class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-danger" style=" width: 24px; height: 24px; padding: 0; font-size: 13px; line-height: 24px;">
               {# rounded-pillからrounded-circle #}
@@ -23,6 +21,12 @@
            </i> 
          </a>
        </li>
+
+      {# ハンバーガー #}
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+       
     
       {# 閉じる開く #}
       <div class="collapse navbar-collapse" id="navbarScroll">
@@ -40,7 +44,7 @@
             <a class="nav-link greeting" href="#">こんにちは <span>{{ family_name }}</span> さん！</a>
           </li>
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown d-none d-md-block">
             <a class="nav-link dropdown-toggle my-dropdown-toggle account" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               マイアカウント
             </a>
@@ -50,6 +54,21 @@
               <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/order_detail.php">注文履歴詳細</a></li>
               <li><a class="dropdown-item" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/contact.php">お問い合わせ</a></li>
             </ul>
+
+          {# ハンバーガー #}
+          <li class="nav-item d-md-none">
+            <a class="nav-link nav-custom" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/profile.php">お客様情報</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link nav-custom" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/order.php">注文履歴</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link nav-custom" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/order_detail.php">注文履歴詳細</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <a class="nav-link nav-custom" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/contact.php">お問い合わせ</a>
+            </li>
+
 
             <li class="nav-item">
               <a class="nav-link cart d-md-flex d-none" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}order/cart.php">

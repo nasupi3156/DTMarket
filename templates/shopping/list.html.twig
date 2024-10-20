@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Shopping</title>
   </head>
-  <body>
+  <body class="list-page">
   
   <div class="shipping_fee">
     <p>2000円以上のお買い上げで送料無料<p>
@@ -71,53 +71,59 @@
           </button>
         </div>
   </section>
-  <section>    
+  <section class="content-wrapper">   
     <div class="side_item">
       <div class="side">
         <p>カテゴリ</p>
         {% include 'category_menu.html.twig' %}
       </div>
       
-      <div class="item_order">
-        <div class="order">
-          <select id="sortOrder">
-            <option value="price ASC" {% if order == 'price ASC' %}selected{% endif %}>安い価格</option>
-            {# valueのascなどはgetリクエストの一部としてサーバーに送信されサーバーはこの値を読み取り、クエリ結果をどのように並べ替えるかを決める   #}
-            <option value="price DESC" {% if order == 'price DESC' %}selected{% endif %}>高い価格</option>
-            <option value="item_name ASC" {% if order == 'item_name ASC' %}selected
-            {% endif %}>アルファベット(A-Z)</option>
-            <option value="item_name DESC" {% if order == 'item_name DESC' %}selected{% endif %}>アルファベット(Z-A)</option> 
-          </select>
-        </div>
-      </div>
-
-      <div class="item_list">
-        {% if errorMessage %}
-          <div class="search_error">{{ errorMessage }}</div>
-        {% endif %}
-    
-        {% for value in dataArr %}
-          <div class="item">
-            <ul>   
-              <li class="image">
-                <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}"><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}" /></a>
-              </li>
-
-              <div class="name_price">
-              <li>
-              <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}">{{value.item_name}}</a>
-              </li>
-              <li class="price">&yen;{{value.price|number_format(0, '.', ',')}}
-              {# <span class="tax">(税込)<span> #}
-              {# 0は小数点以下の桁数を指定 #}{# ','',','  3桁区切り(数字) #}
-              </li>
-              </div>
-            </ul>
+      <div class="main_content">
+        <div class="item_order">
+          <div class="order">
+            <select id="sortOrder">
+              <option value="price ASC" {% if order == 'price ASC' %}selected{% endif %}>安い価格</option>
+              {# valueのascなどはgetリクエストの一部としてサーバーに送信されサーバーはこの値を読み取り、クエリ結果をどのように並べ替えるかを決める   #}
+              <option value="price DESC" {% if order == 'price DESC' %}selected{% endif %}>高い価格</option>
+              <option value="item_name ASC" {% if order == 'item_name ASC' %}selected
+              {% endif %}>アルファベット(A-Z)</option>
+              <option value="item_name DESC" {% if order == 'item_name DESC' %}selected{% endif %}>アルファベット(Z-A)</option> 
+            </select>
           </div>
-        {% endfor %}
-        </div>   
+        </div>
+
+        <div class="item_list">
+          {% if errorMessage %}
+            <div class="search_error">
+              {{ errorMessage }}
+            </div>
+          {% endif %}
+      
+          {% for value in dataArr %}
+            <div class="item">
+              <ul>   
+                <li class="image">
+                  <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}"><img src="{{constant('shopping\\Bootstrap::ENTRY_URL')}}images/{{value.image}}" alt="{{value.item_name}}" /></a>
+                </li>
+
+                <div class="name_price">
+                  <li>
+                  <a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/detail.php?item_id={{value.item_id}}">{{value.item_name}}</a>
+                  </li>
+                  <li class="price">&yen;{{value.price|number_format(0, '.', ',')}}
+                  {# <span class="tax">(税込)<span> #}
+                  {# 0は小数点以下の桁数を指定 #}{# ','',','  3桁区切り(数字) #}
+                  </li>
+                </div>
+              </ul>
+            </div>
+          {% endfor %}
+          </div>  
+        </div>
+        {# main_content  #}
       </div>
       {# side-item #}
+
     {% if totalPages > 0 %}
     <div class="pagination d-flex justify-content-center">
       <nav aria-label="Page navigation">
@@ -134,7 +140,6 @@
     {# pagination #}   
   </section>
 
-  {# footer #}
   {% include 'footer.html.twig' %}
 
  <script src="{{ constant('shopping\\Bootstrap::APP_URL' )}}js/logout.js"></script>

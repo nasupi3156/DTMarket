@@ -35,7 +35,7 @@
         </div>
       </div>
       {# col-3 #}
-      <div class="col-12 col-md-8 detail_">
+      <div class="col-12 col-md-8 detail">
         <div class="detail_list">
           <dl>
             <div class="item_name">
@@ -53,15 +53,16 @@
             </div>
           </dl>
         </div>     
-        <input type="hidden" name="item_id" id="item_id" value="{{itemData.item_id}}">
-        {# jQueryのitem_idが、サーバーから取得したitemDataのitem_idと結びつき、この要素はhiddenで見えないようにしている。
-        value="{{itemData.item_id}}"は、detail.phpから取得した商品情報のitem_idが入る。 #}
-        
-        <input type="button" name="back" value="一覧へ戻る" onclick="history.back(); return false;" / class="detail_back">
-        {# onclick="history.back(); return false;"  : ブラウザは前のページに戻りフォームの値を保持 #}
-        <input type="button" name="cart_in" value="ショッピングカートへ入れる" id="cart_in" / class="detail_cart">
-        {# ショッピングカートに入れるボタン。クリックイベントはjQueryで処理します。 #}
-        
+        <div class="detail_buttons">
+          <input type="hidden" name="item_id" id="item_id" value="{{itemData.item_id}}">
+          {# jQueryのitem_idが、サーバーから取得したitemDataのitem_idと結びつき、この要素はhiddenで見えないようにしている。
+          value="{{itemData.item_id}}"は、detail.phpから取得した商品情報のitem_idが入る。 #}
+          
+          <input type="button" name="back" value="一覧へ戻る" onclick="history.back(); return false;" / class="detail_back">
+          {# onclick="history.back(); return false;"  : ブラウザは前のページに戻りフォームの値を保持 #}
+          <input type="button" name="cart_in" value="ショッピングカートへ入れる" id="cart_in" / class="detail_cart">
+          {# ショッピングカートに入れるボタン。クリックイベントはjQueryで処理 #}
+        </div>
         </div>
         {# col-7 #}
       </div>
