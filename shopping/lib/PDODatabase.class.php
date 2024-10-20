@@ -22,7 +22,7 @@ namespace shopping\lib;
       $this->db_user = $db_user;
       $this->db_pass = $db_pass;
       $this->db_name = $db_name;
-      //SQL関連
+      // SQL関連
       $this->order = '';
       $this->limit = '';
       $this->offset = '';
@@ -181,10 +181,10 @@ namespace shopping\lib;
    
         case 'count':
           $columnKey = 'COUNT(*) AS NUM ';
-          // 全ての行数の値をASのNUMで取得、NUMの値は使用できる
+          // 全ての行数の値をASのNUMで取得、NUMの値を使用できる
         break;
           default: 
-          //switch終了したら全体処理から抜ける
+          // switch終了したら全体処理から抜ける
         break;
       }
 

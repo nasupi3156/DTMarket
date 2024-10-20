@@ -41,7 +41,7 @@ $context = [
 ];
 $context['cateArr'] = $cateArr;
 $context['itemData'] = $itemData[0];
-//　[0]を使用して連想配列の要素に直接アクセスできる。全体にアクセスしたい場合は[0]を入れないでループ処理
+// [0]を使用して連想配列の要素に直接アクセスできる。全体にアクセスしたい場合は[0]を入れないでループ処理
 // 今回は商品詳細だけなのでその商品の情報のみを[0]で指定
 $context['sumNum'] = $sumNum; 
 $context['isUserLogin'] = $ses->isUserLogin();

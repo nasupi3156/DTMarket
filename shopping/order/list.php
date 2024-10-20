@@ -70,7 +70,6 @@ $totalItemCount = $itm->getTotalItemCount($ctg_id);
  
 $categories = $itm->getCategoryDetail();
 
-// 1ページあたりのアイテム数
 $itemsPerPage = 12;
 
 // 1ページ目、$offset = (1 - 1) * 12 = 0 : 0~11

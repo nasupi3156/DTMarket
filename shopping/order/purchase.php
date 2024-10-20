@@ -59,10 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['btn-modal'])) {
       header('Location:' . Bootstrap::ENTRY_URL . 'order/purchase.php');
       exit(); 
     }
-  }
-  
-
- 
+  } 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
 
@@ -138,7 +135,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
       
       $db->insert('order_details', [
         'order_id' => $orderId,
-
         'item_id' => $itemId,
         'image' => $itemImage, 
         'item_name' => $itemName,
@@ -186,8 +182,8 @@ $context = [
   'profile' => $result,
   'shipping_fee' => $shipping_fee
 ];
-$context['dataArr'] = $dataArr;
 
+$context['dataArr'] = $dataArr;
 // 数の合計
 $context['sumNum'] = $sumNum; 
 // 金額計合

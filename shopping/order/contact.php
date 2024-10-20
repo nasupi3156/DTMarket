@@ -25,7 +25,6 @@ $customer_no = isset($_SESSION['customer_no']) ? ($_SESSION['customer_no']) : nu
 $user_id = isset($_SESSION['user_id']) ? ($_SESSION['user_id']) : null;
 
 
-
 $dataArr = [];
 $errArr = [];
 $duplicateEmail = false;
