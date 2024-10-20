@@ -8,7 +8,6 @@ $(function () {
     // hiddenのid="item_id"の値を取得
     location.href = entry_url + "order/cart.php?item_id=" + item_id;
      // item_idをクエリパラメータとしてURLに追加してリダイレクト
-    
   });
 });
 
