@@ -127,7 +127,7 @@ body {
   .item_image img {
     max-width: 370px;
     min-width: 320px;
-    /* height: 220px; */
+    height: 240px;
   }
 
   .item_name {
@@ -269,7 +269,6 @@ body {
     max-width: 370px;
     display: block;
     margin: 0 auto;
-
   }
 
   .item_name {
@@ -364,7 +363,6 @@ body {
     justify-content: flex-start; 
     gap: 3px;
     transform: translateX(-16px);
-
     margin-right: 40px;
     margin-top: 25px; 
   }
