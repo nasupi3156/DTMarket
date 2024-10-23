@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($userDelete) {
       session_destroy();
       // sessionを破壊
-      header('Location:' . Bootstrap::ENTRY_URL . 'login.php');
+      header('Location:' . Bootstrap::ENTRY_URL . 'auth/login.php');
       exit();
     } else {
       echo "退会できませんでした。";

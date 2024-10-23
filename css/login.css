@@ -46,7 +46,6 @@ p {
 
 
 .email p {
-  font-size: 17px;
   display: block;
   margin-bottom: -5px;
 }
@@ -136,9 +135,40 @@ input[type="password"]:focus {
   background-color: #ff8c00;
 }
 
+/* エラー */
+.error_email {
+  font-size: 17px;
 
-@media (min-width: 1200px) {
-  
+  color: #f00;
+}
+
+.error_password {
+  font-size: 18px;
+  color: #f00;
+}
+
+.error_login {
+  font-size: 17px;
+  color: #f00; 
+  font-weight: 599;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    height: 565px;
+  } 
+
+  .error_email {
+    font-size: 16px;
+  }
+
+  .error_password {
+    font-size: 17px;
+  }
+
+  .error_login {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 992px) {
@@ -146,23 +176,53 @@ input[type="password"]:focus {
     font-size: 2.4em;
   }
 
-.email input,
-.password input {
-  width: 240px;
+  .container {
+    height: 560px;
+  }
+  
+  .email input,
+  .password input {
+    width: 240px;
+  }
+
+  .login_btn {
+    width: 240px;
+  }
+
+  .sign_up {
+    width: 240px;
+  }
 }
 
-.login_btn {
-  width: 240px;
-}
+@media (max-width: 768px) {
+  .login h1 {
+    font-size: 2.3em;
+  }
 
-.sign_up {
-  width: 240px;
-}
+  .container {
+   height: 550px;
+  }
+  
+  .error_email {
+    font-size: 15px;
+  }
 
+  .error_password {
+    font-size: 16px;
+  }
+
+  .error_login {
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 576px) {
   .login h1 {
     font-size: 2.1em;
-}
+ }
+
+  .container {
+    height: 540px;
+  } 
+
 }
