@@ -73,7 +73,7 @@
               </form>
               
               {% else %}
-                <p class="customer-info">お客様情報を表示するには、<a href="login.php" class="login-link">新規会員登録またはログイン</a>してください。</p>  
+                <p class="customer-info">お客様情報を表示するには、<a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php" class="login-link">新規会員登録またはログイン</a>してください。</p>  
               {% endif %}
             </div>
             {# col-9 #}

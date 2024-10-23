@@ -26,11 +26,10 @@
           <label for="email">メールアドレス</label>
           <input type="email" name="email" value="{{ dataArr.email }}" id="email">
           {% if errArr.email %}
-            <p style="color: #f00;">{{ errArr.email }}</p>
+            <p class="error_email">{{ errArr.email }}</p>
           {% endif %}
           {% if delete and not errArr.email %}
-           
-            <p style="color: #f00; font-weight: 600;">{{ errArr.email }}</p>
+            <p class="error_delete">{{ errArr.email }}</p>
           {% endif %}
         </div>  
 
@@ -39,10 +38,10 @@
           <input type="password" name="password" 
           value="{{ password }}" id="password">
           {% if errArr.password %}
-            <p style="color: #f00; font-size: 18px;">{{errArr.password}}</p>
+            <p class="error_password">{{errArr.password}}</p>
           {% endif %}
           {% if errArr.login %}
-            <p style="color: #f00; font-weight: bold;">{{ errArr.login }}</p>
+            <p class="error_login">{{ errArr.login }}</p>
           {% endif %}
         </div>
           <button type="submit" name="login" value="ログイン" class="login_btn">ログイン</button>  

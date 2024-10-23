@@ -84,7 +84,7 @@
           {% endif %} 
           {# 購入履歴チェック終了 #}
           {% else %}
-            <p class="customer-info">注文履歴を表示するには、<a href="login.php"  class="login-link">新規会員登録またはログイン</a>してください。</p>
+            <p class="customer-info">注文履歴を表示するには、<a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php"  class="login-link">新規会員登録またはログイン</a>してください。</p>
           {% endif %}
           {# ログインチェック終了  #}
           </div>

@@ -118,7 +118,7 @@
                             {% endif %}
 
                             {% else %}
-                              <p class="customer-info">注文履歴詳細を表示するには、<a href="login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
+                              <p class="customer-info">注文履歴詳細を表示するには、<a href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}auth/login.php" style="text-decoration: underline;">新規会員登録またはログイン</a>してください。</p>
                           {% endif %}
                         {# </div>             #}
                       </div>
