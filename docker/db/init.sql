@@ -348,7 +348,7 @@ INSERT IGNORE INTO items VALUES ( 86, 'かぼす', 'かぼす(大分県産)旬�
 
 INSERT IGNORE INTO items VALUES ( 87, 'レンコン', 'レンコン(茨城県産)旬の季節は、秋から冬です。栄養素は、ビタミンC、食物繊維、カリウムが豊富に含まれています。', 380, 'renkon.jpg', 1 );
 
-INSERT IGNORE INTO items VALUES ( 88, 'グレープ', 'グレープ(山梨県産)旬の季節は、夏から秋です。栄養素は、ビタミンC、ビタミンK、ポリフェノールが豊富に含まれています。', 770, 'grapefruit.jpg', 2 );
+INSERT IGNORE INTO items VALUES ( 88, 'グレープフルーツ', 'グレープフルーツ(山梨県産)旬の季節は、夏から秋です。栄養素は、ビタミンC、ビタミンK、ポリフェノールが豊富に含まれています。', 770, 'grapefruit.jpg', 2 );
 
 INSERT IGNORE INTO items VALUES ( 89, 'オクラ', 'オクラ(鹿児島県産)旬の季節は、夏です。栄養素は、ビタミンC、ビタミンK、食物繊維が豊富に含まれています。', 190, 'okura.jpg', 1 );
 
