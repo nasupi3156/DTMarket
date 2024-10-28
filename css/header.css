@@ -228,7 +228,7 @@ li {
   .nav-custom:hover {
     /* outline: 2px solid rgba(0, 123, 255, 0.5);  */
     background-color: rgba(0, 123, 255, 0.1); 
-    width: 300px;
+    width: 265px;
   }
 
   .logout-in {
@@ -237,7 +237,7 @@ li {
 
   .logout-in:hover {
     background-color: rgba(0, 123, 255, 0.1); 
-    width: 300px;
+    width: 265px;
   }
 
   .nav-link.click {
@@ -397,7 +397,7 @@ li {
   }
   
   .nav-custom:hover {
-    width: 210px;
+    width: 200px;
   }
 
   .logout-in {
@@ -406,7 +406,7 @@ li {
   }
 
   .logout-in:hover {
-    width: 210px;
+    width: 200px;
   }
 
   .search-form.d-md-none {
