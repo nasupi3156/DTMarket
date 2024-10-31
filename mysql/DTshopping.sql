@@ -152,14 +152,14 @@ CREATE TABLE postcodes (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 
-; mac
+--** mac *--
 LOAD DATA LOCAL INFILE '/Applications/MAMP/htdocs/DTMarket/mysql/postcodes.csv'
 INTO TABLE `postcodes`
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
 
-; windows
+--** windows *-
 LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\DTMarket\\mysql\\postcodes.csv'
 INTO TABLE `postcodes`
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
