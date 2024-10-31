@@ -60,7 +60,6 @@ CREATE TABLE items (
   FOREIGN KEY (ctg_id) REFERENCES categories(ctg_id)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-  -- ; カート(取引)	
 CREATE TABLE carts (	
   crt_id int unsigned not null auto_increment,	
   customer_no int unsigned not null,	
