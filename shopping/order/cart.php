@@ -1,5 +1,5 @@
 <?php
-// コントローラー
+
 namespace shopping;
 
 require_once dirname(__FILE__) . '/../Bootstrap.class.php';
