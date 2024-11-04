@@ -245,7 +245,7 @@ li {
     font-weight: 500;
   }
 }
-git commit -m "Update EC-site"
+
 @media (max-width: 576px){
   .list-page .navbar-toggler {
     top: 78px;
