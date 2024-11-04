@@ -228,7 +228,7 @@ li {
   .nav-custom:hover {
     /* outline: 2px solid rgba(0, 123, 255, 0.5);  */
     background-color: rgba(0, 123, 255, 0.1); 
-    width: 265px;
+    width: 295px;
   }
 
   .logout-in {
@@ -237,7 +237,7 @@ li {
 
   .logout-in:hover {
     background-color: rgba(0, 123, 255, 0.1); 
-    width: 265px;
+    width: 295px;
   }
 
   .nav-link.click {
@@ -245,7 +245,7 @@ li {
     font-weight: 500;
   }
 }
-
+git commit -m "Update EC-site"
 @media (max-width: 576px){
   .list-page .navbar-toggler {
     top: 78px;
@@ -397,7 +397,7 @@ li {
   }
   
   .nav-custom:hover {
-    width: 200px;
+    width: 208px;
   }
 
   .logout-in {
@@ -406,7 +406,7 @@ li {
   }
 
   .logout-in:hover {
-    width: 200px;
+    width: 208px;
   }
 
   .search-form.d-md-none {
