@@ -217,12 +217,159 @@ input[type="password"]:focus {
 }
 
 @media (max-width: 576px) {
+  
+  .container {
+    width: 85%;
+    height: 545px;
+  }
+
   .login h1 {
-    font-size: 2.1em;
+    font-size: 1.8em;
  }
 
-  .container {
-    height: 545px;
-  } 
+  label {
+    font-size: 16px;
+  }
+
+  .email input,
+  .password input {
+    width: 230px;
+    height: 38px;
+  }
+
+  .login_btn {
+    font-size: 17px;
+    width: 230px;
+    height: 45px;
+  }
+
+  .sign_up {
+    font-size: 17px;
+    width: 230px;
+    height: 45px;
+  }
+
+  .pass_forget{
+    font-size: 15px;
+  }
+
+  .error_email {
+    font-size: 14px;
+  }
+
+  .error_password {
+    font-size: 15px;
+  }
+
+  .error_login {
+    font-size: 14px;
+  }
 
 }
+
+@media (max-width: 425px) {
+
+  .container {
+    height: 520px;
+  }
+
+  .login h1 {
+    font-size: 1.8em;
+ }
+
+  label {
+    font-size: 15px;
+  } 
+
+  .email input,
+  .password input {
+    width: 210px;
+    height: 35px;
+  }
+
+  .login_btn {
+    font-size: 17px;
+    width: 210px;
+    height: 45px;
+  }
+
+  .sign_up {
+    font-size: 17px;
+    width: 210px;
+    height: 45px;
+  }
+
+  .pass_forget{
+    font-size: 14px;
+  }
+
+  .error_email {
+    font-size: 13px;
+  }
+
+  .error_password {
+    font-size: 14px;
+  }
+
+  .error_login {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 375px) {
+}
+
+@media (max-width: 320px) {
+
+  .container {
+    height: 510px;
+  }
+
+  .login h1 {
+    font-size: 1.6em;
+ }
+
+  label {
+    font-size: 14px;
+  } 
+
+  .email input,
+  .password input {
+    width: 192px;
+    height: 32px;
+  }
+
+  .login_btn {
+    font-size: 15px;
+    width: 192px;
+    height: 43px;
+  }
+
+  .sign_up {
+    width: 192px;
+    height: 43px;
+  }
+
+  .sign_up a {
+    font-size: 15px;
+  }
+
+  .pass_forget{
+    font-size: 13px;
+  }
+
+  .error_email {
+    font-size: 13px;
+  }
+
+  .error_password {
+    font-size: 14px;
+  }
+
+  .error_login {
+    font-size: 13px;
+  }
+}
+
+
+

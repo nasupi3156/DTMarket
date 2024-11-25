@@ -14,16 +14,17 @@ a {
   padding: 0;
 }
 
-body {
+html, body {
+  /* width: 100%; */
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden;  */
   /* background-color: #FAFAFA; */
+
 }
 
 li {
   list-style-type: none;
-}
-
-img {
-  max-width: 100%;
 }
 
 /* 送料無料 */
@@ -58,15 +59,75 @@ img {
   cursor: pointer;
 }
 
+#slider {
+  max-width: 100%;
+
+}
+
+#slider, #carouselExampleFade {
+  /* width: 100%;
+  max-width: 100%; */
+  /* overflow-x: hidden; */
+}
 
 .carousel-item img {
-  width: 100%;
-  /* height: calc(100vh - 100px);  */
+  /* width: 100%; */
+  /* width: auto; */
+  /* height: auto; */
+  display: block;
+    /* padding: 0;
+  margin: 0; */
+  /* height: calc(100vh - 500px);  */
   /* object-fit: cover; */
+  height: 325px;
 }
+
+.carousel-inner {
+  /* display: flex; */
+  /* justify-content: center;  */
+  /* 中央揃え */
+  /* align-items: center;    */
+   /* 中央揃え */
+}
+
+
+
+.bg-carousel {
+  /* background-image: url('../images/slider/colorful-vegetables.webp'); */
+  /* height: 295px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */
+}
+
+
+.carousel-item {
+  /* height: 295px; 
+  background-size: cover;  */
+  /* 背景画像をコンテナ全体にフィット */
+  /* background-position: center;  */
+  /* 画像を中央に配置 */
+  /* background-repeat: no-repeat; */
+   /* 画像の繰り返しを無効化 */
+}
+/* 
+.bg-carousel-1 {
+  background-image: url('../images/slider/colorful-vegetables.webp');
+}
+
+.bg-carousel-2 {
+  background-image: url('../images/slider/colorful-fruits.jpg');
+}
+
+.bg-carousel-3 {
+  background-image: url('../images/slider/fresh-vegetables.jpg');
+} */
+
+
 
 .container {
   background-color: #fafafa;
+  
 }
 
 .order {
@@ -104,6 +165,33 @@ img {
   /* display: flex;
   justify-content: space-between; */
 }
+
+.content-wrapper {
+  /* width: 100%; */
+  max-width: 100%; 
+  /* 必要に応じて適切な最大幅を設定 */
+  /* margin: 0 auto;   */
+    /* 中央揃え */
+  /* padding: 0;  */
+}
+
+/* .content-wrapper, .main_content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+} */
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row > * {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 
 .side_item {
   display: flex; 
@@ -282,6 +370,13 @@ img {
   margin-bottom: 25px;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
 
 @media (max-width: 1200px) {
 
@@ -443,7 +538,7 @@ img {
   }
 
   .carousel-item img {
-    max-height: 280px; 
+    height: 280px; 
   }
 
   .buyNow {
@@ -500,6 +595,7 @@ img {
   }
 
   .item img {
+    width: 100%;
     max-width: 250px;
     min-width: 120px;
     height: 170px;
@@ -542,8 +638,38 @@ img {
       font-size: 15px;
     }
 
+    .item_list {
+     
+      padding: 0 0px 0 10px;
+      margin: 0 15px 0 0;
+      transform: translate(-0.8em);
+      
+  }
+
     .carousel-item img {
+      /* width: 300px; */
+      /* max-width: 1200px; */
+     
+      /* padding: 0;
+      margin: 0; */
       /* height: 320px; */
+    }
+
+    #slider {
+      /* overflow: hidden; */
+    }
+
+    .carousel-item img {
+      /* width: 100%;  
+      min-width: 500px;     */
+    }
+
+    .bg-carousel {
+
+      /* height: 295px; 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; */
     }
 
     .buyNow {
@@ -563,44 +689,214 @@ img {
     }
 
     .side {
-      padding: 28px 0px 0px 35px;
+      padding: 28px 0px 0px 22px;
       margin: 68px 0px 0px 10px;
-      max-width: 150px;
-      height: 250px;
+      /* max-width: 135px; */
+      /* min-width: 130px; */
+      /* width: 100%; */
+      max-width: 125px;
+      min-width: 100px;
+      height: 240px;
     }
     
     .side p {
-      font-size: 17px;
+      font-size: 15px;
     }
 
     .side li a {
-      font-size: 15px;
+      font-size: 13px;
       padding-right: 4px;
     }
 
+    .ctg_number {
+      font-size: 14px;
+    }
+
     .item img {
-      max-width: 240px;
+      max-width: 250px;
+      /* max-width: 260px; */
+      min-width: 110px;
       height: 140px;
     }
 
-  .item_list {
-    padding-top: 20px;
+    ol, ul {
+      padding-left: 1.2em;
   }
 
-  .item ul {
-    margin: 0;
+    .item_list {
+      padding-top: 20px;
+    }
+
+    .item ul {
+      margin: 0;
+    }
+
+    .item_list .item ul a {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .price {
+      font-size: 16px;
+    }
+
+    .page-link {
+      padding: 4px 11px;
+    }
   }
 
-  .item_list .item ul a {
-    font-size: 15px;
-    color: #333;
+  @media (max-width: 425px) {
+
+    .shipping_fee p {
+      font-size: 14px;
+      margin-bottom: -2px;
+    }
+
+
+    .buyNow a {
+      font-size: 15px;
+      padding: 7px 27px;
+    }
+
+    #slider {
+      /* max-width: 100%; */
+     
+    }
+    
+    .carousel-item img {
+      /* max-width: 100%; */
+      /* width: 500px; */
+      height: 235px;
+      /* display: block; */
+      /* height: calc(100vh - 400px);  */
+      /* object-fit: cover; */
+      /* height: 295px; */
+    }
+
+    .item_list {
+      /* display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2px;
+      padding: 0 0 0 18px; 
+      padding-top: 35px; */
+    }
+
+    .item_list {
+     
+      /* padding: 0 0px 0 10px; */
+      margin: 0 5px 0 0px;
+      padding-top: 20px; 
+      /* transform: translate(-0.8em);    */
+    }
+
+    ol, ul {
+      padding-left: 1.2em;
   }
 
-  .price {
-    font-size: 16px;
+    .item img {
+      max-width: 130px;
+      /* max-width: 260px; */
+      min-width: 60px;
+      height: 120px;
+    }
+
+
+    .side {
+      padding: 25px 0px 0px 15px;
+      margin: 68px 0px 0px 8px;
+      max-width: 95px;
+      min-width: 60px;
+      height: 225px;
+    }
+
+        
+    .side p {
+      font-size: 14px;
+      padding-left: 4px;
+    }
+
+    .side li a {
+      font-size: 12px;
+      padding-right: 4px;
+    }
+
+    .ctg_number {
+      font-size: 13px;
+    }
+
+    .item_list .item ul a {
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 15px;
+    }
+
+    .page-link {
+      padding: 3px 10px;
+    }
   }
 
-  .page-link {
-    padding: 4px 11px;
+  @media (max-width: 375px) {
+    
+
+    .item_list .item ul a {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 10px;
+      font-weight: bold;
+    }
+
+    /* .name_price {
+      padding: 10px 0 0 10px;
+    } */
+
+    .pagination {
+      margin-bottom: 5px;
+      margin-top: -10px;
+    }
+
+    .page-link {
+      padding: 2px 9px;
+    }
+
   }
+  
+
+@media (max-width: 524px) {
+
+  
+  #slider {  
+  
+  }
+  .carousel-item img {
+  
+    width: 100%;  /* 幅を親要素に合わせる */
+   
+  }
+
+  .pagination {
+    /* width: 550px; */
+    /* justify-content: center; */
+  }
+
+  /* .content-wrapper {
+    padding: 0;
+  } */
+ 
+}
+
+
+  @media (max-width: 400px) {
+  
+    .carousel-item img {
+      /* min-width: 400px; */
+      /* max-width: 300%; */
+      /* padding: 0;
+      margin: 0; */
+      /* height: 320px; */
+    }
 }

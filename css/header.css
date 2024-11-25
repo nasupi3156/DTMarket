@@ -14,6 +14,13 @@ li {
   list-style-type: none;
 }
 
+header {
+  max-width: 100%;
+  /* width: 100%;
+    max-width: 1200px;  */
+    /* 必要に応じて制限 */
+   
+}
 
 .navbar {
   padding: 23px 15px 17px 55px;
@@ -370,8 +377,12 @@ li {
 
   .navbar-collapse.show .nav-link {
     font-size: 14px; 
-    transform: translateY(60px);
+    /* transform: translateY(60px); */
     padding: 10px 0px 20px 0; 
+  }
+
+  .navbar {
+    padding: 25px 0 17px 32px;
   }
 
   .navbar-toggler {
@@ -381,16 +392,23 @@ li {
   }
 
   .navbar .navbar-brand {
-    font-size: 25px;
+    font-size: 22px;
+    /* margin-left: -35px; */
   }
 
   .navbar-toggler-icon {
-    transform: translate(15px, 8px);
-    width: 35px; 
+    transform: translate(10px, 8px);
+    width: 32px; 
     /* 線の大きさ */
     height: 42px; 
     /* 縦幅の位置 */
   }
+
+  /* .search-form .form-control {
+    width: 120px;
+    height: 28px;
+    font-size: 12px;
+} */
 
   .nav-custom {
     font-size: 13px;
@@ -414,12 +432,80 @@ li {
   }
   
   .search-form .form-control {
-    width: 200px;
-    height: 30px;
+    transform: translateX(10px);
+    width: 160px;
+    height: 28px;
+    font-size: 12px;
   }
+
   .cart.d-md-none {
     margin-right: 1.1em;
   }
 }
+
+@media (max-width: 425px) {
+
+  .navbar {
+    padding: 18px 0 12px 28px;
+  }
+
+  /* .navbar-toggler {
+    margin-right: 5px;
+    margin-top: -18px;
+    padding: 2px 8px 2px 8px;
+  } */
+
+  .navbar .navbar-brand {
+    font-size: 20px;
+    /* margin-left: -35px; */
+  }
+
+  .navbar-toggler-icon {
+    transform: translate(10px, 8px);
+    width: 30px;
+    /* height: 42px; */
+  }
+
+  /* .nav-link.cart .bi-cart {
+    font-size: 16px; 
+  }
+
+   .nav-link.cart .badge {
+    width: 20px;
+    height: 20px;
+    font-size: 10px; 
+    line-height: 20px; /* バッジ内のテキストを中央に配置 */
+     
+  /* } */
+
+
+  /* ハンバーガ検索 */
+  .search-form .form-control {
+    display: none;
+  }
+}
+
+@media (max-width: 424px) {
+  .search-form .form-control {
+    /* display: block !important; */
+  }
+}
+/* @media (max-width: 424px) {
+  .search-form  {
+  display: block;
+}
+} */
+
+
+/* 
+
+@media (max-width: 524px) {
+
+.navbar {
+  width: 525px;
+}
+  
+
+} */
 
 
