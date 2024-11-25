@@ -4,12 +4,10 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/list.php">DT-Health </a>
 
-      <form class="search-form d-md-none ms-auto" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/list.php" method="get">
+      {# ハンバーガー外検索 #}
+      <form class="search-form search-mobile d-md-none ms-auto" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/list.php" method="get">
         <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBox" onkeyup="suggest(this.value)">
       </form>
-
-      {# 上下ハンバーガー #}
-
   
        <li class="nav-item">
          <a class="nav-link cart d-md-none" href="{{ constant('shopping\\Bootstrap::ENTRY_URL')}}order/cart.php">
@@ -40,6 +38,14 @@
           {# 検索結果を表示、サジェスト結果をここに表示 #}
           <div id="suggestions"></div>
 
+{# 
+          <li class="nav-item w-100 d-md-none">
+            <form class="search-form" role="search" action="{{ constant('shopping\\Bootstrap::ENTRY_URL') }}order/list.php" method="get">
+              <input class="form-control me-2" type="search" name="query" placeholder="キーワード検索" aria-label="Search" id="searchBoxMobile">
+            </form>
+          </li> #}
+
+
           <li class="nav-item">
             <a class="nav-link greeting" href="#">こんにちは <span>{{ family_name }}</span> さん！</a>
           </li>
@@ -68,6 +74,8 @@
             <li class="nav-item d-md-none">
               <a class="nav-link nav-custom" href="{{constant('shopping\\Bootstrap::ENTRY_URL')}}order/contact.php">お問い合わせ</a>
             </li>
+
+            
 
 
             <li class="nav-item">
