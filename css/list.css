@@ -15,12 +15,7 @@ a {
 }
 
 html, body {
-  /* width: 100%; */
-  margin: 0;
-  padding: 0;
-  /* overflow-x: hidden;  */
   /* background-color: #FAFAFA; */
-
 }
 
 li {
@@ -64,66 +59,13 @@ li {
 
 }
 
-#slider, #carouselExampleFade {
-  /* width: 100%;
-  max-width: 100%; */
-  /* overflow-x: hidden; */
-}
-
 .carousel-item img {
-  /* width: 100%; */
-  /* width: auto; */
-  /* height: auto; */
   display: block;
-    /* padding: 0;
-  margin: 0; */
+
   /* height: calc(100vh - 500px);  */
   /* object-fit: cover; */
   height: 325px;
 }
-
-.carousel-inner {
-  /* display: flex; */
-  /* justify-content: center;  */
-  /* 中央揃え */
-  /* align-items: center;    */
-   /* 中央揃え */
-}
-
-
-
-.bg-carousel {
-  /* background-image: url('../images/slider/colorful-vegetables.webp'); */
-  /* height: 295px; 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
-}
-
-
-.carousel-item {
-  /* height: 295px; 
-  background-size: cover;  */
-  /* 背景画像をコンテナ全体にフィット */
-  /* background-position: center;  */
-  /* 画像を中央に配置 */
-  /* background-repeat: no-repeat; */
-   /* 画像の繰り返しを無効化 */
-}
-/* 
-.bg-carousel-1 {
-  background-image: url('../images/slider/colorful-vegetables.webp');
-}
-
-.bg-carousel-2 {
-  background-image: url('../images/slider/colorful-fruits.jpg');
-}
-
-.bg-carousel-3 {
-  background-image: url('../images/slider/fresh-vegetables.jpg');
-} */
-
-
 
 .container {
   background-color: #fafafa;
@@ -642,39 +584,9 @@ li {
      
       padding: 0 0px 0 10px;
       margin: 0 15px 0 0;
-      transform: translate(-0.8em);
-      
+      transform: translate(-0.8em);   
   }
 
-    .carousel-item img {
-      /* width: 300px; */
-      /* max-width: 1200px; */
-     
-      /* padding: 0;
-      margin: 0; */
-      /* height: 320px; */
-    }
-
-    #slider {
-      /* overflow: hidden; */
-    }
-
-    .carousel-item img {
-      /* width: 100%;  
-      min-width: 500px;     */
-    }
-
-    .bg-carousel {
-
-      /* height: 295px; 
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat; */
-    }
-
-    .buyNow {
-      /* margin-bottom: 0.2em; */
-    }
 
     .buyNow a{
       font-size: 16px;
@@ -691,9 +603,6 @@ li {
     .side {
       padding: 28px 0px 0px 22px;
       margin: 68px 0px 0px 10px;
-      /* max-width: 135px; */
-      /* min-width: 130px; */
-      /* width: 100%; */
       max-width: 125px;
       min-width: 100px;
       height: 240px;
@@ -759,34 +668,19 @@ li {
     }
 
     #slider {
-      /* max-width: 100%; */
-     
     }
     
     .carousel-item img {
-      /* max-width: 100%; */
-      /* width: 500px; */
       height: 235px;
-      /* display: block; */
-      /* height: calc(100vh - 400px);  */
-      /* object-fit: cover; */
-      /* height: 295px; */
-    }
-
-    .item_list {
-      /* display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2px;
-      padding: 0 0 0 18px; 
-      padding-top: 35px; */
     }
 
     .item_list {
      
-      /* padding: 0 0px 0 10px; */
+    }
+
+    .item_list {
       margin: 0 5px 0 0px;
       padding-top: 20px; 
-      /* transform: translate(-0.8em);    */
     }
 
     ol, ul {
@@ -850,10 +744,6 @@ li {
       font-weight: bold;
     }
 
-    /* .name_price {
-      padding: 10px 0 0 10px;
-    } */
-
     .pagination {
       margin-bottom: 5px;
       margin-top: -10px;
@@ -877,16 +767,6 @@ li {
     width: 100%;  /* 幅を親要素に合わせる */
    
   }
-
-  .pagination {
-    /* width: 550px; */
-    /* justify-content: center; */
-  }
-
-  /* .content-wrapper {
-    padding: 0;
-  } */
- 
 }
 
 
