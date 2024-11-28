@@ -81,13 +81,13 @@ if (isset($_SESSION['formData'])) {
 
 list($yearArr, $monthArr, $dayArr) = Initial::getDate();
 
-$sexArr = Initial::getSex();
+$genderArr = Initial::getGender();
 
 $context = [
   'yearArr' => $yearArr,
   'monthArr' => $monthArr,
   'dayArr' => $dayArr,
-  'sexArr' => $sexArr, 
+  'genderArr' => $genderArr, 
   'formData' => $formData,
   'error_message' => isset($_GET['error']) && $_GET['error'] == 1 ? '登録中にエラーが発生しました。もう一度お試しください。' : ''
 ];

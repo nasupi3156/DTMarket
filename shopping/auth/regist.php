@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
     'first_name' => filter_input(INPUT_POST, 'first_name', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
     'family_name_kana' => filter_input(INPUT_POST, 'family_name_kana', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
     'first_name_kana' => filter_input(INPUT_POST, 'first_name_kana', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '',
-    'sex' => filter_input(INPUT_POST, 'sex', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
+    'gender' => filter_input(INPUT_POST, 'gender', FILTER_SANITIZE_SPECIAL_CHARS) ?? '',
     'year' => filter_input(INPUT_POST, 'year', FILTER_SANITIZE_NUMBER_INT) ?? 0, 
     'month' => filter_input(INPUT_POST, 'month', FILTER_SANITIZE_NUMBER_INT) ?? 0,
     'day' => filter_input(INPUT_POST, 'day', FILTER_SANITIZE_NUMBER_INT) ?? 0,
@@ -79,13 +79,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm'])) {
 
 list($yearArr, $monthArr, $dayArr) = Initial::getDate();
 
-$sexArr = Initial::getSex();
+$genderArr = Initial::getGender();
 
 $context = [
   'yearArr' => $yearArr,
   'monthArr' => $monthArr,
   'dayArr' => $dayArr,
-  'sexArr' => $sexArr,
+  'genderArr' => $genderArr,
   'formData' => $dataArr,
   'errArr' => $errArr,
   'delete' => $delete,

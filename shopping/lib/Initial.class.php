@@ -33,10 +33,10 @@ class Initial
     return [$yearArr, $monthArr, $dayArr];
   }
   
-  public static function getSex()
+  public static function getGender()
   {
-    $sexArr = [ 0 => '男性', 1 => '女性', 2 => 'その他'];
-    return $sexArr;
+    $genderArr = [ 0 => '男性', 1 => '女性', 2 => 'その他'];
+    return $genderArr;
   }
 
 }

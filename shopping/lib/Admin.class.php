@@ -40,7 +40,7 @@ class Admin
   {
     try {
         $table = 'users';
-        $column = 'user_id, family_name, first_name, family_name_kana, first_name_kana, sex, year, month, day, zip1, zip2, address, email, tel1, tel2, tel3, is_logged_in';
+        $column = 'user_id, family_name, first_name, family_name_kana, first_name_kana, gender, year, month, day, zip1, zip2, address, email, tel1, tel2, tel3, is_logged_in';
         $where = 'is_deleted = ?';
         $arrVal = [0];
         return $this->db->select($table, $column, $where, $arrVal);

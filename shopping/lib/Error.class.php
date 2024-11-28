@@ -24,7 +24,7 @@ class Error {
     $this->firstNameCheck();
     $this->familyNameKanaCheck();
     $this->firstNameKanaCheck();
-    $this->sexCheck();
+    $this->genderCheck();
     $this->birthCheck();
     $this->zipCheck();
     $this->addCheck();
@@ -113,10 +113,10 @@ class Error {
   }
   
    
-  private function sexCheck()
+  private function genderCheck()
   {
-    if ($this->dataArr['sex'] === '') {
-      $this->errArr['sex'] = '性別を選択してください';
+    if ($this->dataArr['gender'] === '') {
+      $this->errArr['gender'] = '性別を選択してください';
     }
   }
   

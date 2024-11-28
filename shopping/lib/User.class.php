@@ -15,14 +15,14 @@ class User {
   public function insertUser($dataArr)
   {
     try {
-        $sql = "INSERT INTO users (family_name, first_name, family_name_kana, first_name_kana, sex, year, month, day, email, zip1, zip2, address, tel1, tel2, tel3, registed_at) 
-                VALUES (:family_name, :first_name, :family_name_kana, :first_name_kana, :sex, :year, :month, :day, :email, :zip1, :zip2, :address, :tel1, :tel2, :tel3, :registed_at)";
+        $sql = "INSERT INTO users (family_name, first_name, family_name_kana, first_name_kana, gender, year, month, day, email, zip1, zip2, address, tel1, tel2, tel3, registed_at) 
+                VALUES (:family_name, :first_name, :family_name_kana, :first_name_kana, :gender, :year, :month, :day, :email, :zip1, :zip2, :address, :tel1, :tel2, :tel3, :registed_at)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':family_name', $dataArr['family_name'], \PDO::PARAM_STR);
         $stmt->bindParam(':first_name', $dataArr['first_name'], \PDO::PARAM_STR);
         $stmt->bindParam(':family_name_kana', $dataArr['family_name_kana'], \PDO::PARAM_STR);
         $stmt->bindParam(':first_name_kana', $dataArr['first_name_kana'], \PDO::PARAM_STR);
-        $stmt->bindParam(':sex', $dataArr['sex'], \PDO::PARAM_STR);
+        $stmt->bindParam(':gender', $dataArr['gender'], \PDO::PARAM_STR);
         $stmt->bindParam(':year', $dataArr['year'], \PDO::PARAM_INT);
         $stmt->bindParam(':month', $dataArr['month'], \PDO::PARAM_INT);
         $stmt->bindParam(':day', $dataArr['day'], \PDO::PARAM_INT);
