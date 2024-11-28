@@ -755,7 +755,6 @@ li {
 
   }
   
-
 @media (max-width: 524px) {
 
   
@@ -763,9 +762,7 @@ li {
   
   }
   .carousel-item img {
-  
-    width: 100%;  /* 幅を親要素に合わせる */
-   
+     
   }
 }
 
