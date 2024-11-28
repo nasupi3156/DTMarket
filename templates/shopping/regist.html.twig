@@ -48,12 +48,12 @@
           <tr class="regist_row">
             <th class="regist_name">性別<span class="red">*</span></th>
             <td class="regist_data">
-              {% for index, label in sexArr %}
-                <input type="radio" name="sex" value="{{index}}" id="sex_{{index}}" class="sex-radio" {% if formData.sex == index %} checked="checked" {% endif %}>
-                <label for="sex_{{index}}">{{label}}</label>
+              {% for index, label in genderArr %}
+                <input type="radio" name="gender" value="{{index}}" id="gender_{{index}}" class="gender-radio" {% if formData.gender == index %} checked="checked" {% endif %}>
+                <label for="gender_{{index}}">{{label}}</label>
                 {# 最初のループindex男性,次のループlebel女性, #}
               {% endfor %}
-              {% if errArr.sex | length> 0 %}<br><span class="red">{{errArr.sex}}</span>{% endif %}
+              {% if errArr.gender | length> 0 %}<br><span class="red">{{errArr.gender}}</span>{% endif %}
             </td>
           </tr>
 
